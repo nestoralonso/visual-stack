@@ -1,7 +1,6 @@
 {
   "name": "@cjdev/visual-stack",
   "version": "6.7.3",
-  "description": "A set of React components with a consistent visual style",
   "files": [
     "dist",
     "lib",
