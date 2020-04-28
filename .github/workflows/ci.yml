@@ -1,7 +1,7 @@
 name: CI
 on: [pull_request, push]
 jobs:
-  build:
+  ci:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -14,17 +14,14 @@ jobs:
         run: npm test
       - name: Build visual-stack-docs
         run: cd packages/visual-stack-docs && npm run build
-  deploy:
-    runs-on: ubuntu-latest
-    needs: build
-    if: github.ref == 'refs/heads/github-action'
-    steps:
       - name: Configure AWS Credentials
+        if: github.ref == 'refs/heads/github-action'
         uses: aws-actions/configure-aws-credentials@v1
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
       - name: Deploy visual-stack-docs to S3
+        if: github.ref == 'refs/heads/github-action'
         run: aws s3 sync packages/visual-stack-docs/build/ s3://visual-stack-docs --delete
       
