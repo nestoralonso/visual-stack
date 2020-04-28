@@ -1,12 +1,7 @@
 name: CI
-on:
-  pull_request:
-  push:
-    branches:
-      - master
-      - github-action
+on: [pull_request, push]
 jobs:
-  ci:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -19,6 +14,11 @@ jobs:
         run: npm test
       - name: Build visual-stack-docs
         run: cd packages/visual-stack-docs && npm run build
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    if: github.ref == 'refs/heads/github-action'
+    steps:
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
