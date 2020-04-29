@@ -23,5 +23,5 @@ jobs:
           aws-region: us-east-1
       - name: Deploy visual-stack-docs to S3
         if: github.ref == 'refs/heads/github-action'
-        run: aws s3 sync packages/visual-stack-docs/build/ s3://visual-stack-docs --delete
+        run: aws s3 sync packages/visual-stack-docs/build/ s3://visual-stack-docs --delete --acl public-read
       
