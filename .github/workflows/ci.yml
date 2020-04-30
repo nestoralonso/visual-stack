@@ -9,7 +9,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v1
         with:
-          node_version: '12.x'
+          node_version: 12.x
       - name: Install dependencies
         run: npm install
       - name: Run lerna bootstrap
