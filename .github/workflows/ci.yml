@@ -25,13 +25,15 @@ jobs:
           path: packages/visual-stack-docs/build
   deploy:
     needs: build
-    if: github.ref == 'refs/heads/github-action'
+    if: github.ref == 'refs/heads/github-action-test'
     runs-on: ubuntu-latest
     steps:
       - name: Download artifact
         uses: actions/download-artifact@v2
         with:
           name: visual-stack-docs
+      - name: List directory contents
+        run: ls -al
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
