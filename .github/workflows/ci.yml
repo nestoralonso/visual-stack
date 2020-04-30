@@ -22,7 +22,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: visual-stack-docs
-          path: packages/visual-stack-docs/build
+          path: packages/visual-stack-docs
   deploy:
     needs: build
     if: github.ref == 'refs/heads/github-action-test'
@@ -32,8 +32,6 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: visual-stack-docs
-      - name: List directory contents
-        run: ls -al
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
@@ -41,5 +39,5 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
       - name: Deploy visual-stack-docs to S3
-        run: aws s3 sync visual-stack-docs s3://visual-stack-docs --delete --acl public-read
+        run: aws s3 sync build s3://visual-stack-docs --delete --acl public-read
       
