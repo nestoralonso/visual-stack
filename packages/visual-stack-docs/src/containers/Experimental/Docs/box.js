@@ -14,7 +14,7 @@ export default () => {
             <Body>
               <Text>
                 Primitive layout component that renders a flex container with
-                standardized styling props
+                standardized styling props.
               </Text>
             </Body>
           </Panel>
