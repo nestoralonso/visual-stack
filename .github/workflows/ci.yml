@@ -9,7 +9,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v1
         with:
-          node_version: '12.x'
+          node_version: 12.x
       - name: Install dependencies
         run: npm install
       - name: Run lerna bootstrap
@@ -39,5 +39,5 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
       - name: Deploy visual-stack-docs to S3
-        run: aws s3 sync visual-stack-docs s3://visual-stack-docs --delete --acl public-read
+        run: aws s3 sync . s3://visual-stack-docs --delete --acl public-read
       
