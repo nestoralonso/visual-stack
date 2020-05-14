@@ -41,6 +41,8 @@ Text.propTypes = {
     'h6',
     'subheading',
     'link',
+    'error',
+    'error-small',
   ]),
 };
 

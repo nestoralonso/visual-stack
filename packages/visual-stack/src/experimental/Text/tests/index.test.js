@@ -97,6 +97,20 @@ describe('Text', () => {
         'Lorem ipsum'
       );
     });
+    it('should render text type error', () => {
+      const wrapper = mount(<Text type="error">Lorem ipsum</Text>);
+
+      expect(wrapper.find('.vs-text.vs-text-type-error').text()).toEqual(
+        'Lorem ipsum'
+      );
+    });
+    it('should render text type error small', () => {
+      const wrapper = mount(<Text type="error-small">Lorem ipsum</Text>);
+
+      expect(wrapper.find('.vs-text.vs-text-type-error-small').text()).toEqual(
+        'Lorem ipsum'
+      );
+    });
   });
   describe('Italic', () => {
     it('should render text italic', () => {

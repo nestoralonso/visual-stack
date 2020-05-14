@@ -85,22 +85,36 @@ export default () => {
               </a>
               {/* s13:end */}
               <Snippet tag="s13" src={snippets} />
+
+              {/* s14:start */}
+              <a href="http://cj.com">
+                <Text type="error">Error</Text>
+              </a>
+              {/* s14:end */}
+              <Snippet tag="s14" src={snippets} />
+
+              {/* s15:start */}
+              <a href="http://cj.com">
+                <Text type="error-small">Error Small</Text>
+              </a>
+              {/* s15:end */}
+              <Snippet tag="s15" src={snippets} />
             </Body>
           </Panel>
           <Panel>
             <Header>Italic</Header>
             <Body>
-              {/* s14:start */}
+              {/* s16:start */}
               <Text italic>Italic</Text>
-              {/* s14:end */}
-              <Snippet tag="s14" src={snippets} />
+              {/* s16:end */}
+              <Snippet tag="s16" src={snippets} />
 
-              {/* s15:start */}
+              {/* s17:start */}
               <Text italic type="h4">
                 Italic Heading 4
               </Text>
-              {/* s15:end */}
-              <Snippet tag="s15" src={snippets} />
+              {/* s17:end */}
+              <Snippet tag="s17" src={snippets} />
             </Body>
           </Panel>
         </div>
