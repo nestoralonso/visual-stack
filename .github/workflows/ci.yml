@@ -40,4 +40,3 @@ jobs:
           aws-region: us-east-1
       - name: Deploy visual-stack-docs to S3
         run: aws s3 sync . s3://visual-stack-docs --delete --acl public-read
-      
