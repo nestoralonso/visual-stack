@@ -25,7 +25,7 @@ jobs:
           path: packages/visual-stack-docs/build
   deploy:
     needs: build
-    if: github.ref == 'refs/heads/github-action-docs'
+    if: github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
     steps:
       - name: Download artifact
