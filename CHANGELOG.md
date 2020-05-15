@@ -1,4 +1,4 @@
-# Upcoming
+# 6.7.4
 ## Updates
 - Box: Remove wrap prop since it doesn't work well with gap
 - Box: Add nested boxes example
