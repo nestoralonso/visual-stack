@@ -1,3 +1,10 @@
+# Upcoming
+## Updates
+- Box: Remove wrap prop since it doesn't work well with gap
+- Box: Add nested boxes example
+- Text: Add error and error-small types
+- Button: Make min-width fit-content so it plays well with flexbox
+
 # 6.7.3
 ## Updates
 - Box component: Add more accepted values for alignItems and justifyContent props
