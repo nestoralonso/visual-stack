@@ -1,4 +1,4 @@
-# Upcoming
+# 6.7.6
 ## Updates
 - TextArea: Add trimmed prop to trim value on blur
 
