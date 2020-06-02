@@ -1,8 +1,9 @@
 import * as R from 'ramda';
 import React from 'react';
+import PropTypes from 'prop-types';
 import './Form.css';
 
-export default ({ className, onBlur, onChange, trimmed, ...restProps }) => (
+const TextArea = ({ className, onBlur, onChange, trimmed, ...restProps }) => (
   <textarea
     {...restProps}
     className={`form-control ${className || ''}`}
@@ -22,3 +23,14 @@ export default ({ className, onBlur, onChange, trimmed, ...restProps }) => (
     }}
   />
 );
+
+TextArea.propTypes = {
+  className: PropTypes.string,
+  onBlur: PropTypes.func,
+  onChange: PropTypes.func,
+  placeholder: PropTypes.string,
+  trimmed: PropTypes.bool,
+  value: PropTypes.string,
+};
+
+export default TextArea;
