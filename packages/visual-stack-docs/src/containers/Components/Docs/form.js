@@ -1,6 +1,6 @@
 /* eslint */
 /* eslint-disable no-console */
-import React from 'react';
+import React, { useState } from 'react';
 import { Body, Header, Panel } from '@cjdev/visual-stack/lib/components/Panel';
 import { Demo, Snippet } from '../../../components/Demo';
 import Select from '@cjdev/visual-stack/lib/components/Select';
@@ -20,7 +20,6 @@ import {
   TextArea,
   SelectField,
 } from '@cjdev/visual-stack/lib/components/Form';
-import { useState } from 'react';
 /* s3:end */
 
 const PanelComponent = ({ header, children }) => (
@@ -47,6 +46,23 @@ const TextFieldDemo = () => {
     </Form>
   );
   /* s4:end */
+};
+
+const TextAreaDemo = () => {
+  const [value, setValue] = useState();
+
+  return (
+    /* s13:start */
+    <TextArea
+      trimmed
+      placeholder="Enter some text here..."
+      value={value}
+      onChange={e => {
+        setValue(e.target.value);
+      }}
+    />
+    /* s13:end */
+  );
 };
 
 export default () => (
@@ -305,7 +321,7 @@ export default () => (
               </div>
             </Form>
             {/* s12:end */}
-            <Snippet tag="s11" src={snippets} />
+            <Snippet tag="s12" src={snippets} />
             <Demo srcFile="/samples/src/containers/Components/Docs/form.css">
               {cssSnippet => (
                 <div>
@@ -319,14 +335,12 @@ export default () => (
           <Panel>
             <Header>Text Area</Header>
             <Body>
-              {/* s13:start */}
               <Form>
                 <FieldContent>
-                  <TextArea placeholder="Enter some text here..." />
+                  <TextAreaDemo />
                 </FieldContent>
               </Form>
-              {/* s13:end */}
-              <Snippet tag="s12" src={snippets} />
+              <Snippet tag="s13" src={snippets} />
             </Body>
           </Panel>
         </div>
