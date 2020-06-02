@@ -1,4 +1,4 @@
-# Upcoming
+# 6.7.5
 ## Updates
 - Input: Add trimmed prop to trim value on blur
 
