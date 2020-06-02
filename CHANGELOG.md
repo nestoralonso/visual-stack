@@ -1,3 +1,7 @@
+# Upcoming
+## Updates
+- Input: Add trimmed prop to trim value on blur
+
 # 6.7.4
 ## Updates
 - Box: Remove wrap prop since it doesn't work well with gap

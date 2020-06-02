@@ -20,6 +20,7 @@ import {
   TextArea,
   SelectField,
 } from '@cjdev/visual-stack/lib/components/Form';
+import { useState } from 'react';
 /* s3:end */
 
 const PanelComponent = ({ header, children }) => (
@@ -28,6 +29,25 @@ const PanelComponent = ({ header, children }) => (
     <Body>{children}</Body>
   </Panel>
 );
+
+const TextFieldDemo = () => {
+  /* s4:start */
+  const [value, setValue] = useState();
+  return (
+    <Form>
+      <TextField
+        required
+        trimmed
+        value={value}
+        onChange={e => setValue(e.target.value)}
+        label="Some Label"
+        help="this is some field"
+        placeholder="placeholder text"
+      />
+    </Form>
+  );
+  /* s4:end */
+};
 
 export default () => (
   <Demo srcFile="/samples/src/containers/Components/Docs/form.js">
@@ -68,16 +88,7 @@ export default () => (
 
           <PanelComponent header="TextField Labeled Components">
             <PanelComponent>
-              {/* s4:start */}
-              <Form>
-                <TextField
-                  required
-                  label="Some Label"
-                  help="this is some field"
-                  placeholder="placeholder text"
-                />
-              </Form>
-              {/* s4:end */}
+              <TextFieldDemo />
               <Snippet tag="s4" src={snippets} />
             </PanelComponent>
             <PanelComponent>
