@@ -1,4 +1,5 @@
 import * as R from 'ramda';
+import classNames from 'classnames';
 import React from 'react';
 import PropTypes from 'prop-types';
 import './Form.css';
@@ -6,7 +7,7 @@ import './Form.css';
 const TextArea = ({ className, onBlur, onChange, trimmed, ...restProps }) => (
   <textarea
     {...restProps}
-    className={`form-control ${className || ''}`}
+    className={classNames('form-control', className)}
     onChange={onChange}
     onBlur={e => {
       const maybeTrimmedEvent = trimmed
