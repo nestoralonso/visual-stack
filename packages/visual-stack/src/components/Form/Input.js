@@ -17,15 +17,21 @@ const Input = ({
     className={`form-control ${className || ''}`}
     onChange={onChange}
     onBlur={e => {
-      if (trimmed && onChange) {
-        onChange(R.over(R.lensPath(['target', 'value']), R.trim)(e));
+      const maybeTrimmedEvent = trimmed
+        ? R.over(R.lensPath(['target', 'value']), R.trim)(e)
+        : e;
+
+      if (onChange) {
+        onChange(maybeTrimmedEvent);
       }
+
       if (onBlur) {
-        onBlur();
+        onBlur(maybeTrimmedEvent);
       }
     }}
   />
 );
+
 Input.propTypes = {
   className: PropTypes.string,
   type: PropTypes.string,

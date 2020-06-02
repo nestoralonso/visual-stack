@@ -1,9 +1,10 @@
 import React from 'react';
 import Enzyme, { mount } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
+
 Enzyme.configure({ adapter: new Adapter() });
 
-import { ChoiceInput, Field, TextField, SelectField } from '../Form';
+import { ChoiceInput, Field, Input, TextField, SelectField } from '../Form';
 
 describe('Form', () => {
   describe('Field', () => {
@@ -33,6 +34,22 @@ describe('Form', () => {
       const wrapper = mount(<ChoiceInput id="test-id" />);
       expect(wrapper.find('label[htmlFor="test-id"]')).toHaveLength(1);
       expect(wrapper.find('input[id="test-id"]')).toHaveLength(1);
+    });
+  });
+
+  describe('Input', () => {
+    it('should trim on blur', () => {
+      const mockOnChange = jest.fn();
+      const mockOnBlur = jest.fn();
+
+      const wrapper = mount(
+        <Input trimmed onBlur={mockOnBlur} onChange={mockOnChange} />
+      );
+
+      wrapper.find('input').simulate('blur', { target: { value: '  test  ' } });
+
+      expect(mockOnChange.mock.calls[0][0].target.value).toEqual('test');
+      expect(mockOnBlur.mock.calls[0][0].target.value).toEqual('test');
     });
   });
 
