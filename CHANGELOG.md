@@ -1,3 +1,7 @@
+#Upcoming
+## Bug Fix
+- ChoiceInput: Separate onClick prop for ChoiceInput and pass it only to actual Input, so the handler runs only once
+
 # 6.7.6
 ## Updates
 - TextArea: Add trimmed prop to trim value on blur
