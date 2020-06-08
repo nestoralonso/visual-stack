@@ -1,4 +1,4 @@
-#Upcoming
+# 6.7.7
 ## Bug Fix
 - ChoiceInput: Separate onClick prop for ChoiceInput and pass it only to actual Input, so the handler runs only once
 
