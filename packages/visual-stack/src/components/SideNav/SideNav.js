@@ -58,6 +58,10 @@ class SideNavP extends React.Component {
       ...restProps
     } = this.props;
 
+    const restPropsForDOMElements = R.omit(
+      ['initializedCollapsed', 'logoBackground', 'toggleSideNav', 'matches'],
+      restProps
+    );
     const toggle = () => onClick(!collapsed);
     const capAppName = appName ? appName.toUpperCase() : '';
     const userMenuWithColor = userMenu
@@ -65,7 +69,7 @@ class SideNavP extends React.Component {
       : null;
     return (
       <ul
-        {...restProps}
+        {...restPropsForDOMElements}
         className={'vs-sidenav' + (collapsed ? ' collapsed' : ' active')}
       >
         <li className="vs-sideNav-left-logo">
