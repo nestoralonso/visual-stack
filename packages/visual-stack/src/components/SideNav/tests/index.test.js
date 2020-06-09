@@ -45,6 +45,26 @@ describe('SideNav', () => {
     );
   });
 
+  test('should omit VS properties from propagating to DOM ul', () => {
+    const wrapper = mount(
+      <SideNav
+        onClick={() => {}}
+        userMenu={<div />}
+        initializedCollapsed={false}
+        logoBackground={<div />}
+        toggleSideNav={() => {}}
+        matches={false}
+      />
+    );
+    wrapper.update();
+    const ul = wrapper.find('ul');
+    expect(ul).toHaveLength(1);
+    expect(ul.prop('initializedCollapsed')).toBeUndefined();
+    expect(ul.prop('logoBackground')).toBeUndefined();
+    expect(ul.prop('matches')).toBeUndefined();
+    expect(ul.prop('toggleSideNav')).toBeUndefined();
+  });
+
   describe('Header', () => {
     test('should render with children', () => {
       const wrapper = mount(
@@ -89,7 +109,7 @@ describe('SideNav', () => {
   describe('Link', () => {
     test('should render with children and default Icon', () => {
       const wrapper = mount(
-        <Link inLinkGroup={false}>
+        <Link>
           <a href="mock link for React Router">
             <span>Label without Text</span>
           </a>

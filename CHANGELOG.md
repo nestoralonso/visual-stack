@@ -1,3 +1,7 @@
+# 6.7.8
+## Bug Fix
+- SideNav: omit VS props from being passed to SideNav ul to avoid react console warnings
+
 # 6.7.7
 ## Bug Fix
 - ChoiceInput: Separate onClick prop for ChoiceInput and pass it only to actual Input, so the handler runs only once
