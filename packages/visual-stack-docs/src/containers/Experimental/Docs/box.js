@@ -411,10 +411,10 @@ export default () => {
             </Body>
           </Panel>
           <Panel>
-            <Header>Align Items</Header>
+            <Header>Align</Header>
             <Body>
               {/* s39:start */}
-              <Box direction="column" gap alignItems="center">
+              <Box direction="column" gap align="center">
                 <Box border padding>
                   <Text>Lorem Ipsum</Text>
                 </Box>
@@ -426,7 +426,7 @@ export default () => {
               <Snippet tag="s39" src={snippets} />
 
               {/* s40:start */}
-              <Box direction="column" gap alignItems="start">
+              <Box direction="column" gap align="start">
                 <Box border padding>
                   <Text>Lorem Ipsum</Text>
                 </Box>
@@ -438,7 +438,7 @@ export default () => {
               <Snippet tag="s40" src={snippets} />
 
               {/* s41:start */}
-              <Box direction="column" gap alignItems="end">
+              <Box direction="column" gap align="end">
                 <Box border padding>
                   <Text>Lorem Ipsum</Text>
                 </Box>
@@ -451,10 +451,10 @@ export default () => {
             </Body>
           </Panel>
           <Panel>
-            <Header>Justify Content</Header>
+            <Header>Justify</Header>
             <Body>
               {/* s42:start */}
-              <Box gap justifyContent="center">
+              <Box gap justify="center">
                 <Box border padding>
                   <Text>Lorem Ipsum</Text>
                 </Box>
@@ -466,7 +466,7 @@ export default () => {
               <Snippet tag="s42" src={snippets} />
 
               {/* s43:start */}
-              <Box gap justifyContent="start">
+              <Box gap justify="start">
                 <Box border padding>
                   <Text>Lorem Ipsum</Text>
                 </Box>
@@ -478,7 +478,7 @@ export default () => {
               <Snippet tag="s43" src={snippets} />
 
               {/* s44:start */}
-              <Box gap justifyContent="end">
+              <Box gap justify="end">
                 <Box border padding>
                   <Text>Lorem Ipsum</Text>
                 </Box>
@@ -490,7 +490,7 @@ export default () => {
               <Snippet tag="s44" src={snippets} />
 
               {/* s45:start */}
-              <Box gap justifyContent="space-around">
+              <Box gap justify="space-around">
                 <Box border padding>
                   <Text>Lorem Ipsum</Text>
                 </Box>
@@ -502,7 +502,7 @@ export default () => {
               <Snippet tag="s45" src={snippets} />
 
               {/* s46:start */}
-              <Box gap justifyContent="space-between">
+              <Box gap justify="space-between">
                 <Box border padding>
                   <Text>Lorem Ipsum</Text>
                 </Box>
@@ -514,7 +514,7 @@ export default () => {
               <Snippet tag="s46" src={snippets} />
 
               {/* s47:start */}
-              <Box gap justifyContent="space-evenly">
+              <Box gap justify="space-evenly">
                 <Box border padding>
                   <Text>Lorem Ipsum</Text>
                 </Box>
@@ -534,7 +534,7 @@ export default () => {
                 <Box border padding>
                   <Text>Lorem Ipsum</Text>
                 </Box>
-                <Box border grow padding justifyContent="center">
+                <Box border grow padding justify="center">
                   <Text>Lorem Ipsum</Text>
                 </Box>
               </Box>

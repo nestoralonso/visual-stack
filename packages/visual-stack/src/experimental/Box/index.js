@@ -4,14 +4,16 @@ import React from 'react';
 import './Box.css';
 
 const Box = ({
-  alignItems,
+  align,
+  alignItems, // deprecated
   border,
   children,
   className,
   direction,
   gap,
   grow,
-  justifyContent,
+  justify,
+  justifyContent, // deprecated
   padding,
   paddingBottom,
   paddingLeft,
@@ -37,8 +39,10 @@ const Box = ({
       }`,
     paddingTop &&
       `vs-box-padding-top-${paddingTop === true ? 'default' : paddingTop}`,
-    alignItems && `vs-box-align-items-${alignItems}`,
-    justifyContent && `vs-box-justify-content-${justifyContent}`,
+    alignItems && `vs-box-align-${alignItems}`,
+    align && `vs-box-align-${align}`,
+    justify && `vs-box-justify-${justify}`,
+    justifyContent && `vs-box-justify-${justifyContent}`,
     grow && 'vs-box-grow',
     className
   );
@@ -63,8 +67,8 @@ Box.propTypes = {
   paddingLeft: PropTypes.oneOf(['small', true, 'large', 'xl', 'xxl']),
   paddingRight: PropTypes.oneOf(['small', true, 'large', 'xl', 'xxl']),
   gap: PropTypes.oneOf(['small', true, 'large', 'xl', 'xxl']),
-  alignItems: PropTypes.oneOf(['start', 'center', 'end']),
-  justifyContent: PropTypes.oneOf([
+  align: PropTypes.oneOf(['start', 'center', 'end']),
+  justify: PropTypes.oneOf([
     'start',
     'center',
     'end',

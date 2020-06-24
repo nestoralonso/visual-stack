@@ -155,39 +155,39 @@
   margin-bottom: 32px;
 }
 
-.vs-box.vs-box-align-items-center {
+.vs-box.vs-box-align-center {
   align-items: center;
 }
 
-.vs-box.vs-box-align-items-start {
+.vs-box.vs-box-align-start {
   align-items: flex-start;
 }
 
-.vs-box.vs-box-align-items-end {
+.vs-box.vs-box-align-end {
   align-items: flex-end;
 }
 
-.vs-box.vs-box-justify-content-center {
+.vs-box.vs-box-justify-center {
   justify-content: center;
 }
 
-.vs-box.vs-box-justify-content-start {
+.vs-box.vs-box-justify-start {
   justify-content: flex-start;
 }
 
-.vs-box.vs-box-justify-content-end {
+.vs-box.vs-box-justify-end {
   justify-content: flex-end;
 }
 
-.vs-box.vs-box-justify-content-space-around {
+.vs-box.vs-box-justify-space-around {
   justify-content: space-around;
 }
 
-.vs-box.vs-box-justify-content-space-between {
+.vs-box.vs-box-justify-space-between {
   justify-content: space-between;
 }
 
-.vs-box.vs-box-justify-content-space-evenly {
+.vs-box.vs-box-justify-space-evenly {
   justify-content: space-evenly;
 }
 

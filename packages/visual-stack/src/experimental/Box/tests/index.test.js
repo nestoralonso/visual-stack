@@ -151,61 +151,59 @@ describe('Box', () => {
       'Lorem ipsum'
     );
   });
-  it('should render with alignItems center', () => {
-    const wrapper = mount(<Box alignItems="center">Lorem ipsum</Box>);
-    expect(wrapper.find('.vs-box.vs-box-align-items-center').text()).toEqual(
+  it('should render with align center', () => {
+    const wrapper = mount(<Box align="center">Lorem ipsum</Box>);
+    expect(wrapper.find('.vs-box.vs-box-align-center').text()).toEqual(
       'Lorem ipsum'
     );
   });
-  it('should render with alignItems start', () => {
-    const wrapper = mount(<Box alignItems="start">Lorem ipsum</Box>);
-    expect(wrapper.find('.vs-box.vs-box-align-items-start').text()).toEqual(
+  it('should render with align start', () => {
+    const wrapper = mount(<Box align="start">Lorem ipsum</Box>);
+    expect(wrapper.find('.vs-box.vs-box-align-start').text()).toEqual(
       'Lorem ipsum'
     );
   });
-  it('should render with alignItems end', () => {
-    const wrapper = mount(<Box alignItems="end">Lorem ipsum</Box>);
-    expect(wrapper.find('.vs-box.vs-box-align-items-end').text()).toEqual(
+  it('should render with align end', () => {
+    const wrapper = mount(<Box align="end">Lorem ipsum</Box>);
+    expect(wrapper.find('.vs-box.vs-box-align-end').text()).toEqual(
       'Lorem ipsum'
     );
   });
-  it('should render with justifyContent center', () => {
-    const wrapper = mount(<Box justifyContent="center">Lorem ipsum</Box>);
-    expect(
-      wrapper.find('.vs-box.vs-box-justify-content-center').text()
-    ).toEqual('Lorem ipsum');
-  });
-  it('should render with justifyContent start', () => {
-    const wrapper = mount(<Box justifyContent="start">Lorem ipsum</Box>);
-    expect(wrapper.find('.vs-box.vs-box-justify-content-start').text()).toEqual(
+  it('should render with justify center', () => {
+    const wrapper = mount(<Box justify="center">Lorem ipsum</Box>);
+    expect(wrapper.find('.vs-box.vs-box-justify-center').text()).toEqual(
       'Lorem ipsum'
     );
   });
-  it('should render with justifyContent end', () => {
-    const wrapper = mount(<Box justifyContent="end">Lorem ipsum</Box>);
-    expect(wrapper.find('.vs-box.vs-box-justify-content-end').text()).toEqual(
+  it('should render with justify start', () => {
+    const wrapper = mount(<Box justify="start">Lorem ipsum</Box>);
+    expect(wrapper.find('.vs-box.vs-box-justify-start').text()).toEqual(
       'Lorem ipsum'
     );
   });
-  it('should render with justifyContent space-around', () => {
-    const wrapper = mount(<Box justifyContent="space-around">Lorem ipsum</Box>);
-    expect(
-      wrapper.find('.vs-box.vs-box-justify-content-space-around').text()
-    ).toEqual('Lorem ipsum');
-  });
-  it('should render with justifyContent space-between', () => {
-    const wrapper = mount(
-      <Box justifyContent="space-between">Lorem ipsum</Box>
+  it('should render with justify end', () => {
+    const wrapper = mount(<Box justify="end">Lorem ipsum</Box>);
+    expect(wrapper.find('.vs-box.vs-box-justify-end').text()).toEqual(
+      'Lorem ipsum'
     );
-    expect(
-      wrapper.find('.vs-box.vs-box-justify-content-space-between').text()
-    ).toEqual('Lorem ipsum');
   });
-  it('should render with justifyContent space-evenly', () => {
-    const wrapper = mount(<Box justifyContent="space-evenly">Lorem ipsum</Box>);
-    expect(
-      wrapper.find('.vs-box.vs-box-justify-content-space-evenly').text()
-    ).toEqual('Lorem ipsum');
+  it('should render with justify space-around', () => {
+    const wrapper = mount(<Box justify="space-around">Lorem ipsum</Box>);
+    expect(wrapper.find('.vs-box.vs-box-justify-space-around').text()).toEqual(
+      'Lorem ipsum'
+    );
+  });
+  it('should render with justify space-between', () => {
+    const wrapper = mount(<Box justify="space-between">Lorem ipsum</Box>);
+    expect(wrapper.find('.vs-box.vs-box-justify-space-between').text()).toEqual(
+      'Lorem ipsum'
+    );
+  });
+  it('should render with justify space-evenly', () => {
+    const wrapper = mount(<Box justify="space-evenly">Lorem ipsum</Box>);
+    expect(wrapper.find('.vs-box.vs-box-justify-space-evenly').text()).toEqual(
+      'Lorem ipsum'
+    );
   });
   it('should render with grow', () => {
     const wrapper = mount(<Box grow>Lorem ipsum</Box>);
