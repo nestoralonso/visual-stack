@@ -12,6 +12,7 @@ export default ({
   label,
   checked,
   style,
+  onClick,
   ...restProps
 }) => (
   <div
@@ -26,6 +27,7 @@ export default ({
         name={name}
         value={value}
         checked={checked}
+        onClick={onClick}
       />
       {label}
     </Label>
