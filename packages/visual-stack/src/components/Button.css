@@ -610,3 +610,8 @@ a.vs-btn-d:hover,
 .vs-text-link-btn[disabled]:hover {
   color: #ccd1d7;
 }
+
+/* remove margin if using inside a box */
+.vs-box .vs-btn-d {
+  margin: 0;
+}
