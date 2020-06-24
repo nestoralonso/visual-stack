@@ -18,36 +18,28 @@ const Box = ({
   paddingRight,
   paddingTop,
   ...restProps
-}) => {
-  const classes = classNames(
-    'vs-box',
-    `vs-box-direction-${direction}`,
-    border && 'vs-box-border',
-    gap && `vs-box-gap-${gap === true ? 'default' : gap}`,
-    padding && `vs-box-padding-${padding === true ? 'default' : padding}`,
-    paddingBottom &&
-      `vs-box-padding-bottom-${
-        paddingBottom === true ? 'default' : paddingBottom
-      }`,
-    paddingLeft &&
-      `vs-box-padding-left-${paddingLeft === true ? 'default' : paddingLeft}`,
-    paddingRight &&
-      `vs-box-padding-right-${
-        paddingRight === true ? 'default' : paddingRight
-      }`,
-    paddingTop &&
-      `vs-box-padding-top-${paddingTop === true ? 'default' : paddingTop}`,
-    align && `vs-box-align-${align}`,
-    justify && `vs-box-justify-${justify}`,
-    grow && 'vs-box-grow',
-    className
-  );
-  return (
-    <div {...restProps} className={classes}>
-      {children}
-    </div>
-  );
-};
+}) => (
+  <div
+    {...restProps}
+    className={classNames(
+      'vs-box',
+      `vs-box-direction-${direction}`,
+      border && 'vs-box-border',
+      gap && `vs-box-gap-${gap}`,
+      padding && `vs-box-padding-${padding}`,
+      paddingBottom && `vs-box-padding-bottom-${paddingBottom}`,
+      paddingLeft && `vs-box-padding-left-${paddingLeft}`,
+      paddingRight && `vs-box-padding-right-${paddingRight}`,
+      paddingTop && `vs-box-padding-top-${paddingTop}`,
+      align && `vs-box-align-${align}`,
+      justify && `vs-box-justify-${justify}`,
+      grow && 'vs-box-grow',
+      className
+    )}
+  >
+    {children}
+  </div>
+);
 
 Box.defaultProps = {
   direction: 'row',
@@ -57,12 +49,12 @@ Box.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
   direction: PropTypes.oneOf(['column', 'row']),
-  padding: PropTypes.oneOf(['small', true, 'large', 'xl', 'xxl']),
-  paddingTop: PropTypes.oneOf(['small', true, 'large', 'xl', 'xxl']),
-  paddingBottom: PropTypes.oneOf(['small', true, 'large', 'xl', 'xxl']),
-  paddingLeft: PropTypes.oneOf(['small', true, 'large', 'xl', 'xxl']),
-  paddingRight: PropTypes.oneOf(['small', true, 'large', 'xl', 'xxl']),
-  gap: PropTypes.oneOf(['small', true, 'large', 'xl', 'xxl']),
+  padding: PropTypes.oneOf(['small', 'default', 'large', 'xl', 'xxl']),
+  paddingTop: PropTypes.oneOf(['small', 'default', 'large', 'xl', 'xxl']),
+  paddingBottom: PropTypes.oneOf(['small', 'default', 'large', 'xl', 'xxl']),
+  paddingLeft: PropTypes.oneOf(['small', 'default', 'large', 'xl', 'xxl']),
+  paddingRight: PropTypes.oneOf(['small', 'default', 'large', 'xl', 'xxl']),
+  gap: PropTypes.oneOf(['small', 'default', 'large', 'xl', 'xxl']),
   align: PropTypes.oneOf(['start', 'center', 'end']),
   justify: PropTypes.oneOf([
     'start',

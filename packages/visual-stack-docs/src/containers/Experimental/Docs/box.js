@@ -61,7 +61,7 @@ export default () => {
             <Header>Padding</Header>
             <Body>
               {/* s6:start */}
-              <Box border padding>
+              <Box border padding="default">
                 Lorem Ipsum
               </Box>
               {/* s6:end */}
@@ -96,7 +96,7 @@ export default () => {
               <Snippet tag="s10" src={snippets} />
 
               {/* s11:start */}
-              <Box border paddingLeft>
+              <Box border paddingLeft="default">
                 Lorem Ipsum
               </Box>
               {/* s11:end */}
@@ -132,7 +132,7 @@ export default () => {
 
               {/* s16:start */}
               <Box direction="row">
-                <Box border paddingRight>
+                <Box border paddingRight="default">
                   Lorem Ipsum
                 </Box>
                 <Text>Lorem ipsum</Text>
@@ -181,7 +181,7 @@ export default () => {
               <Snippet tag="s20" src={snippets} />
 
               {/* s21:start */}
-              <Box border paddingBottom>
+              <Box border paddingBottom="default">
                 Lorem Ipsum
               </Box>
               {/* s21:end */}
@@ -216,7 +216,7 @@ export default () => {
               <Snippet tag="s25" src={snippets} />
 
               {/* s26:start */}
-              <Box border paddingTop>
+              <Box border paddingTop="default">
                 Lorem Ipsum
               </Box>
               {/* s26:end */}
@@ -248,17 +248,17 @@ export default () => {
             <Header>Gap</Header>
             <Body>
               {/* s30:start */}
-              <Box gap>
-                <Box border padding>
+              <Box gap="default">
+                <Box border padding="default">
                   <Text>Lorem Ipsum</Text>
                 </Box>
-                <Box border padding>
+                <Box border padding="default">
                   <Text>Lorem Ipsum</Text>
                 </Box>
-                <Box border padding>
+                <Box border padding="default">
                   <Text>Lorem Ipsum</Text>
                 </Box>
-                <Box border padding>
+                <Box border padding="default">
                   <Text>Lorem Ipsum</Text>
                 </Box>
               </Box>
@@ -267,16 +267,16 @@ export default () => {
 
               {/* s31:start */}
               <Box gap="small">
-                <Box border padding>
+                <Box border padding="default">
                   <Text>Lorem Ipsum</Text>
                 </Box>
-                <Box border padding>
+                <Box border padding="default">
                   <Text>Lorem Ipsum</Text>
                 </Box>
-                <Box border padding>
+                <Box border padding="default">
                   <Text>Lorem Ipsum</Text>
                 </Box>
-                <Box border padding>
+                <Box border padding="default">
                   <Text>Lorem Ipsum</Text>
                 </Box>
               </Box>
@@ -285,16 +285,16 @@ export default () => {
 
               {/* s32:start */}
               <Box gap="large">
-                <Box border padding>
+                <Box border padding="default">
                   <Text>Lorem Ipsum</Text>
                 </Box>
-                <Box border padding>
+                <Box border padding="default">
                   <Text>Lorem Ipsum</Text>
                 </Box>
-                <Box border padding>
+                <Box border padding="default">
                   <Text>Lorem Ipsum</Text>
                 </Box>
-                <Box border padding>
+                <Box border padding="default">
                   <Text>Lorem Ipsum</Text>
                 </Box>
               </Box>
@@ -303,16 +303,16 @@ export default () => {
 
               {/* s33:start */}
               <Box gap="xl">
-                <Box border padding>
+                <Box border padding="default">
                   <Text>Lorem Ipsum</Text>
                 </Box>
-                <Box border padding>
+                <Box border padding="default">
                   <Text>Lorem Ipsum</Text>
                 </Box>
-                <Box border padding>
+                <Box border padding="default">
                   <Text>Lorem Ipsum</Text>
                 </Box>
-                <Box border padding>
+                <Box border padding="default">
                   <Text>Lorem Ipsum</Text>
                 </Box>
               </Box>
@@ -321,16 +321,16 @@ export default () => {
 
               {/* s34:start */}
               <Box gap="xxl">
-                <Box border padding>
+                <Box border padding="default">
                   <Text>Lorem Ipsum</Text>
                 </Box>
-                <Box border padding>
+                <Box border padding="default">
                   <Text>Lorem Ipsum</Text>
                 </Box>
-                <Box border padding>
+                <Box border padding="default">
                   <Text>Lorem Ipsum</Text>
                 </Box>
-                <Box border padding>
+                <Box border padding="default">
                   <Text>Lorem Ipsum</Text>
                 </Box>
               </Box>
@@ -338,17 +338,17 @@ export default () => {
               <Snippet tag="s34" src={snippets} />
 
               {/* s35:start */}
-              <Box direction="column" gap>
-                <Box border padding>
+              <Box direction="column" gap="default">
+                <Box border padding="default">
                   <Text>Lorem Ipsum</Text>
                 </Box>
-                <Box border padding>
+                <Box border padding="default">
                   <Text>Lorem Ipsum</Text>
                 </Box>
-                <Box border padding>
+                <Box border padding="default">
                   <Text>Lorem Ipsum</Text>
                 </Box>
-                <Box border padding>
+                <Box border padding="default">
                   <Text>Lorem Ipsum</Text>
                 </Box>
               </Box>
@@ -357,16 +357,16 @@ export default () => {
 
               {/* s36:start */}
               <Box direction="column" gap="small">
-                <Box border padding>
+                <Box border padding="default">
                   <Text>Lorem Ipsum</Text>
                 </Box>
-                <Box border padding>
+                <Box border padding="default">
                   <Text>Lorem Ipsum</Text>
                 </Box>
-                <Box border padding>
+                <Box border padding="default">
                   <Text>Lorem Ipsum</Text>
                 </Box>
-                <Box border padding>
+                <Box border padding="default">
                   <Text>Lorem Ipsum</Text>
                 </Box>
               </Box>
@@ -375,16 +375,16 @@ export default () => {
 
               {/* s37:start */}
               <Box direction="column" gap="xl">
-                <Box border padding>
+                <Box border padding="default">
                   <Text>Lorem Ipsum</Text>
                 </Box>
-                <Box border padding>
+                <Box border padding="default">
                   <Text>Lorem Ipsum</Text>
                 </Box>
-                <Box border padding>
+                <Box border padding="default">
                   <Text>Lorem Ipsum</Text>
                 </Box>
-                <Box border padding>
+                <Box border padding="default">
                   <Text>Lorem Ipsum</Text>
                 </Box>
               </Box>
@@ -393,16 +393,16 @@ export default () => {
 
               {/* s38:start */}
               <Box direction="column" gap="xxl">
-                <Box border padding>
+                <Box border padding="default">
                   <Text>Lorem Ipsum</Text>
                 </Box>
-                <Box border padding>
+                <Box border padding="default">
                   <Text>Lorem Ipsum</Text>
                 </Box>
-                <Box border padding>
+                <Box border padding="default">
                   <Text>Lorem Ipsum</Text>
                 </Box>
-                <Box border padding>
+                <Box border padding="default">
                   <Text>Lorem Ipsum</Text>
                 </Box>
               </Box>
@@ -414,11 +414,11 @@ export default () => {
             <Header>Align</Header>
             <Body>
               {/* s39:start */}
-              <Box direction="column" gap align="center">
-                <Box border padding>
+              <Box direction="column" gap="default" align="center">
+                <Box border padding="default">
                   <Text>Lorem Ipsum</Text>
                 </Box>
-                <Box border padding>
+                <Box border padding="default">
                   <Text>Lorem Ipsum</Text>
                 </Box>
               </Box>
@@ -426,11 +426,11 @@ export default () => {
               <Snippet tag="s39" src={snippets} />
 
               {/* s40:start */}
-              <Box direction="column" gap align="start">
-                <Box border padding>
+              <Box direction="column" gap="default" align="start">
+                <Box border padding="default">
                   <Text>Lorem Ipsum</Text>
                 </Box>
-                <Box border padding>
+                <Box border padding="default">
                   <Text>Lorem Ipsum</Text>
                 </Box>
               </Box>
@@ -438,11 +438,11 @@ export default () => {
               <Snippet tag="s40" src={snippets} />
 
               {/* s41:start */}
-              <Box direction="column" gap align="end">
-                <Box border padding>
+              <Box direction="column" gap="default" align="end">
+                <Box border padding="default">
                   <Text>Lorem Ipsum</Text>
                 </Box>
-                <Box border padding>
+                <Box border padding="default">
                   <Text>Lorem Ipsum</Text>
                 </Box>
               </Box>
@@ -454,11 +454,11 @@ export default () => {
             <Header>Justify</Header>
             <Body>
               {/* s42:start */}
-              <Box gap justify="center">
-                <Box border padding>
+              <Box gap="default" justify="center">
+                <Box border padding="default">
                   <Text>Lorem Ipsum</Text>
                 </Box>
-                <Box border padding>
+                <Box border padding="default">
                   <Text>Lorem Ipsum</Text>
                 </Box>
               </Box>
@@ -466,11 +466,11 @@ export default () => {
               <Snippet tag="s42" src={snippets} />
 
               {/* s43:start */}
-              <Box gap justify="start">
-                <Box border padding>
+              <Box gap="default" justify="start">
+                <Box border padding="default">
                   <Text>Lorem Ipsum</Text>
                 </Box>
-                <Box border padding>
+                <Box border padding="default">
                   <Text>Lorem Ipsum</Text>
                 </Box>
               </Box>
@@ -478,11 +478,11 @@ export default () => {
               <Snippet tag="s43" src={snippets} />
 
               {/* s44:start */}
-              <Box gap justify="end">
-                <Box border padding>
+              <Box gap="default" justify="end">
+                <Box border padding="default">
                   <Text>Lorem Ipsum</Text>
                 </Box>
-                <Box border padding>
+                <Box border padding="default">
                   <Text>Lorem Ipsum</Text>
                 </Box>
               </Box>
@@ -490,11 +490,11 @@ export default () => {
               <Snippet tag="s44" src={snippets} />
 
               {/* s45:start */}
-              <Box gap justify="space-around">
-                <Box border padding>
+              <Box gap="default" justify="space-around">
+                <Box border padding="default">
                   <Text>Lorem Ipsum</Text>
                 </Box>
-                <Box border padding>
+                <Box border padding="default">
                   <Text>Lorem Ipsum</Text>
                 </Box>
               </Box>
@@ -502,11 +502,11 @@ export default () => {
               <Snippet tag="s45" src={snippets} />
 
               {/* s46:start */}
-              <Box gap justify="space-between">
-                <Box border padding>
+              <Box gap="default" justify="space-between">
+                <Box border padding="default">
                   <Text>Lorem Ipsum</Text>
                 </Box>
-                <Box border padding>
+                <Box border padding="default">
                   <Text>Lorem Ipsum</Text>
                 </Box>
               </Box>
@@ -514,11 +514,11 @@ export default () => {
               <Snippet tag="s46" src={snippets} />
 
               {/* s47:start */}
-              <Box gap justify="space-evenly">
-                <Box border padding>
+              <Box gap="default" justify="space-evenly">
+                <Box border padding="default">
                   <Text>Lorem Ipsum</Text>
                 </Box>
-                <Box border padding>
+                <Box border padding="default">
                   <Text>Lorem Ipsum</Text>
                 </Box>
               </Box>
@@ -530,11 +530,11 @@ export default () => {
             <Header>Grow</Header>
             <Body>
               {/* s48:start */}
-              <Box gap>
-                <Box border padding>
+              <Box gap="default">
+                <Box border padding="default">
                   <Text>Lorem Ipsum</Text>
                 </Box>
-                <Box border grow padding justify="center">
+                <Box border grow padding="default" justify="center">
                   <Text>Lorem Ipsum</Text>
                 </Box>
               </Box>
@@ -546,19 +546,19 @@ export default () => {
             <Header>Nested Boxes</Header>
             <Body>
               {/* s49:start */}
-              <Box gap>
-                <Box border padding>
+              <Box gap="default">
+                <Box border padding="default">
                   A
                 </Box>
-                <Box direction="column" gap grow>
-                  <Box border padding>
+                <Box direction="column" gap="default" grow>
+                  <Box border padding="default">
                     B
                   </Box>
-                  <Box border padding>
+                  <Box border padding="default">
                     C
                   </Box>
                 </Box>
-                <Box border padding>
+                <Box border padding="default">
                   D
                 </Box>
               </Box>
