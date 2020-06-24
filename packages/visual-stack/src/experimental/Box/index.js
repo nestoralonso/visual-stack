@@ -5,7 +5,6 @@ import './Box.css';
 
 const Box = ({
   align,
-  alignItems, // deprecated
   border,
   children,
   className,
@@ -13,7 +12,6 @@ const Box = ({
   gap,
   grow,
   justify,
-  justifyContent, // deprecated
   padding,
   paddingBottom,
   paddingLeft,
@@ -39,10 +37,8 @@ const Box = ({
       }`,
     paddingTop &&
       `vs-box-padding-top-${paddingTop === true ? 'default' : paddingTop}`,
-    alignItems && `vs-box-align-${alignItems}`,
     align && `vs-box-align-${align}`,
     justify && `vs-box-justify-${justify}`,
-    justifyContent && `vs-box-justify-${justifyContent}`,
     grow && 'vs-box-grow',
     className
   );
