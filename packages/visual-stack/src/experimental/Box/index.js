@@ -57,6 +57,12 @@ Box.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
   direction: PropTypes.oneOf(['column', 'row']),
+  padding: PropTypes.oneOf(['small', true, 'large', 'xl', 'xxl']),
+  paddingTop: PropTypes.oneOf(['small', true, 'large', 'xl', 'xxl']),
+  paddingBottom: PropTypes.oneOf(['small', true, 'large', 'xl', 'xxl']),
+  paddingLeft: PropTypes.oneOf(['small', true, 'large', 'xl', 'xxl']),
+  paddingRight: PropTypes.oneOf(['small', true, 'large', 'xl', 'xxl']),
+  gap: PropTypes.oneOf(['small', true, 'large', 'xl', 'xxl']),
   alignItems: PropTypes.oneOf(['start', 'center', 'end']),
   justifyContent: PropTypes.oneOf([
     'start',
@@ -67,13 +73,7 @@ Box.propTypes = {
     'space-evenly',
   ]),
   border: PropTypes.bool,
-  gap: PropTypes.oneOf([true, 'small', 'large']),
   grow: PropTypes.bool,
-  padding: PropTypes.oneOf([true, 'small', 'large']),
-  paddingBottom: PropTypes.oneOf([true, 'small', 'large']),
-  paddingLeft: PropTypes.oneOf([true, 'small', 'large']),
-  paddingRight: PropTypes.oneOf([true, 'small', 'large']),
-  paddingTop: PropTypes.oneOf([true, 'small', 'large']),
 };
 
 export default Box;
