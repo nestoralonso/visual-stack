@@ -1,14 +1,19 @@
 # Upcoming
+
 ## Updates
-- Box: Add xl and xxl paddings
-- Box: Rename align and justify props
+
+- Box: Add xl and xxl paddings. Rename align and justify props. Normalize padding and gap props to use string values. Improve Box docs.
 
 # 6.7.8
+
 ## Bug Fix
+
 - SideNav: omit VS props from being passed to SideNav ul to avoid react console warnings
 
 # 6.7.7
+
 ## Bug Fix
+
 - ChoiceInput: Separate onClick prop for ChoiceInput and pass it only to actual Input, so the handler runs only once
 
 # 6.7.6
