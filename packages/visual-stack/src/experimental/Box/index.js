@@ -4,50 +4,42 @@ import React from 'react';
 import './Box.css';
 
 const Box = ({
-  alignItems,
+  align,
   border,
   children,
   className,
   direction,
   gap,
   grow,
-  justifyContent,
+  justify,
   padding,
   paddingBottom,
   paddingLeft,
   paddingRight,
   paddingTop,
   ...restProps
-}) => {
-  const classes = classNames(
-    'vs-box',
-    `vs-box-direction-${direction}`,
-    border && 'vs-box-border',
-    gap && `vs-box-gap-${gap === true ? 'default' : gap}`,
-    padding && `vs-box-padding-${padding === true ? 'default' : padding}`,
-    paddingBottom &&
-      `vs-box-padding-bottom-${
-        paddingBottom === true ? 'default' : paddingBottom
-      }`,
-    paddingLeft &&
-      `vs-box-padding-left-${paddingLeft === true ? 'default' : paddingLeft}`,
-    paddingRight &&
-      `vs-box-padding-right-${
-        paddingRight === true ? 'default' : paddingRight
-      }`,
-    paddingTop &&
-      `vs-box-padding-top-${paddingTop === true ? 'default' : paddingTop}`,
-    alignItems && `vs-box-align-items-${alignItems}`,
-    justifyContent && `vs-box-justify-content-${justifyContent}`,
-    grow && 'vs-box-grow',
-    className
-  );
-  return (
-    <div {...restProps} className={classes}>
-      {children}
-    </div>
-  );
-};
+}) => (
+  <div
+    {...restProps}
+    className={classNames(
+      'vs-box',
+      `vs-box-direction-${direction}`,
+      border && 'vs-box-border',
+      gap && `vs-box-gap-${gap}`,
+      padding && `vs-box-padding-${padding}`,
+      paddingBottom && `vs-box-padding-bottom-${paddingBottom}`,
+      paddingLeft && `vs-box-padding-left-${paddingLeft}`,
+      paddingRight && `vs-box-padding-right-${paddingRight}`,
+      paddingTop && `vs-box-padding-top-${paddingTop}`,
+      align && `vs-box-align-${align}`,
+      justify && `vs-box-justify-${justify}`,
+      grow && 'vs-box-grow',
+      className
+    )}
+  >
+    {children}
+  </div>
+);
 
 Box.defaultProps = {
   direction: 'row',
@@ -57,8 +49,14 @@ Box.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
   direction: PropTypes.oneOf(['column', 'row']),
-  alignItems: PropTypes.oneOf(['start', 'center', 'end']),
-  justifyContent: PropTypes.oneOf([
+  padding: PropTypes.oneOf(['small', 'default', 'large', 'xl', 'xxl']),
+  paddingTop: PropTypes.oneOf(['small', 'default', 'large', 'xl', 'xxl']),
+  paddingBottom: PropTypes.oneOf(['small', 'default', 'large', 'xl', 'xxl']),
+  paddingLeft: PropTypes.oneOf(['small', 'default', 'large', 'xl', 'xxl']),
+  paddingRight: PropTypes.oneOf(['small', 'default', 'large', 'xl', 'xxl']),
+  gap: PropTypes.oneOf(['small', 'default', 'large', 'xl', 'xxl']),
+  align: PropTypes.oneOf(['start', 'center', 'end']),
+  justify: PropTypes.oneOf([
     'start',
     'center',
     'end',
@@ -67,13 +65,7 @@ Box.propTypes = {
     'space-evenly',
   ]),
   border: PropTypes.bool,
-  gap: PropTypes.oneOf([true, 'small', 'large']),
   grow: PropTypes.bool,
-  padding: PropTypes.oneOf([true, 'small', 'large']),
-  paddingBottom: PropTypes.oneOf([true, 'small', 'large']),
-  paddingLeft: PropTypes.oneOf([true, 'small', 'large']),
-  paddingRight: PropTypes.oneOf([true, 'small', 'large']),
-  paddingTop: PropTypes.oneOf([true, 'small', 'large']),
 };
 
 export default Box;
