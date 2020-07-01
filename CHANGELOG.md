@@ -1,3 +1,9 @@
+# 6.7.11
+
+## Updates
+
+- Box: fix class names
+
 # 6.7.10
 
 ## Updates
