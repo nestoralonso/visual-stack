@@ -29,7 +29,7 @@ export default () => {
                 direction="column"
                 gap="large"
                 padding="xl"
-                paddingTop="xxl"
+                paddingTop="2xl"
               >
                 <Box gap="default" align="center">
                   <IconSuccess />
@@ -105,7 +105,7 @@ export default () => {
               Adds padding around the box. Available props are padding,
               paddingTop, paddingBottom, paddingLeft, and paddingRight. Values
               can be one of "small" (4px), "default" (8px), "large" (16px), "xl"
-              (24px), or "xxl" (32px).
+              (24px), "2xl" (32px), "3xl" (40px), "4xl" (48px).
               <Snippet tag="s5" src={snippets} />
               {/* s5:start */}
               <Box border padding="default">
@@ -126,7 +126,7 @@ export default () => {
               {/* s7:end */}
               <Snippet tag="s8" src={snippets} />
               {/* s8:start */}
-              <Box border padding="xl" paddingTop="xxl">
+              <Box border padding="xl" paddingTop="2xl">
                 Lorem Ipsum
               </Box>
               {/* s8:end */}
@@ -136,7 +136,8 @@ export default () => {
             <Header>Gap</Header>
             <Body>
               Adds spacing between children. Values can be one of "small" (4px),
-              "default" (8px), "large" (16px), "xl" (24px), or "xxl" (32px).
+              "default" (8px), "large" (16px), "xl" (24px), "2xl" (32px), "3xl"
+              (40px), or "4xl" (48px).
               <Snippet tag="s9" src={snippets} />
               {/* s9:start */}
               <Box gap="default">
