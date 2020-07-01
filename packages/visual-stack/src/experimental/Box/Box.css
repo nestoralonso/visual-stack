@@ -31,8 +31,16 @@
   padding: 24px;
 }
 
-.vs-box.vs-box-padding-xxl {
+.vs-box.vs-box-padding-2xl {
   padding: 32px;
+}
+
+.vs-box.vs-box-padding-3xl {
+  padding: 40px;
+}
+
+.vs-box.vs-box-padding-4xl {
+  padding: 48px;
 }
 
 .vs-box.vs-box-padding-bottom-default {
@@ -51,8 +59,16 @@
   padding-bottom: 24px;
 }
 
-.vs-box.vs-box-padding-bottom-xxl {
+.vs-box.vs-box-padding-bottom-2xl {
   padding-bottom: 32px;
+}
+
+.vs-box.vs-box-padding-bottom-3xl {
+  padding-bottom: 40px;
+}
+
+.vs-box.vs-box-padding-bottom-4xl {
+  padding-bottom: 48px;
 }
 
 .vs-box.vs-box-padding-left-default {
@@ -71,8 +87,16 @@
   padding-left: 24px;
 }
 
-.vs-box.vs-box-padding-left-xxl {
+.vs-box.vs-box-padding-left-2xl {
   padding-left: 32px;
+}
+
+.vs-box.vs-box-padding-left-3xl {
+  padding-left: 40px;
+}
+
+.vs-box.vs-box-padding-left-4xl {
+  padding-left: 48px;
 }
 
 .vs-box.vs-box-padding-right-default {
@@ -91,8 +115,16 @@
   padding-right: 24px;
 }
 
-.vs-box.vs-box-padding-right-xxl {
+.vs-box.vs-box-padding-right-2xl {
   padding-right: 32px;
+}
+
+.vs-box.vs-box-padding-right-3xl {
+  padding-right: 40px;
+}
+
+.vs-box.vs-box-padding-right-4xl {
+  padding-right: 48px;
 }
 
 .vs-box.vs-box-padding-top-default {
@@ -111,8 +143,16 @@
   padding-top: 24px;
 }
 
-.vs-box.vs-box-padding-top-xxl {
+.vs-box.vs-box-padding-top-2xl {
   padding-top: 32px;
+}
+
+.vs-box.vs-box-padding-top-3xl {
+  padding-top: 40px;
+}
+
+.vs-box.vs-box-padding-top-4xl {
+  padding-top: 48px;
 }
 
 .vs-box.vs-box-direction-row.vs-box-gap-default > :not(:last-child) {
@@ -131,8 +171,16 @@
   margin-right: 24px;
 }
 
-.vs-box.vs-box-direction-row.vs-box-gap-xxl > :not(:last-child) {
+.vs-box.vs-box-direction-row.vs-box-gap-2xl > :not(:last-child) {
   margin-right: 32px;
+}
+
+.vs-box.vs-box-direction-row.vs-box-gap-2xl > :not(:last-chi3d) {
+  margin-right: 40px;
+}
+
+.vs-box.vs-box-direction-row.vs-box-gap-2xl > :not(:last-chi4d) {
+  margin-right: 48px;
 }
 
 .vs-box.vs-box-direction-column.vs-box-gap-default > :not(:last-child) {
@@ -151,8 +199,16 @@
   margin-bottom: 24px;
 }
 
-.vs-box.vs-box-direction-column.vs-box-gap-xxl > :not(:last-child) {
+.vs-box.vs-box-direction-column.vs-box-gap-2xl > :not(:last-child) {
   margin-bottom: 32px;
+}
+
+.vs-box.vs-box-direction-column.vs-box-gap-2xl > :not(:last-chi3d) {
+  margin-bottom: 40px;
+}
+
+.vs-box.vs-box-direction-column.vs-box-gap-2xl > :not(:last-chi4d) {
+  margin-bottom: 48px;
 }
 
 .vs-box.vs-box-align-center {

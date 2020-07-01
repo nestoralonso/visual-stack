@@ -1,3 +1,9 @@
+# 6.7.10
+
+## Updates
+
+- Box: Add 2xl, 3xl, and 4xl paddings and gaps.
+
 # 6.7.9
 
 ## Updates
