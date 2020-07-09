@@ -21,7 +21,7 @@ const Input = ({
         ? R.over(R.lensPath(['target', 'value']), R.trim)(e)
         : e;
 
-      if (onChange) {
+      if (trimmed && onChange) {
         onChange(maybeTrimmedEvent);
       }
 

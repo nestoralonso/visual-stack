@@ -58,6 +58,19 @@ describe('Form', () => {
       expect(mockOnChange.mock.calls[0][0].target.value).toEqual('test');
       expect(mockOnBlur.mock.calls[0][0].target.value).toEqual('test');
     });
+
+    it('should not call onChange when bluring without the trimmed prop', () => {
+      const mockOnChange = jest.fn();
+      const mockOnBlur = jest.fn();
+
+      const wrapper = mount(
+        <Input onBlur={mockOnBlur} onChange={mockOnChange} />
+      );
+
+      wrapper.find('input').simulate('blur', { target: { value: '  test  ' } });
+
+      expect(mockOnChange.mock.calls).toHaveLength(0);
+    });
   });
 
   describe('TextArea', () => {
