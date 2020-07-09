@@ -1,3 +1,9 @@
+# 6.7.13
+
+## Updates
+
+- Input: fix onChange invocation when onBlur
+
 # 6.7.12
 
 ## Updates
