@@ -5,6 +5,15 @@ import './SlidingPanel.css';
 import FilterVariantIcon from 'mdi-react/FilterVariantIcon';
 import ArrowRightIcon from 'mdi-react/ArrowRightIcon';
 import { Button } from '../Button.js';
+import * as R from 'ramda';
+
+
+const removeUnrelatedProps = R.omit(["initialActive",
+  "syncStateToOpen",
+  "expandFilterDropdown",
+  "hideFilterDropdown",
+  "toggleSlidingPanel",
+  "setSlidingPanelActiveState"]);
 
 export const ToggleIcon = ({
   onClick,
@@ -46,7 +55,7 @@ export const SlidingPanel = ({
       className={classNames(`${className} vs-sliding-panel`, {
         'vs-active': active,
       })}
-      {...restProps}
+      {...removeUnrelatedProps(restProps)}
     >
       <ul className="vs-force-sliding-panel-width">{children}</ul>
     </div>
@@ -107,7 +116,7 @@ export const SlidingPanelDropdown = ({
     'vs-expanded': expanded,
   });
   return (
-    <ul className={containerClasses} id={id} {...restProps}>
+    <ul className={containerClasses} id={id} {...removeUnrelatedProps(restProps)}>
       <a className="vs-sliding-panel-section-container-label" onClick={onClick}>
         <div>{label}</div>
         <i className="fa fa-chevron-right" />
