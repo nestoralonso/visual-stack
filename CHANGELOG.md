@@ -1,3 +1,9 @@
+# 6.7.14
+
+## Bug Fix
+
+- SlidngPanel: fix warnings
+
 # 6.7.13
 
 ## Updates
