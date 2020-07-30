@@ -12,6 +12,23 @@
   border-left: 0px solid #d1d1d2;
 }
 
+.vs-sliding-panel-section-label {
+  align-items: center;
+  display: flex;
+  flex-grow: 1;
+  justify-content: space-between;
+  margin-left: 12px;
+  font-weight: 500;
+}
+
+.vs-sliding-panel-chevron-container {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+}
+
 .vs-sliding-panel-header {
   font-weight: 500;
   padding: 14px 15px;
@@ -43,13 +60,10 @@
 }
 
 .vs-sliding-panel-section-container-label {
-  align-items: center;
   cursor: pointer;
-  display: flex;
   justify-content: space-between;
-  padding: 12px;
-  padding-right: 16px;
-  user-select: none;
+  display: flex;
+  align-items: center;
 }
 
 .vs-sliding-panel.vs-active {
@@ -85,8 +99,6 @@
 
 .vs-sliding-panel-section-container-label div {
   font-weight: 500;
-  opacity: 0.54;
-  transition: 0.3s all ease-in-out;
 }
 
 .vs-sliding-panel-section-container
@@ -96,18 +108,11 @@
 
 .vs-sliding-panel-section-container
   .vs-sliding-panel-section-container-label
-  i {
-  color: #999;
+  svg {
+  fill: #757575;
   font-size: 10px;
   transform: rotate(0);
   transition: 0.3s all ease-in-out;
-}
-
-.vs-sliding-panel-section-container-label:hover div,
-.vs-sliding-panel-section-container.vs-expanded
-  .vs-sliding-panel-section-container-label
-  div {
-  opacity: 1;
 }
 
 .vs-sliding-panel-section-container.vs-expanded ul {
@@ -116,7 +121,22 @@
 
 .vs-sliding-panel-section-container.vs-expanded
   .vs-sliding-panel-section-container-label
-  i {
-  color: #3abda7;
+  svg {
+  fill: #333;
   transform: rotate(90deg);
+}
+
+.vs-sliding-panel-section-options.vs-expanded {
+  padding: 0 12px 12px 12px;
+}
+
+.vs-badge {
+  font-size: 10px;
+  background-color: #6d7684;
+  color: white;
+  border-radius: 8px;
+  padding: 0 8px;
+  height: 16px;
+  min-width: 16px;
+  text-align: center;
 }

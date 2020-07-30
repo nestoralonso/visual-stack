@@ -118,6 +118,7 @@ InternalSlidingPanelDropdown.propTypes = {
   id: PropTypes.string.isRequired,
   initialActive: PropTypes.bool,
   label: PropTypes.any,
+  badge: PropTypes.any,
   children: PropTypes.any,
   toggleFilterDropdown: PropTypes.func,
   styles: PropTypes.object,

@@ -123,6 +123,20 @@ class SlidingPanelDemo extends React.Component {
                           {/* example of a Filter to populate the Dropdown */}
                           <div>Look at me!!!</div>
                         </SlidingPanelDropdown>
+
+                        <SlidingPanelDropdown
+                          label="Dropdown Label"
+                          badge="1 included"
+                          expanded={this.state.filter2Active}
+                          onClick={() =>
+                            this.setState({
+                              filter2Active: !this.state.filter2Active,
+                            })
+                          }
+                        >
+                          <div>Look at me!!!</div>
+                        </SlidingPanelDropdown>
+
                       </SlidingPanelSection>
                     </SlidingPanel>
                     {/* s3:end */}
@@ -143,6 +157,7 @@ class VSRSlidingPanelDemo extends React.Component {
     this.state = {
       panelActive: false,
       filterActive: true,
+      filter2Active: false,
       companies: [
         { label: '1234 - my company', value: 1234 },
         { label: '5667 - my other company', value: 5667 },
@@ -200,6 +215,7 @@ class VSRSlidingPanelDemo extends React.Component {
                       <VSDropdown
                         id="id1"
                         label="My Redux CIDs"
+                        badge="1 included"
                         initialActive={true}
                       >
                         <div>something</div>

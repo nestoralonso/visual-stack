@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { SlidingPanel, ToggleIcon } from '../';
+import { SlidingPanel, ToggleIcon, SlidingPanelDropdown } from '../';
 
 import Enzyme from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
@@ -18,9 +18,22 @@ describe('SlidingPanel', () => {
   });
 });
 
+describe("SlidingPanelDropdown", () => {
+  test("should render badge", () => {
+    const wrapper = shallow(<SlidingPanelDropdown badge="hello" />);
+    expect(wrapper.find("Badge")).toHaveLength(1);
+    expect(wrapper.find("Badge").prop("children")).toBe("hello");
+  })
+
+  test("should not render badge when missing badge prop", () => {
+    const wrapper = shallow(<SlidingPanelDropdown />);
+    expect(wrapper.find("Badge")).toHaveLength(0);
+  })
+})
+
 describe('ToggleIcon', () => {
   test('should render', () => {
-    const wrapper = shallow(<ToggleIcon onClick={() => {}} />);
+    const wrapper = shallow(<ToggleIcon onClick={() => { }} />);
     expect(wrapper.find('.vs-sliding-panel-toggle-icon').length).toEqual(1);
   });
 });

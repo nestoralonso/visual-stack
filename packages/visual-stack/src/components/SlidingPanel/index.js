@@ -4,9 +4,12 @@ import classNames from 'classnames';
 import './SlidingPanel.css';
 import FilterVariantIcon from 'mdi-react/FilterVariantIcon';
 import ArrowRightIcon from 'mdi-react/ArrowRightIcon';
+import ChevronRightIcon from 'mdi-react/ChevronRightIcon';
 import { Button } from '../Button.js';
 import * as R from 'ramda';
-
+const Badge = ({ children }) => {
+  return <div className="vs-badge">{children}</div>
+}
 
 const removeUnrelatedProps = R.omit(["initialActive",
   "syncStateToOpen",
@@ -102,6 +105,7 @@ export const SlidingPanelDropdown = ({
   label,
   children,
   onClick,
+  badge,
   expanded,
   id = '',
   ...restProps
@@ -117,10 +121,19 @@ export const SlidingPanelDropdown = ({
   });
   return (
     <ul className={containerClasses} id={id} {...removeUnrelatedProps(restProps)}>
-      <a className="vs-sliding-panel-section-container-label" onClick={onClick}>
-        <div>{label}</div>
-        <i className="fa fa-chevron-right" />
-      </a>
+      <li>
+        <a onClick={onClick} className="vs-sliding-panel-section-container-label">
+          <div className="vs-sliding-panel-section-label">
+            {label}
+            {badge && <Badge>
+              {badge}
+            </Badge>}
+          </div>
+          <div className="vs-sliding-panel-chevron-container">
+            <ChevronRightIcon />
+          </div>
+        </a>
+      </li>
       <ul>
         <div className={optionsClasses}>{children}</div>
       </ul>
