@@ -1,3 +1,9 @@
+# 6.8.0
+
+## New Feature
+
+- SlidngPanel: support badges in sliding panel
+
 # 6.7.14
 
 ## Bug Fix
