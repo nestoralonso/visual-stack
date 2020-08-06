@@ -1,3 +1,9 @@
+# 6.8.1
+
+## Bug Fix
+
+- Tree: fix warnings in tree component
+
 # 6.8.0
 
 ## New Feature
