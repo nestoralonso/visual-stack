@@ -3,6 +3,15 @@ import PropTypes from 'prop-types';
 import { TriStateCheckbox } from '../TriStateCheckbox';
 import './Tree.css';
 import { withErrorBoundary } from '../../components/ErrorBoundary';
+import * as R from 'ramda';
+
+const transformToDivProps = (props) => {
+  const cloneProps = R.clone(props);
+  cloneProps['_nodeid'] = props["_nodeId"];
+  delete cloneProps['_nodeId'];
+  delete cloneProps['labelContent'];
+  return cloneProps;
+}
 
 export class Tree extends React.Component {
   shouldComponentUpdate(nextProps) {
@@ -50,14 +59,14 @@ export class Tree extends React.Component {
 
     return (
       <div
-        {...restProps}
+        {...transformToDivProps(restProps)}
         className={`${
           _nodeId === props.treeStructure.rootId() ? 'vs-tree' : ''
-        } ${
+          } ${
           filterOut && filterOut[_nodeId]
             ? `vs-hidden ${props.className}`
             : props.className
-        }`}
+          }`}
       >
         {rootVisible ? (
           children(_nodeId).length > 0 ? (
@@ -83,28 +92,28 @@ export class Tree extends React.Component {
               </div>
             </details>
           ) : (
-            <div className={'vs-leafContent'}>
-              <div onClick={onSelectionClick}>
-                {labelContent(_nodeId, highlight)}
+              <div className={'vs-leafContent'}>
+                <div onClick={onSelectionClick}>
+                  {labelContent(_nodeId, highlight)}
+                </div>
+                <TriStateCheckbox
+                  className={'vs-treecheckbox'}
+                  value={selection[_nodeId]}
+                  onClick={onSelectionClick}
+                />
               </div>
-              <TriStateCheckbox
-                className={'vs-treecheckbox'}
-                value={selection[_nodeId]}
-                onClick={onSelectionClick}
-              />
-            </div>
-          )
+            )
         ) : (
-          <div>
-            {children(_nodeId).map(_nodeId => (
-              <Tree
-                {...{ ...props, _nodeId }}
-                key={_nodeId}
-                rootVisible={true}
-              />
-            ))}
-          </div>
-        )}
+            <div>
+              {children(_nodeId).map(_nodeId => (
+                <Tree
+                  {...{ ...props, _nodeId }}
+                  key={_nodeId}
+                  rootVisible={true}
+                />
+              ))}
+            </div>
+          )}
       </div>
     );
   }
