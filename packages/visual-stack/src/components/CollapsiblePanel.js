@@ -24,7 +24,11 @@ export class CollapsiblePanel extends React.Component {
   }
 
   toggleCollapsed() {
-    this.setState({ collapsed: !this.state.collapsed });
+    const collapsed = !this.state.collapsed;
+    this.setState({ collapsed });
+    if (this.props.onToggleCollapsed) {
+      this.props.onToggleCollapsed(collapsed);
+    }
   }
 
   render() {
@@ -78,6 +82,7 @@ CollapsiblePanel.prototypes = {
   children: PropTypes.node,
   className: PropTypes.string,
   initializedCollapsed: PropTypes.bool,
+  onToggleCollapsed: PropTypes.func,
   padding: PropTypes.oneOf([paddingSize.LARGE]),
   title: PropTypes.node,
   titleIcon: PropTypes.node,

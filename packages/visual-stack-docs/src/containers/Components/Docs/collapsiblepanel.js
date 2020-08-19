@@ -30,6 +30,10 @@ export default () => {
                 <h3 className="inline-remove-margin">Collapsible Panel 1</h3>
               }
               initializedCollapsed={false}
+              onToggleCollapsed={collapsed => {
+                // eslint-disable-next-line no-console
+                console.log(collapsed);
+              }}
             >
               <Field label="# of vacation days" help="Enter vacation rules">
                 <FieldContent>

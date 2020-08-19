@@ -8,11 +8,13 @@ Enzyme.configure({ adapter: new Adapter() });
 
 describe('CollapsiblePanel', () => {
   let shallowWrapper;
+  let onToggleCollapsed;
 
   describe('when initially collapsed', () => {
     beforeEach(() => {
+      onToggleCollapsed = jest.fn();
       shallowWrapper = shallow(
-        <CollapsiblePanel>
+        <CollapsiblePanel onToggleCollapsed={onToggleCollapsed}>
           <div id="test-marker">I am some content</div>
         </CollapsiblePanel>
       );
@@ -26,17 +28,37 @@ describe('CollapsiblePanel', () => {
       const headerButton = shallowWrapper.find(
         '.vs-collapsible-panel-header-button'
       );
+      expect(shallowWrapper.find('div#test-marker').length).toBe(0);
       headerButton.simulate('click');
       expect(shallowWrapper.find('div#test-marker').length).toBe(1);
+      expect(onToggleCollapsed.mock.calls[0][0]).toEqual(false);
       headerButton.simulate('click');
       expect(shallowWrapper.find('div#test-marker').length).toBe(0);
+      expect(onToggleCollapsed.mock.calls[1][0]).toEqual(true);
+    });
+    
+    test('should toggle content when title is clicked', () => {
+      const headerTitle = shallowWrapper.find(
+        '.vs-collapsible-panel-header-title'
+      );
+      expect(shallowWrapper.find('div#test-marker').length).toBe(0);
+      headerTitle.simulate('click');
+      expect(shallowWrapper.find('div#test-marker').length).toBe(1);
+      expect(onToggleCollapsed.mock.calls[0][0]).toEqual(false);
+      headerTitle.simulate('click');
+      expect(shallowWrapper.find('div#test-marker').length).toBe(0);
+      expect(onToggleCollapsed.mock.calls[1][0]).toEqual(true);
     });
   });
 
   describe('when not initially collapsed', () => {
     beforeEach(() => {
+      onToggleCollapsed = jest.fn();
       shallowWrapper = shallow(
-        <CollapsiblePanel initializedCollapsed={false}>
+        <CollapsiblePanel
+          onToggleCollapsed={onToggleCollapsed}
+          initializedCollapsed={false}
+        >
           <div id="test-marker">I am some content</div>
         </CollapsiblePanel>
       );
@@ -44,6 +66,32 @@ describe('CollapsiblePanel', () => {
 
     test('should initially show the content', () => {
       expect(shallowWrapper.find('div#test-marker').length).toBe(1);
+    });
+
+    test('should toggle content when button is clicked', () => {
+      const headerButton = shallowWrapper.find(
+        '.vs-collapsible-panel-header-button'
+      );
+      expect(shallowWrapper.find('div#test-marker').length).toBe(1);
+      headerButton.simulate('click');
+      expect(shallowWrapper.find('div#test-marker').length).toBe(0);
+      expect(onToggleCollapsed.mock.calls[0][0]).toEqual(true);
+      headerButton.simulate('click');
+      expect(shallowWrapper.find('div#test-marker').length).toBe(1);
+      expect(onToggleCollapsed.mock.calls[1][0]).toEqual(false);
+    });
+
+    test('should toggle content when title is clicked', () => {
+      const headerTitle = shallowWrapper.find(
+        '.vs-collapsible-panel-header-title'
+      );
+      expect(shallowWrapper.find('div#test-marker').length).toBe(1);
+      headerTitle.simulate('click');
+      expect(shallowWrapper.find('div#test-marker').length).toBe(0);
+      expect(onToggleCollapsed.mock.calls[0][0]).toEqual(true);
+      headerTitle.simulate('click');
+      expect(shallowWrapper.find('div#test-marker').length).toBe(1);
+      expect(onToggleCollapsed.mock.calls[1][0]).toEqual(false);
     });
   });
 
