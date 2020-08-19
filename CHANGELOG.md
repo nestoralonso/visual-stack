@@ -1,3 +1,9 @@
+# 6.8.2
+
+## New Feature
+
+- CollapsiblePanel: add onToggleCollapse prop
+
 # 6.8.1
 
 ## Bug Fix
