@@ -111,14 +111,14 @@ describe('CollapsiblePanel', () => {
 
 describe('PureCollapsiblePanel', () => {
   let container;
-  let onToggleCollapsed;
+  let onChange;
 
   describe('when collapsed prop is true', () => {
 
     test('render collapsed and respond false when button clicked', () => {
-      onToggleCollapsed = jest.fn();
+      onChange = jest.fn();
       container = mount(
-        <PureCollapsiblePanel collapsed={true} onToggleCollapsed={onToggleCollapsed}>
+        <PureCollapsiblePanel collapsed={true} onChange={onChange}>
           <div id="test-marker">I am some content</div>
         </PureCollapsiblePanel>
       );
@@ -129,13 +129,13 @@ describe('PureCollapsiblePanel', () => {
       expect(container.find('div#test-marker').length).toBe(0);
       headerButton.simulate('click');
       expect(container.find('div#test-marker').length).toBe(0);
-      expect(onToggleCollapsed.mock.calls[0][0]).toEqual(false);
+      expect(onChange.mock.calls[0][0]).toEqual(false);
     });
 
     test('render collapsed and respond false when title clicked', () => {
-      onToggleCollapsed = jest.fn();
+      onChange = jest.fn();
       container = mount(
-        <PureCollapsiblePanel collapsed={true} onToggleCollapsed={onToggleCollapsed}>
+        <PureCollapsiblePanel collapsed={true} onChange={onChange}>
           <div id="test-marker">I am some content</div>
         </PureCollapsiblePanel>
       );
@@ -146,7 +146,7 @@ describe('PureCollapsiblePanel', () => {
       expect(container.find('div#test-marker').length).toBe(0);
       headerButton.simulate('click');
       expect(container.find('div#test-marker').length).toBe(0);
-      expect(onToggleCollapsed.mock.calls[0][0]).toEqual(false);
+      expect(onChange.mock.calls[0][0]).toEqual(false);
     });
 
 
@@ -155,9 +155,9 @@ describe('PureCollapsiblePanel', () => {
   describe('when collapsed prop is false', () => {
 
     test('render expanded and respond true when button clicked', () => {
-      onToggleCollapsed = jest.fn();
+      onChange = jest.fn();
       container = mount(
-        <PureCollapsiblePanel collapsed={false} onToggleCollapsed={onToggleCollapsed}>
+        <PureCollapsiblePanel collapsed={false} onChange={onChange}>
           <div id="test-marker">I am some content</div>
         </PureCollapsiblePanel>
       );
@@ -168,13 +168,13 @@ describe('PureCollapsiblePanel', () => {
       expect(container.find('div#test-marker').length).toBe(1);
       headerButton.simulate('click');
       expect(container.find('div#test-marker').length).toBe(1);
-      expect(onToggleCollapsed.mock.calls[0][0]).toEqual(true);
+      expect(onChange.mock.calls[0][0]).toEqual(true);
     });
 
     test('render expanded and respond true when title clicked', () => {
-      onToggleCollapsed = jest.fn();
+      onChange = jest.fn();
       container = mount(
-        <PureCollapsiblePanel collapsed={false} onToggleCollapsed={onToggleCollapsed}>
+        <PureCollapsiblePanel collapsed={false} onChange={onChange}>
           <div id="test-marker">I am some content</div>
         </PureCollapsiblePanel>
       );
@@ -185,7 +185,7 @@ describe('PureCollapsiblePanel', () => {
       expect(container.find('div#test-marker').length).toBe(1);
       headerButton.simulate('click');
       expect(container.find('div#test-marker').length).toBe(1);
-      expect(onToggleCollapsed.mock.calls[0][0]).toEqual(true);
+      expect(onChange.mock.calls[0][0]).toEqual(true);
     });
   });
 
@@ -193,7 +193,7 @@ describe('PureCollapsiblePanel', () => {
     it('should render icon when I pass in an icon prop', () => {
       const titleIcon = <div id="titleIcon" />;
       const container = mount(
-        <PureCollapsiblePanel titleIcon={titleIcon} collapsed={false} onToggleCollapsed={()=>{}} />
+        <PureCollapsiblePanel titleIcon={titleIcon} collapsed={false} onChange={()=>{}} />
       );
       expect(
         container.find('.vs-collapsible-panel-icon-container #titleIcon')
@@ -205,7 +205,7 @@ describe('PureCollapsiblePanel', () => {
 
     it('should not render icon when I dont pass in an icon prop', () => {
       const container = mount(
-        <PureCollapsiblePanel collapsed={false} onToggleCollapsed={()=>{}}/>
+        <PureCollapsiblePanel collapsed={false} onChange={()=>{}}/>
       );
       expect(
         container.find('.vs-collapsible-panel-icon-container #titleIcon')

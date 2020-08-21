@@ -19,7 +19,7 @@ export class PureCollapsiblePanel extends React.Component {
   }
 
   toggleCollapsed() {
-    this.props.onToggleCollapsed(!this.props.collapsed);
+    this.props.onChange(!this.props.collapsed);
   }
 
   render() {
@@ -28,7 +28,7 @@ export class PureCollapsiblePanel extends React.Component {
       children,
       className,
       collapsed,
-      onToggleCollapsed,
+      onChange,
       padding,
       title,
       titleIcon,
@@ -97,7 +97,7 @@ export class CollapsiblePanel extends React.Component {
       ...restProps
     } = this.props;
 
-   return <PureCollapsiblePanel onToggleCollapsed={this.toggleCollapsed}  collapsed={this.state.collapsed} {...restProps} />;
+   return <PureCollapsiblePanel onChange={this.toggleCollapsed}  collapsed={this.state.collapsed} {...restProps} />;
   }
 }
 
@@ -105,7 +105,7 @@ PureCollapsiblePanel.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
   collapsed: PropTypes.bool.isRequired,
-  onToggleCollapsed: PropTypes.func.isRequired,
+  onChange: PropTypes.func.isRequired,
   padding: PropTypes.oneOf([paddingSize.LARGE]),
   title: PropTypes.node,
   titleIcon: PropTypes.node,
