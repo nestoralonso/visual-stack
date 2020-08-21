@@ -10,32 +10,25 @@ const paddingSize = {
   LARGE: 'large',
 };
 
-export class CollapsiblePanel extends React.Component {
+
+export class PureCollapsiblePanel extends React.Component {
+
   constructor(props) {
     super(props);
-
-    const collapsed =
-      props.initializedCollapsed === undefined
-        ? true
-        : props.initializedCollapsed;
-    this.state = { collapsed };
-
     this.toggleCollapsed = this.toggleCollapsed.bind(this);
   }
 
   toggleCollapsed() {
-    const collapsed = !this.state.collapsed;
-    this.setState({ collapsed });
-    if (this.props.onToggleCollapsed) {
-      this.props.onToggleCollapsed(collapsed);
-    }
+    this.props.onToggleCollapsed(!this.props.collapsed);
   }
 
   render() {
+
     const {
       children,
       className,
-      initializedCollapsed,
+      collapsed,
+      onToggleCollapsed,
       padding,
       title,
       titleIcon,
@@ -55,7 +48,7 @@ export class CollapsiblePanel extends React.Component {
             className="vs-collapsible-panel-header-button"
             onClick={this.toggleCollapsed}
           >
-            {this.state.collapsed ? <ChevronRightIcon /> : <ChevronDownIcon />}
+            {collapsed ? <ChevronRightIcon /> : <ChevronDownIcon />}
           </Button>
           <div className="vs-collapsible-panel-icon-container">{titleIcon}</div>
           <span
@@ -65,7 +58,7 @@ export class CollapsiblePanel extends React.Component {
             {title}
           </span>
         </div>
-        {!this.state.collapsed && (
+        {!collapsed && (
           <div className="vs-collapsible-panel-item">
             {titleIcon && (
               <div className="vs-collapsible-panel-icon-placeholder" />
@@ -78,11 +71,50 @@ export class CollapsiblePanel extends React.Component {
   }
 }
 
-CollapsiblePanel.prototypes = {
+
+export class CollapsiblePanel extends React.Component {
+
+  constructor(props) {
+    super(props);
+
+    const collapsed =
+      props.initializedCollapsed === undefined
+        ? true
+        : props.initializedCollapsed;
+    this.state = { collapsed };
+
+    this.toggleCollapsed = this.toggleCollapsed.bind(this);
+  }
+
+  toggleCollapsed() {
+    const collapsed = !this.state.collapsed;
+    this.setState({ collapsed });
+  }
+
+  render() {
+    const {
+      initializedCollapsed,
+      ...restProps
+    } = this.props;
+
+   return <PureCollapsiblePanel onToggleCollapsed={this.toggleCollapsed}  collapsed={this.state.collapsed} {...restProps} />;
+  }
+}
+
+PureCollapsiblePanel.propTypes = {
+  children: PropTypes.node,
+  className: PropTypes.string,
+  collapsed: PropTypes.bool.isRequired,
+  onToggleCollapsed: PropTypes.func.isRequired,
+  padding: PropTypes.oneOf([paddingSize.LARGE]),
+  title: PropTypes.node,
+  titleIcon: PropTypes.node,
+};
+
+CollapsiblePanel.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
   initializedCollapsed: PropTypes.bool,
-  onToggleCollapsed: PropTypes.func,
   padding: PropTypes.oneOf([paddingSize.LARGE]),
   title: PropTypes.node,
   titleIcon: PropTypes.node,
