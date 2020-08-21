@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Body, Panel, Header } from '@cjdev/visual-stack/lib/components/Panel';
-import CollapsiblePanel from '@cjdev/visual-stack/lib/components/CollapsiblePanel';
+import { CollapsiblePanel, PureCollapsiblePanel } from '@cjdev/visual-stack/lib/components/CollapsiblePanel';
 import './collapsiblepanel.css';
 import {
   FieldContent,
@@ -12,28 +12,40 @@ import {
 import { Demo, Snippet } from '../../../components/Demo';
 import SVG from 'react-inlinesvg';
 import sampleIconPath from './reporting.svg';
+import { useState } from 'react';
 
 const SampleIcon = () => {
   return <SVG src={sampleIconPath} />;
 };
 
 export default () => {
+
+  const [ collapsed, setCollapsed ] = useState(false);
+
   return (
     <Demo srcFile="/samples/src/containers/Components/Docs/collapsiblepanel.js">
       {snippets => (
         <Panel>
           <Header>Collapsible Panels</Header>
           <Body paddingSize="none">
+
             {/* s1:start */}
+            <PureCollapsiblePanel onChange={setCollapsed} collapsed={collapsed} title="Pure Collapsible Panel">
+              <div>Use the PureCollapsiblePanel if you want to manage the 'collapsed' state yourself.  Unlike CollapsiblePanel, it
+                does not keep track of the state itself and merely calls you back with the state via 'onChange' when a
+                user clicks on it.
+              </div>
+            </PureCollapsiblePanel>
+            {/* s1:end */}
+            <Snippet tag="s1" src={snippets} />
+
+
+            {/* s2:start */}
             <CollapsiblePanel
               title={
                 <h3 className="inline-remove-margin">Collapsible Panel 1</h3>
               }
               initializedCollapsed={false}
-              onToggleCollapsed={collapsed => {
-                // eslint-disable-next-line no-console
-                console.log(collapsed);
-              }}
             >
               <Field label="# of vacation days" help="Enter vacation rules">
                 <FieldContent>
@@ -79,11 +91,11 @@ export default () => {
                   />
                 </FieldContent>
               </Field>
-              <Snippet tag="s1" src={snippets} />
             </CollapsiblePanel>
-            {/* s1:end */}
+            {/* s2:end */}
+            <Snippet tag="s2" src={snippets} />
 
-            {/* s2:start */}
+            {/* s3:start */}
             <CollapsiblePanel title="Collapsible Panel 2">
               <div className="summary-content">
                 <Label>Default commissioning</Label>
@@ -97,11 +109,11 @@ export default () => {
                 <Label>Situation 2</Label>
                 <Label fontWeight="normal">5%</Label>
               </div>
-              <Snippet tag="s2" src={snippets} />
             </CollapsiblePanel>
-            {/* s2:end */}
+            {/* s3:end */}
+            <Snippet tag="s3" src={snippets} />
 
-            {/* s3:start */}
+            {/* s4:start */}
             <CollapsiblePanel
               title="Collapsible Panel With Icon"
               titleIcon={<SampleIcon />}
@@ -118,10 +130,11 @@ export default () => {
                 <Label>Situation 2</Label>
                 <Label fontWeight="normal">5%</Label>
               </div>
-              <Snippet tag="s3" src={snippets} />
             </CollapsiblePanel>
-            {/* s3:end */}
-            {/* s4:start */}
+            {/* s4:end */}
+            <Snippet tag="s4" src={snippets} />
+
+            {/* s5:start */}
             <CollapsiblePanel
               title={
                 <h3 className="inline-remove-margin">
@@ -143,9 +156,10 @@ export default () => {
                 <Label>Situation 2</Label>
                 <Label fontWeight="normal">5%</Label>
               </div>
-              <Snippet tag="s4" src={snippets} />
             </CollapsiblePanel>
-            {/* s4:end */}
+            {/* s5:end */}
+            <Snippet tag="s5" src={snippets} />
+
           </Body>
         </Panel>
       )}

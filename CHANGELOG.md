@@ -1,3 +1,9 @@
+# Upcoming
+
+## New Component
+
+- Add PureCollapsiblePanel so that you can manage the state outside the component
+
 # 6.8.2
 
 ## New Feature
