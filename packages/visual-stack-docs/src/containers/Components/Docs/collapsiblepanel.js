@@ -30,9 +30,9 @@ export default () => {
           <Body paddingSize="none">
 
             {/* s1:start */}
-            <PureCollapsiblePanel onToggleCollapsed={setCollapsed} collapsed={collapsed} title="Pure Collapsible Panel">
+            <PureCollapsiblePanel onChange={setCollapsed} collapsed={collapsed} title="Pure Collapsible Panel">
               <div>Use the PureCollapsiblePanel if you want to manage the 'collapsed' state yourself.  Unlike CollapsiblePanel, it
-                does not keep track of the state itself and merely calls you back with the state via 'onToggleCollapsed' when a
+                does not keep track of the state itself and merely calls you back with the state via 'onChange' when a
                 user clicks on it.
               </div>
             </PureCollapsiblePanel>
