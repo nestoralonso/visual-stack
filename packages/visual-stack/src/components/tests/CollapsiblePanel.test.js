@@ -48,7 +48,7 @@ describe('CollapsiblePanel', () => {
   describe('when not initially collapsed', () => {
     beforeEach(() => {
       container = mount(
-        <CollapsiblePanel initializedCollapsed={false} >
+        <CollapsiblePanel initializedCollapsed={false}>
           <div id="test-marker">I am some content</div>
         </CollapsiblePanel>
       );
@@ -114,7 +114,6 @@ describe('PureCollapsiblePanel', () => {
   let onChange;
 
   describe('when collapsed prop is true', () => {
-
     test('render collapsed and respond false when button clicked', () => {
       onChange = jest.fn();
       container = mount(
@@ -140,20 +139,15 @@ describe('PureCollapsiblePanel', () => {
         </PureCollapsiblePanel>
       );
 
-      const headerButton = container.find(
-        '.vs-collapsible-panel-header-title'
-      );
+      const headerButton = container.find('.vs-collapsible-panel-header-title');
       expect(container.find('div#test-marker').length).toBe(0);
       headerButton.simulate('click');
       expect(container.find('div#test-marker').length).toBe(0);
       expect(onChange.mock.calls[0][0]).toEqual(false);
     });
-
-
   });
 
   describe('when collapsed prop is false', () => {
-
     test('render expanded and respond true when button clicked', () => {
       onChange = jest.fn();
       container = mount(
@@ -179,9 +173,7 @@ describe('PureCollapsiblePanel', () => {
         </PureCollapsiblePanel>
       );
 
-      const headerButton = container.find(
-        '.vs-collapsible-panel-header-title'
-      );
+      const headerButton = container.find('.vs-collapsible-panel-header-title');
       expect(container.find('div#test-marker').length).toBe(1);
       headerButton.simulate('click');
       expect(container.find('div#test-marker').length).toBe(1);
@@ -193,7 +185,11 @@ describe('PureCollapsiblePanel', () => {
     it('should render icon when I pass in an icon prop', () => {
       const titleIcon = <div id="titleIcon" />;
       const container = mount(
-        <PureCollapsiblePanel titleIcon={titleIcon} collapsed={false} onChange={()=>{}} />
+        <PureCollapsiblePanel
+          titleIcon={titleIcon}
+          collapsed={false}
+          onChange={() => {}}
+        />
       );
       expect(
         container.find('.vs-collapsible-panel-icon-container #titleIcon')
@@ -205,7 +201,7 @@ describe('PureCollapsiblePanel', () => {
 
     it('should not render icon when I dont pass in an icon prop', () => {
       const container = mount(
-        <PureCollapsiblePanel collapsed={false} onChange={()=>{}}/>
+        <PureCollapsiblePanel collapsed={false} onChange={() => {}} />
       );
       expect(
         container.find('.vs-collapsible-panel-icon-container #titleIcon')

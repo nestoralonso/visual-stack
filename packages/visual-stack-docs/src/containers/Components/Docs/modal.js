@@ -51,10 +51,7 @@ const ModalButton = ({ openModal, closeModal, takeAction }) => (
 );
 
 // Hook up the actions to the button and dialog
-const OpenModalButton = connect(
-  null,
-  { openModal, closeModal }
-)(ModalButton);
+const OpenModalButton = connect(null, { openModal, closeModal })(ModalButton);
 /* s3:end */
 
 /* s6:start */
@@ -93,10 +90,9 @@ const OptionsModalButton = ({ openModal, closeModal, takeAction }) => (
   </Button>
 );
 
-const OpenOptionsModalButton = connect(
-  null,
-  { openModal, closeModal }
-)(OptionsModalButton);
+const OpenOptionsModalButton = connect(null, { openModal, closeModal })(
+  OptionsModalButton
+);
 
 export default () => (
   <Demo srcFile="/samples/src/containers/Components/Docs/modal.js">

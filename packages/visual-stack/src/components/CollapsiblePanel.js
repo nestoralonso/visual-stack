@@ -10,9 +10,7 @@ const paddingSize = {
   LARGE: 'large',
 };
 
-
 export class PureCollapsiblePanel extends React.Component {
-
   constructor(props) {
     super(props);
     this.toggleCollapsed = this.toggleCollapsed.bind(this);
@@ -23,7 +21,6 @@ export class PureCollapsiblePanel extends React.Component {
   }
 
   render() {
-
     const {
       children,
       className,
@@ -71,9 +68,7 @@ export class PureCollapsiblePanel extends React.Component {
   }
 }
 
-
 export class CollapsiblePanel extends React.Component {
-
   constructor(props) {
     super(props);
 
@@ -92,12 +87,15 @@ export class CollapsiblePanel extends React.Component {
   }
 
   render() {
-    const {
-      initializedCollapsed,
-      ...restProps
-    } = this.props;
+    const { initializedCollapsed, ...restProps } = this.props;
 
-   return <PureCollapsiblePanel onChange={this.toggleCollapsed}  collapsed={this.state.collapsed} {...restProps} />;
+    return (
+      <PureCollapsiblePanel
+        onChange={this.toggleCollapsed}
+        collapsed={this.state.collapsed}
+        {...restProps}
+      />
+    );
   }
 }
 

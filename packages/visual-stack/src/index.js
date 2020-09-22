@@ -16,13 +16,13 @@ import * as Panel from './components/Panel';
 import * as SideNav from './components/SideNav';
 import * as ToolTipSuite from './components/ToolTip';
 
-export { 
-    BlankSlate, 
-    Form, 
-    List, 
-    Modal, 
-    PageHeader, 
-    Panel, 
-    SideNav,
-    ToolTipSuite
+export {
+  BlankSlate,
+  Form,
+  List,
+  Modal,
+  PageHeader,
+  Panel,
+  SideNav,
+  ToolTipSuite,
 };

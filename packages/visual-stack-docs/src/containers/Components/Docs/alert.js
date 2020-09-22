@@ -39,10 +39,7 @@ const createButton = ({
 
 /* s3:start */
 const connectButton = button =>
-  connect(
-    null,
-    { openAlert, closeAlert }
-  )(button);
+  connect(null, { openAlert, closeAlert })(button);
 /* s3:end */
 
 /* s4:start */

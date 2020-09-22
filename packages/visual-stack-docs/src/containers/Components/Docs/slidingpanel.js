@@ -136,7 +136,6 @@ class SlidingPanelDemo extends React.Component {
                         >
                           <div>Look at me!!!</div>
                         </SlidingPanelDropdown>
-
                       </SlidingPanelSection>
                     </SlidingPanel>
                     {/* s3:end */}
