@@ -6,7 +6,7 @@ import classNames from 'classnames';
 
 import { Button } from '../Button';
 import { CompareIcon } from '../Icons';
-import { _internal } from './index.js';
+import { _internal } from './index';
 import './DatePicker.css';
 
 const { fromInternalDateFormat, internalDateFormat } = _internal;
