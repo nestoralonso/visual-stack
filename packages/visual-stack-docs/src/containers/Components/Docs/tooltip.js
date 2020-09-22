@@ -9,7 +9,7 @@ import {
 } from '@cjdev/visual-stack/lib/components/ToolTip';
 
 export default () => (
-  <Demo srcFile="/samples/src/containers/Components/Docs/tooltips.js">
+  <Demo srcFile="/samples/src/containers/Components/Docs/tooltip.js">
     {snippets => {
       return (
         <div>

@@ -26,6 +26,7 @@ import ListViewDocs from './listview';
 import ExpandingInputButtonDocs from './expanding-input-button';
 import LoadingAnimationDocs from './loading-animation';
 import PopoverDocs from './popover';
+import ToolTipDocs from './tooltip';
 
 import CollapsiblePanelDocs from './collapsiblepanel';
 import PaginationDocs from './pagination';
@@ -61,6 +62,7 @@ addComponentRoute(
 addComponentRoute('popover', 'Popover', <PopoverDocs />);
 addComponentRoute('spinner', 'Spinner', <SpinnerDocs />);
 addComponentRoute('table', 'Table', <TableDocs />);
+addComponentRoute('tooltip', 'Tool Tip', <ToolTipDocs />);
 addComponentRoute('tablayout', 'TabLayout', <TabLayoutDocs />);
 addComponentRoute('card', 'Card', <CardDocs />);
 addComponentRoute('listview', 'List View', <ListViewDocs />);
