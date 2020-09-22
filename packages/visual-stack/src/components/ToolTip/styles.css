@@ -1,0 +1,37 @@
+@import "../../css/globalVariables.css";
+
+.tooltip-hint {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip-hint a {
+  color: var(--text-link-color);
+  text-decoration: none;
+}
+
+.tooltip-hint .tool-tip a {
+  color: var(--text-link-color);
+  text-decoration: underline;
+}
+
+.tooltip-hint .tooltip {
+  visibility: hidden;
+  position: absolute;
+
+  color: var(--primary-light-text-color);
+  background-color: var(--dialog-window-background-color);
+
+  font-family: var(--primary-font-family);
+  font-size: 1.2rem;
+  text-align: center;
+
+  border-radius: 4px;
+  padding: 5px 8px;
+
+  z-index: 9999;
+}
+
+.tooltip-hint:hover .tooltip {
+  visibility: visible;
+}
