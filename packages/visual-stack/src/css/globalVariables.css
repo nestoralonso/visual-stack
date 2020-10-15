@@ -20,6 +20,12 @@
 
   /* Functional Role - Color Names */
 
+  /* Maintainable Naming Convention */
+  /*   1) order (example: primary, secondary, tertiary, quaternary, quinary, etc) */
+  /*   2) role (example: brand, button, table-heading, etc) */
+  /*   3) state (example: active, inactive, default, disabled, on-hover, etc) */
+  /*   4) css property (example: color, font-family, margin, etc) */
+
   --primary-brand-color: var(--cj-green);
   --primary-button-color: var(--cj-green);
 
@@ -40,6 +46,7 @@
   --primary-light-text-color: var(--white);
 
   --page-background-color: #f6f6f6;
+  --table-row-highlight: #f6f6f6;
 
   --border-color: var(--silver);
 
