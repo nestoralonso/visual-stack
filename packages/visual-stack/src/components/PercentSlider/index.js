@@ -4,33 +4,23 @@ import Label from "../Form/Label.js";
 import Box from "../../experimental/Box";
 import React from "react";
 
-export const PercentSlider = ({ value, onChange, label, id }) => {
-  const handleChange = (percentageInput) => {
-    const percentage = parseInt(percentageInput, 10);
-    if (isNaN(percentage)) {
-      onChange(0);
-      return;
-    }
-    if (percentage > 100) {
-      return;
-    }
-    onChange(percentage);
-  };
+const handleChange = (percentageInput, onChange) => {
+  const percentage = parseInt(percentageInput, 10);
+  if (isNaN(percentage)) {
+    onChange(0);
+    return;
+  }
+  if (percentage > 100) {
+    return;
+  }
+  onChange(percentage);
+};
 
+export const PercentSlider = ({ value, onChange, label, id }) => {
   return (
     <div>
       <Label htmlFor={id}>{label}</Label>
-      <Slider onChange={(percentageInput) => {
-        const percentage = parseInt(percentageInput, 10);
-        if (isNaN(percentage)) {
-          onChange(0);
-          return;
-        }
-        if (percentage > 100) {
-          return;
-        }
-        onChange(percentage);
-      }} 
+      <Slider onChange={(newValue) => handleChange(newValue, onChange)} 
       value={value} id={id} />
     </div>
   );
