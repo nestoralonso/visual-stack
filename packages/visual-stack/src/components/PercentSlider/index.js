@@ -20,7 +20,18 @@ export const PercentSlider = ({ value, onChange, label, id }) => {
   return (
     <div>
       <Label htmlFor={id}>{label}</Label>
-      <Slider onChange={handleChange} value={value} id={id} />
+      <Slider onChange={(percentageInput) => {
+        const percentage = parseInt(percentageInput, 10);
+        if (isNaN(percentage)) {
+          onChange(0);
+          return;
+        }
+        if (percentage > 100) {
+          return;
+        }
+        onChange(percentage);
+      }} 
+      value={value} id={id} />
     </div>
   );
 };
