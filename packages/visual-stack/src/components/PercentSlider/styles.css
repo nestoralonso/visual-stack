@@ -1,0 +1,182 @@
+@import '../../css/globalVariables.css';
+
+input[type="range"] {
+  --thumbSize: 16px;
+  --trackSize: 4px;
+  --thumbBg: var(--white);
+  --thumbBorder: 1px solid var(--silver);
+  --thumbBorderFocus: 1.5px solid var(--warm-grey);
+  --trackBg: var(--silver);
+  --progressBg: var(--warm-grey);
+
+  /* webkit progress workaround */
+  --webkitProgressPercent: 0%;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  height: var(--thumbSize);
+  width: 100%;
+  margin: 8px 0;
+  padding: 0px 10px 0px 0px;
+}
+
+input[type="range"]:focus {
+  outline: none;
+}
+
+/* Slider Thumb */
+
+/* Chrome */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+
+  width: var(--thumbSize);
+  height: var(--thumbSize);
+  background-color: var(--thumbBg);
+  border-radius: calc(var(--thumbSize) / 2);
+  border: var(--thumbBorder);
+
+  margin-top: calc(((var(--thumbSize) - var(--trackSize)) / 2) * -1);
+  cursor: pointer;
+}
+
+/* Firefox */
+input[type="range"]::-moz-range-thumb {
+  -moz-appearance: none;
+  appearance: none;
+
+  width: var(--thumbSize);
+  height: var(--thumbSize);
+  background-color: var(--thumbBg);
+  border-radius: calc(var(--thumbSize) / 2);
+  border: var(--thumbBorder);
+
+  margin-top: calc(((var(--thumbSize) - var(--trackSize)) / 2) * -1);
+  cursor: pointer;
+}
+
+/* IE */
+input[type="range"]::-ms-thumb {
+  -ms-appearance: none;
+  appearance: none;
+
+  width: var(--thumbSize);
+  height: var(--thumbSize);
+  background-color: var(--thumbBg);
+  border-radius: calc(var(--thumbSize) / 2);
+  border: var(--thumbBorder);
+
+  margin-top: calc(((var(--thumbSize) - var(--trackSize)) / 2) * -1);
+  cursor: pointer;
+}
+
+/* Chrome */
+input[type="range"]:hover::-webkit-slider-thumb {
+  border: var(--thumbBorderFocus);
+}
+
+/* Firefox */
+input[type="range"]:hover::-moz-range-thumb {
+  border: var(--thumbBorderFocus);
+}
+
+/* IE */
+input[type="range"]:hover::-ms-thumb {
+  border: var(--thumbBorderFocus);
+}
+
+/* Slider Track */
+
+/* Chrome */
+input[type="range"]::-webkit-slider-runnable-track {
+  height: var(--trackSize);
+  background-image: linear-gradient(
+    90deg,
+    var(--progressBg) var(--webkitProgressPercent),
+    var(--trackBg) var(--webkitProgressPercent)
+  );
+  border-radius: calc(var(--trackSize) / 2);
+}
+
+/* Firefox, IE */
+input[type="range"]::-moz-range-track,
+input[type="range"]::-ms-track {
+  height: var(--trackSize);
+  background-color: var(--trackBg);
+  border-radius: calc(var(--trackSize) / 2);
+}
+
+/* Slider Progress */
+
+/* Firefox  */
+input[type="range"]::-moz-range-progress {
+  height: var(--trackSize);
+  background-color: var(--progressBg);
+  border-radius: calc(var(--trackSize) / 2) 0 0 calc(var(--trackSize) / 2);
+}
+
+/* IE */
+input[type="range"]::-ms-fill-lower {
+  height: var(--trackSize);
+  background-color: var(--progressBg);
+  border-radius: calc(var(--trackSize) / 2) 0 0 calc(var(--trackSize) / 2);
+}
+
+/* Slider Input */
+
+span.percentage-input-wrapper span.percentage-input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  -webkit-rtl-ordering: logical;
+  outline: none;
+  writing-mode: none;
+
+  display: inline;
+  margin: 0em;
+  /* padding: 1px; */
+
+  border: none;
+  width: 4ch;
+
+  color: -internal-light-dark-color(black, white);
+  background-color: -internal-light-dark-color(white, black);
+
+  font: 400 11px system-ui;
+  cursor: text;
+
+  font-size: inherit;
+  line-height: inherit;
+
+  font-family: inherit;
+  text-align: start;
+  letter-spacing: normal;
+  text-indent: 0px;
+  text-rendering: auto;
+  word-spacing: normal;
+  text-shadow: none;
+  text-transform: none;
+}
+
+span.percentage-input-wrapper {
+  display: inline-block;
+  width: 60px;
+  height: 32px;
+  margin: 0;
+  padding: 4px 8px;
+
+  color: #333;
+  background-color: #fff;
+  transition: border-color 0.2s ease-in-out, box-shadow 0.15s ease-in-out;
+
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 1.6;
+
+  text-align: right;
+}
