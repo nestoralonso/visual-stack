@@ -102,8 +102,14 @@ input[type="range"]::-webkit-slider-runnable-track {
   border-radius: calc(var(--trackSize) / 2);
 }
 
-/* Firefox, IE */
-input[type="range"]::-moz-range-track,
+/* Firefox */
+input[type="range"]::-moz-range-track {
+  height: var(--trackSize);
+  background-color: var(--trackBg);
+  border-radius: calc(var(--trackSize) / 2);
+}
+
+/* IE */
 input[type="range"]::-ms-track {
   height: var(--trackSize);
   background-color: var(--trackBg);
