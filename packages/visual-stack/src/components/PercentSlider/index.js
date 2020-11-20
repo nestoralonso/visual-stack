@@ -1,6 +1,6 @@
 import "./styles.css";
 
-import Label from "../Form/Label.js";
+import Label from "../Form/Label";
 import Box from "../../experimental/Box";
 import React from "react";
 
