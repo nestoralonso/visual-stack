@@ -1,3 +1,9 @@
+# 6.10.0
+
+## New Component
+
+- Add PercentSlider: a new input component with percentage display
+
 # 6.9.0
 
 ## New Component

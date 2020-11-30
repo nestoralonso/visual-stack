@@ -29,6 +29,7 @@ import PopoverDocs from './popover';
 
 import CollapsiblePanelDocs from './collapsiblepanel';
 import PaginationDocs from './pagination';
+import PercentSliderDocs from './percentslider';
 
 const routeComponentMap = {};
 
@@ -50,6 +51,7 @@ addComponentRoute('list', 'List', <ListDocs />);
 addComponentRoute('modal', 'Modal', <ModalDocs />);
 addComponentRoute('panel', 'Panel', <PanelDocs />);
 addComponentRoute('pageheader', 'Page Header', <PageHeaderDocs />);
+addComponentRoute('percentslider', 'Percent Slider', <PercentSliderDocs />)
 addComponentRoute('select', 'Select', <SelectDocs />);
 addComponentRoute('sidenav', 'SideNav', <SideNavDocs />);
 addComponentRoute('slidingpanel', 'Sliding Panel', <SlidingPanelDocs />);
