@@ -13,9 +13,7 @@ export class TriStateCheckbox extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (prevProps.value !== this.props.value) {
-      this._updateInnerCheckBoxState();
-    }
+    this._updateInnerCheckBoxState();
   }
 
   onBoxClick(ev) {
