@@ -26,12 +26,12 @@ export default () => {
               {/* s21:start */}
               <Box
                 border
-                direction="column"
+                direction="down"
                 gap="large"
                 padding="xl"
                 paddingTop="2xl"
               >
-                <Box gap="default" align="center">
+                <Box direction="right" gap="default" align="center">
                   <IconSuccess />
                   <Text type="h4">Your offer has been sent!</Text>
                 </Box>
@@ -39,15 +39,15 @@ export default () => {
                   You will be notified by email if the publisher accepts your
                   offer.
                 </Text>
-                <Box direction="column" gap="small">
+                <Box direction="down" gap="small">
                   <Text type="bold">Program Terms</Text>
                   <Text>Test terms 1</Text>
                 </Box>
-                <Box direction="column" gap="small">
+                <Box direction="down" gap="small">
                   <Text type="bold">Publisher Group</Text>
                   <Text>Test group 1</Text>
                 </Box>
-                <Box gap="default" justify="end">
+                <Box justify="end" direction="right" gap="default">
                   <Button type="text">Close</Button>
                   <Button type="solid-primary">Submit</Button>
                 </Box>
@@ -80,19 +80,19 @@ export default () => {
           <Panel>
             <Header>Direction</Header>
             <Body>
-              Sets the flex direction to lay out children. It defaults to
-              direction row, so for most cases there's no need to set it to row
-              explicitely.
+              Sets the direction in which the children are laid out. Values can
+              be one of "down", "right", "left", and "up"; or the flex standards
+              "column" and "row", which are equivalent to "down" and "right".
               <Snippet tag="s3" src={snippets} />
               {/* s3:start */}
-              <Box direction="column" border>
+              <Box direction="down" border>
                 <Text>Lorem Ipsum</Text>
                 <Text>Lorem Ipsum</Text>
               </Box>
               {/* s3:end */}
               <Snippet tag="s4" src={snippets} />
               {/* s4:start */}
-              <Box direction="row" border>
+              <Box direction="right" border>
                 <Text>Lorem Ipsum</Text>
                 <Text>Lorem Ipsum</Text>
               </Box>
@@ -157,7 +157,7 @@ export default () => {
               {/* s9:end */}
               <Snippet tag="s10" src={snippets} />
               {/* s10:start */}
-              <Box direction="column" gap="xl">
+              <Box direction="down" gap="xl">
                 <Box border padding="default">
                   <Text>Lorem Ipsum</Text>
                 </Box>
@@ -181,7 +181,7 @@ export default () => {
               direction). Values can be one of "start", "center", or "end".
               <Snippet tag="s11" src={snippets} />
               {/* s11:start */}
-              <Box direction="column" gap="default" align="center">
+              <Box direction="down" gap="default" align="center">
                 <Box border padding="default">
                   <Text>Lorem Ipsum</Text>
                 </Box>
@@ -192,7 +192,7 @@ export default () => {
               {/* s11:end */}
               <Snippet tag="s12" src={snippets} />
               {/* s12:start */}
-              <Box direction="column" gap="default" align="start">
+              <Box direction="down" gap="default" align="start">
                 <Box border padding="default">
                   <Text>Lorem Ipsum</Text>
                 </Box>
@@ -203,7 +203,7 @@ export default () => {
               {/* ss12:end */}
               <Snippet tag="s13" src={snippets} />
               {/* s13:start */}
-              <Box direction="column" gap="default" align="end">
+              <Box direction="down" gap="default" align="end">
                 <Box border padding="default">
                   <Text>Lorem Ipsum</Text>
                 </Box>
@@ -217,17 +217,16 @@ export default () => {
           <Panel>
             <Header>Justify</Header>
             <Body>
-              Justifies children along the main axis (direction axis). The
-              direction is row in the following examples. Values can be one of
-              "start", "center", "end", "space-around", "space-between", or
-              "space-evenly".
+              Justifies children along the main axis (direction axis). Values
+              can be one of "start", "center", "end", "space-around",
+              "space-between", or "space-evenly".
               <Snippet tag="s14" src={snippets} />
               {/* s14:start */}
-              <Box gap="default" justify="center">
-                <Box border padding="default">
+              <Box direction="right" gap="default" justify="center">
+                <Box direction="right" border padding="default">
                   <Text>Lorem Ipsum</Text>
                 </Box>
-                <Box border padding="default">
+                <Box direction="right" border padding="default">
                   <Text>Lorem Ipsum</Text>
                 </Box>
               </Box>

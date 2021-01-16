@@ -48,7 +48,7 @@ Box.defaultProps = {
 Box.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
-  direction: PropTypes.oneOf(['column', 'row']),
+  direction: PropTypes.oneOf(['down', 'right', 'up', 'left', 'column', 'row']),
   padding: PropTypes.oneOf([
     'small',
     'default',
