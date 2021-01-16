@@ -6,6 +6,7 @@ import {
 import PageContent from '@cjdev/visual-stack/lib/components/PageContent';
 // 1. add an import for your demo
 import BlankSlateDocs from './blankslate';
+import BoxDocs from './box';
 import ButtonWithDropdownDocs from './button-with-dropdown';
 import ButtonDocs from './button';
 import AlertDocs from './alert';
@@ -39,6 +40,7 @@ const addComponentRoute = (path, linkName, component) => {
 
 // 2. add your demo to the routeComponentMap
 addComponentRoute('blankslate', 'Blank Slate', <BlankSlateDocs />);
+addComponentRoute('box', 'Box', <BoxDocs />);
 addComponentRoute('button', 'Button', <ButtonDocs />);
 addComponentRoute(
   'button-with-dropdown',
@@ -51,7 +53,7 @@ addComponentRoute('list', 'List', <ListDocs />);
 addComponentRoute('modal', 'Modal', <ModalDocs />);
 addComponentRoute('panel', 'Panel', <PanelDocs />);
 addComponentRoute('pageheader', 'Page Header', <PageHeaderDocs />);
-addComponentRoute('percentslider', 'Percent Slider', <PercentSliderDocs />)
+addComponentRoute('percentslider', 'Percent Slider', <PercentSliderDocs />);
 addComponentRoute('select', 'Select', <SelectDocs />);
 addComponentRoute('sidenav', 'SideNav', <SideNavDocs />);
 addComponentRoute('slidingpanel', 'Sliding Panel', <SlidingPanelDocs />);

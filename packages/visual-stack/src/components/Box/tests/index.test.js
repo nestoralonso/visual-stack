@@ -1,5 +1,5 @@
 import React from 'react';
-import Box from '../index';
+import { Box } from '../index';
 import Enzyme, { mount } from 'enzyme';
 
 import Adapter from 'enzyme-adapter-react-16';

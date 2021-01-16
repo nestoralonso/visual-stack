@@ -3,12 +3,12 @@ import { Demo, Snippet } from '../../../components/Demo';
 import { Panel, Body, Header } from '@cjdev/visual-stack/lib/components/Panel';
 import IconSuccess from '@cjdev/visual-stack/lib/components/IconSuccess';
 import { Button } from '@cjdev/visual-stack/lib/components/Button';
-import Box from '@cjdev/visual-stack/lib/experimental/Box';
+import { Box } from '@cjdev/visual-stack';
 import Text from '@cjdev/visual-stack/lib/experimental/Text';
 
 export default () => {
   return (
-    <Demo srcFile="/samples/src/containers/Experimental/Docs/box.js">
+    <Demo srcFile="/samples/src/containers/Components/Docs/box.js">
       {snippets => (
         <div>
           <Panel>
