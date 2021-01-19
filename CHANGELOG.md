@@ -1,9 +1,3 @@
-# Upcoming
-
-## New Component
-
-- Add Chip component
-
 # 6.10.0
 
 ## New Component

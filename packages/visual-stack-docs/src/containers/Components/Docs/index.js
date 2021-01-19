@@ -22,7 +22,6 @@ import SpinnerDocs from './spinner';
 import TableDocs from './table';
 import TabLayoutDocs from './tablayout';
 import CardDocs from './card';
-import ChipDocs from './chip';
 import ListViewDocs from './listview';
 import ExpandingInputButtonDocs from './expanding-input-button';
 import LoadingAnimationDocs from './loading-animation';
@@ -52,7 +51,7 @@ addComponentRoute('list', 'List', <ListDocs />);
 addComponentRoute('modal', 'Modal', <ModalDocs />);
 addComponentRoute('panel', 'Panel', <PanelDocs />);
 addComponentRoute('pageheader', 'Page Header', <PageHeaderDocs />);
-addComponentRoute('percentslider', 'Percent Slider', <PercentSliderDocs />);
+addComponentRoute('percentslider', 'Percent Slider', <PercentSliderDocs />)
 addComponentRoute('select', 'Select', <SelectDocs />);
 addComponentRoute('sidenav', 'SideNav', <SideNavDocs />);
 addComponentRoute('slidingpanel', 'Sliding Panel', <SlidingPanelDocs />);
@@ -66,7 +65,6 @@ addComponentRoute('spinner', 'Spinner', <SpinnerDocs />);
 addComponentRoute('table', 'Table', <TableDocs />);
 addComponentRoute('tablayout', 'TabLayout', <TabLayoutDocs />);
 addComponentRoute('card', 'Card', <CardDocs />);
-addComponentRoute('chip', 'Chip', <ChipDocs />);
 addComponentRoute('listview', 'List View', <ListViewDocs />);
 addComponentRoute('pagination', 'Pagination', <PaginationDocs />);
 addComponentRoute(
