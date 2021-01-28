@@ -42,13 +42,13 @@ export const Box = ({
 );
 
 Box.defaultProps = {
-  direction: 'row',
+  direction: 'down',
 };
 
 Box.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
-  direction: PropTypes.oneOf(['down', 'right', 'up', 'left', 'column', 'row']),
+  direction: PropTypes.oneOf(['down', 'right', 'up', 'left']),
   padding: PropTypes.oneOf([
     'small',
     'medium',

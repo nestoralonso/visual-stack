@@ -2,7 +2,6 @@
   display: flex;
 }
 
-.vs-box.vs-box-direction-column,
 .vs-box.vs-box-direction-down {
   flex-direction: column;
 }
@@ -11,7 +10,6 @@
   flex-direction: column-reverse;
 }
 
-.vs-box.vs-box-direction-row,
 .vs-box.vs-box-direction-right {
   flex-direction: row;
 }
@@ -165,7 +163,6 @@
   padding-top: 48px;
 }
 
-.vs-box.vs-box-direction-row.vs-box-gap-medium > :not(:last-child),
 .vs-box.vs-box-direction-right.vs-box-gap-medium > :not(:last-child) {
   margin-right: 8px;
 }
@@ -174,7 +171,6 @@
   margin-left: 8px;
 }
 
-.vs-box.vs-box-direction-row.vs-box-gap-small > :not(:last-child),
 .vs-box.vs-box-direction-right.vs-box-gap-small > :not(:last-child) {
   margin-right: 4px;
 }
@@ -183,7 +179,6 @@
   margin-left: 4px;
 }
 
-.vs-box.vs-box-direction-row.vs-box-gap-large > :not(:last-child),
 .vs-box.vs-box-direction-right.vs-box-gap-large > :not(:last-child) {
   margin-right: 16px;
 }
@@ -192,7 +187,6 @@
   margin-left: 16px;
 }
 
-.vs-box.vs-box-direction-row.vs-box-gap-xl > :not(:last-child),
 .vs-box.vs-box-direction-right.vs-box-gap-xl > :not(:last-child) {
   margin-right: 24px;
 }
@@ -201,7 +195,6 @@
   margin-left: 24px;
 }
 
-.vs-box.vs-box-direction-row.vs-box-gap-2xl > :not(:last-child),
 .vs-box.vs-box-direction-right.vs-box-gap-2xl > :not(:last-child) {
   margin-right: 32px;
 }
@@ -210,7 +203,6 @@
   margin-left: 32px;
 }
 
-.vs-box.vs-box-direction-row.vs-box-gap-3xl > :not(:last-child),
 .vs-box.vs-box-direction-right.vs-box-gap-3xl > :not(:last-child) {
   margin-right: 40px;
 }
@@ -219,7 +211,6 @@
   margin-left: 40px;
 }
 
-.vs-box.vs-box-direction-row.vs-box-gap-4xl > :not(:last-child),
 .vs-box.vs-box-direction-right.vs-box-gap-4xl > :not(:last-child) {
   margin-right: 48px;
 }
@@ -228,7 +219,6 @@
   margin-left: 48px;
 }
 
-.vs-box.vs-box-direction-column.vs-box-gap-medium > :not(:last-child),
 .vs-box.vs-box-direction-down.vs-box-gap-medium > :not(:last-child) {
   margin-bottom: 8px;
 }
@@ -237,7 +227,6 @@
   margin-top: 8px;
 }
 
-.vs-box.vs-box-direction-column.vs-box-gap-small > :not(:last-child),
 .vs-box.vs-box-direction-down.vs-box-gap-small > :not(:last-child) {
   margin-bottom: 4px;
 }
@@ -246,7 +235,6 @@
   margin-top: 4px;
 }
 
-.vs-box.vs-box-direction-column.vs-box-gap-large > :not(:last-child),
 .vs-box.vs-box-direction-down.vs-box-gap-large > :not(:last-child) {
   margin-bottom: 16px;
 }
@@ -255,7 +243,6 @@
   margin-top: 16px;
 }
 
-.vs-box.vs-box-direction-column.vs-box-gap-xl > :not(:last-child),
 .vs-box.vs-box-direction-down.vs-box-gap-xl > :not(:last-child) {
   margin-bottom: 24px;
 }
@@ -264,7 +251,6 @@
   margin-top: 24px;
 }
 
-.vs-box.vs-box-direction-column.vs-box-gap-2xl > :not(:last-child),
 .vs-box.vs-box-direction-down.vs-box-gap-2xl > :not(:last-child) {
   margin-bottom: 32px;
 }
@@ -273,7 +259,6 @@
   margin-top: 32px;
 }
 
-.vs-box.vs-box-direction-column.vs-box-gap-3xl > :not(:last-child),
 .vs-box.vs-box-direction-down.vs-box-gap-3xl > :not(:last-child) {
   margin-bottom: 40px;
 }
@@ -282,7 +267,6 @@
   margin-top: 40px;
 }
 
-.vs-box.vs-box-direction-column.vs-box-gap-4xl > :not(:last-child),
 .vs-box.vs-box-direction-down.vs-box-gap-4xl > :not(:last-child) {
   margin-bottom: 48px;
 }

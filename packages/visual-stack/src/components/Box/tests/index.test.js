@@ -11,31 +11,59 @@ describe('Box', () => {
     const wrapper = mount(<Box>Lorem ipsum</Box>);
     expect(wrapper.find('.vs-box').text()).toEqual('Lorem ipsum');
   });
-  it('should render children with direction column', () => {
+  it('should render children with direction down', () => {
     const wrapper = mount(
-      <Box direction="column">
+      <Box direction="down">
         <span>Lorem ipsum</span>
         <button>OK</button>
       </Box>
     );
-    expect(wrapper.find('.vs-box.vs-box-direction-column span').text()).toEqual(
+    expect(wrapper.find('.vs-box.vs-box-direction-down span').text()).toEqual(
+      'Lorem ipsum'
+    );
+    expect(wrapper.find('.vs-box.vs-box-direction-down button').text()).toEqual(
+      'OK'
+    );
+  });
+  it('should render children with direction right', () => {
+    const wrapper = mount(
+      <Box direction="right">
+        <span>Lorem ipsum</span>
+        <button>OK</button>
+      </Box>
+    );
+    expect(wrapper.find('.vs-box.vs-box-direction-right span').text()).toEqual(
       'Lorem ipsum'
     );
     expect(
-      wrapper.find('.vs-box.vs-box-direction-column button').text()
+      wrapper.find('.vs-box.vs-box-direction-right button').text()
     ).toEqual('OK');
   });
-  it('should render children with direction row', () => {
+  it('should render children with direction up', () => {
     const wrapper = mount(
-      <Box direction="row">
+      <Box direction="up">
         <span>Lorem ipsum</span>
         <button>OK</button>
       </Box>
     );
-    expect(wrapper.find('.vs-box.vs-box-direction-row span').text()).toEqual(
+    expect(wrapper.find('.vs-box.vs-box-direction-up span').text()).toEqual(
       'Lorem ipsum'
     );
-    expect(wrapper.find('.vs-box.vs-box-direction-row button').text()).toEqual(
+    expect(wrapper.find('.vs-box.vs-box-direction-up button').text()).toEqual(
+      'OK'
+    );
+  });
+  it('should render children with direction left', () => {
+    const wrapper = mount(
+      <Box direction="left">
+        <span>Lorem ipsum</span>
+        <button>OK</button>
+      </Box>
+    );
+    expect(wrapper.find('.vs-box.vs-box-direction-left span').text()).toEqual(
+      'Lorem ipsum'
+    );
+    expect(wrapper.find('.vs-box.vs-box-direction-left button').text()).toEqual(
       'OK'
     );
   });
