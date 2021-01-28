@@ -50,18 +50,6 @@ export default () => {
             </Body>
           </Panel>
           <Panel>
-            <Header>Default</Header>
-            <Body>
-              With no props, it just renders a div with display set to flex.
-              <Snippet tag="s1" src={snippets} />
-              {/* s1:start */}
-              <Box>
-                <Text>Lorem Ipsum</Text>
-              </Box>
-              {/* s1:end */}
-            </Body>
-          </Panel>
-          <Panel>
             <Header>Border</Header>
             <Body>
               Adds a border.
