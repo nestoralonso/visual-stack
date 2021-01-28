@@ -31,7 +31,7 @@ export default () => {
                 padding="xl"
                 paddingTop="2xl"
               >
-                <Box direction="right" gap="default" align="center">
+                <Box direction="right" gap="medium" align="center">
                   <IconSuccess />
                   <Text type="h4">Your offer has been sent!</Text>
                 </Box>
@@ -47,7 +47,7 @@ export default () => {
                   <Text type="bold">Publisher Group</Text>
                   <Text>Test group 1</Text>
                 </Box>
-                <Box justify="end" direction="right" gap="default">
+                <Box justify="end" direction="right" gap="medium">
                   <Button type="text">Close</Button>
                   <Button type="solid-primary">Submit</Button>
                 </Box>
@@ -104,11 +104,11 @@ export default () => {
             <Body>
               Adds padding around the box. Available props are padding,
               paddingTop, paddingBottom, paddingLeft, and paddingRight. Values
-              can be one of "small" (4px), "default" (8px), "large" (16px), "xl"
+              can be one of "small" (4px), "medium" (8px), "large" (16px), "xl"
               (24px), "2xl" (32px), "3xl" (40px), "4xl" (48px).
               <Snippet tag="s5" src={snippets} />
               {/* s5:start */}
-              <Box border padding="default">
+              <Box border padding="medium">
                 Lorem Ipsum
               </Box>
               {/* s5:end */}
@@ -136,21 +136,21 @@ export default () => {
             <Header>Gap</Header>
             <Body>
               Adds spacing between children. Values can be one of "small" (4px),
-              "default" (8px), "large" (16px), "xl" (24px), "2xl" (32px), "3xl"
+              "medium" (8px), "large" (16px), "xl" (24px), "2xl" (32px), "3xl"
               (40px), or "4xl" (48px).
               <Snippet tag="s9" src={snippets} />
               {/* s9:start */}
-              <Box gap="default">
-                <Box border padding="default">
+              <Box gap="medium">
+                <Box border padding="medium">
                   <Text>Lorem Ipsum</Text>
                 </Box>
-                <Box border padding="default">
+                <Box border padding="medium">
                   <Text>Lorem Ipsum</Text>
                 </Box>
-                <Box border padding="default">
+                <Box border padding="medium">
                   <Text>Lorem Ipsum</Text>
                 </Box>
-                <Box border padding="default">
+                <Box border padding="medium">
                   <Text>Lorem Ipsum</Text>
                 </Box>
               </Box>
@@ -158,16 +158,16 @@ export default () => {
               <Snippet tag="s10" src={snippets} />
               {/* s10:start */}
               <Box direction="down" gap="xl">
-                <Box border padding="default">
+                <Box border padding="medium">
                   <Text>Lorem Ipsum</Text>
                 </Box>
-                <Box border padding="default">
+                <Box border padding="medium">
                   <Text>Lorem Ipsum</Text>
                 </Box>
-                <Box border padding="default">
+                <Box border padding="medium">
                   <Text>Lorem Ipsum</Text>
                 </Box>
-                <Box border padding="default">
+                <Box border padding="medium">
                   <Text>Lorem Ipsum</Text>
                 </Box>
               </Box>
@@ -181,33 +181,33 @@ export default () => {
               direction). Values can be one of "start", "center", or "end".
               <Snippet tag="s11" src={snippets} />
               {/* s11:start */}
-              <Box direction="down" gap="default" align="center">
-                <Box border padding="default">
+              <Box direction="down" gap="medium" align="center">
+                <Box border padding="medium">
                   <Text>Lorem Ipsum</Text>
                 </Box>
-                <Box border padding="default">
+                <Box border padding="medium">
                   <Text>Lorem Ipsum</Text>
                 </Box>
               </Box>
               {/* s11:end */}
               <Snippet tag="s12" src={snippets} />
               {/* s12:start */}
-              <Box direction="down" gap="default" align="start">
-                <Box border padding="default">
+              <Box direction="down" gap="medium" align="start">
+                <Box border padding="medium">
                   <Text>Lorem Ipsum</Text>
                 </Box>
-                <Box border padding="default">
+                <Box border padding="medium">
                   <Text>Lorem Ipsum</Text>
                 </Box>
               </Box>
               {/* ss12:end */}
               <Snippet tag="s13" src={snippets} />
               {/* s13:start */}
-              <Box direction="down" gap="default" align="end">
-                <Box border padding="default">
+              <Box direction="down" gap="medium" align="end">
+                <Box border padding="medium">
                   <Text>Lorem Ipsum</Text>
                 </Box>
-                <Box border padding="default">
+                <Box border padding="medium">
                   <Text>Lorem Ipsum</Text>
                 </Box>
               </Box>
@@ -222,66 +222,66 @@ export default () => {
               "space-between", or "space-evenly".
               <Snippet tag="s14" src={snippets} />
               {/* s14:start */}
-              <Box direction="right" gap="default" justify="center">
-                <Box direction="right" border padding="default">
+              <Box direction="right" gap="medium" justify="center">
+                <Box direction="right" border padding="medium">
                   <Text>Lorem Ipsum</Text>
                 </Box>
-                <Box direction="right" border padding="default">
+                <Box direction="right" border padding="medium">
                   <Text>Lorem Ipsum</Text>
                 </Box>
               </Box>
               {/* s14:end */}
               <Snippet tag="s15" src={snippets} />
               {/* s15:start */}
-              <Box gap="default" justify="start">
-                <Box border padding="default">
+              <Box gap="medium" justify="start">
+                <Box border padding="medium">
                   <Text>Lorem Ipsum</Text>
                 </Box>
-                <Box border padding="default">
+                <Box border padding="medium">
                   <Text>Lorem Ipsum</Text>
                 </Box>
               </Box>
               {/* s15:end */}
               <Snippet tag="s16" src={snippets} />
               {/* s16:start */}
-              <Box gap="default" justify="end">
-                <Box border padding="default">
+              <Box gap="medium" justify="end">
+                <Box border padding="medium">
                   <Text>Lorem Ipsum</Text>
                 </Box>
-                <Box border padding="default">
+                <Box border padding="medium">
                   <Text>Lorem Ipsum</Text>
                 </Box>
               </Box>
               {/* s16:end */}
               <Snippet tag="s17" src={snippets} />
               {/* s17:start */}
-              <Box gap="default" justify="space-around">
-                <Box border padding="default">
+              <Box gap="medium" justify="space-around">
+                <Box border padding="medium">
                   <Text>Lorem Ipsum</Text>
                 </Box>
-                <Box border padding="default">
+                <Box border padding="medium">
                   <Text>Lorem Ipsum</Text>
                 </Box>
               </Box>
               {/* s17:end */}
               <Snippet tag="s18" src={snippets} />
               {/* s18:start */}
-              <Box gap="default" justify="space-between">
-                <Box border padding="default">
+              <Box gap="medium" justify="space-between">
+                <Box border padding="medium">
                   <Text>Lorem Ipsum</Text>
                 </Box>
-                <Box border padding="default">
+                <Box border padding="medium">
                   <Text>Lorem Ipsum</Text>
                 </Box>
               </Box>
               {/* s18:end */}
               <Snippet tag="s19" src={snippets} />
               {/* s19:start */}
-              <Box gap="default" justify="space-evenly">
-                <Box border padding="default">
+              <Box gap="medium" justify="space-evenly">
+                <Box border padding="medium">
                   <Text>Lorem Ipsum</Text>
                 </Box>
-                <Box border padding="default">
+                <Box border padding="medium">
                   <Text>Lorem Ipsum</Text>
                 </Box>
               </Box>
@@ -295,11 +295,11 @@ export default () => {
               (sets flex to 1).
               <Snippet tag="s20" src={snippets} />
               {/* s20:start */}
-              <Box gap="default">
-                <Box border padding="default">
+              <Box gap="medium">
+                <Box border padding="medium">
                   <Text>Lorem Ipsum</Text>
                 </Box>
-                <Box border grow padding="default" justify="center">
+                <Box border grow padding="medium" justify="center">
                   <Text>Lorem Ipsum</Text>
                 </Box>
               </Box>

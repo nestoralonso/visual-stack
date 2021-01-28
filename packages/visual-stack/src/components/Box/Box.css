@@ -25,7 +25,7 @@
   border-radius: 2px;
 }
 
-.vs-box.vs-box-padding-default {
+.vs-box.vs-box-padding-medium {
   padding: 8px;
 }
 
@@ -53,7 +53,7 @@
   padding: 48px;
 }
 
-.vs-box.vs-box-padding-bottom-default {
+.vs-box.vs-box-padding-bottom-medium {
   padding-bottom: 8px;
 }
 
@@ -81,7 +81,7 @@
   padding-bottom: 48px;
 }
 
-.vs-box.vs-box-padding-left-default {
+.vs-box.vs-box-padding-left-medium {
   padding-left: 8px;
 }
 
@@ -109,7 +109,7 @@
   padding-left: 48px;
 }
 
-.vs-box.vs-box-padding-right-default {
+.vs-box.vs-box-padding-right-medium {
   padding-right: 8px;
 }
 
@@ -137,7 +137,7 @@
   padding-right: 48px;
 }
 
-.vs-box.vs-box-padding-top-default {
+.vs-box.vs-box-padding-top-medium {
   padding-top: 8px;
 }
 
@@ -165,12 +165,12 @@
   padding-top: 48px;
 }
 
-.vs-box.vs-box-direction-row.vs-box-gap-default > :not(:last-child),
-.vs-box.vs-box-direction-right.vs-box-gap-default > :not(:last-child) {
+.vs-box.vs-box-direction-row.vs-box-gap-medium > :not(:last-child),
+.vs-box.vs-box-direction-right.vs-box-gap-medium > :not(:last-child) {
   margin-right: 8px;
 }
 
-.vs-box.vs-box-direction-left.vs-box-gap-default > :not(:last-child) {
+.vs-box.vs-box-direction-left.vs-box-gap-medium > :not(:last-child) {
   margin-left: 8px;
 }
 
@@ -228,12 +228,12 @@
   margin-left: 48px;
 }
 
-.vs-box.vs-box-direction-column.vs-box-gap-default > :not(:last-child),
-.vs-box.vs-box-direction-down.vs-box-gap-default > :not(:last-child) {
+.vs-box.vs-box-direction-column.vs-box-gap-medium > :not(:last-child),
+.vs-box.vs-box-direction-down.vs-box-gap-medium > :not(:last-child) {
   margin-bottom: 8px;
 }
 
-.vs-box.vs-box-direction-up.vs-box-gap-default > :not(:last-child) {
+.vs-box.vs-box-direction-up.vs-box-gap-medium > :not(:last-child) {
   margin-top: 8px;
 }
 

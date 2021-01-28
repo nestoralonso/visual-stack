@@ -51,7 +51,7 @@ Box.propTypes = {
   direction: PropTypes.oneOf(['down', 'right', 'up', 'left', 'column', 'row']),
   padding: PropTypes.oneOf([
     'small',
-    'default',
+    'medium',
     'large',
     'xl',
     '2xl',
@@ -60,7 +60,7 @@ Box.propTypes = {
   ]),
   paddingTop: PropTypes.oneOf([
     'small',
-    'default',
+    'medium',
     'large',
     'xl',
     '2xl',
@@ -69,7 +69,7 @@ Box.propTypes = {
   ]),
   paddingBottom: PropTypes.oneOf([
     'small',
-    'default',
+    'medium',
     'large',
     'xl',
     '2xl',
@@ -78,7 +78,7 @@ Box.propTypes = {
   ]),
   paddingLeft: PropTypes.oneOf([
     'small',
-    'default',
+    'medium',
     'large',
     'xl',
     '2xl',
@@ -87,22 +87,14 @@ Box.propTypes = {
   ]),
   paddingRight: PropTypes.oneOf([
     'small',
-    'default',
+    'medium',
     'large',
     'xl',
     '2xl',
     '3xl',
     '4xl',
   ]),
-  gap: PropTypes.oneOf([
-    'small',
-    'default',
-    'large',
-    'xl',
-    '2xl',
-    '3xl',
-    '4xl',
-  ]),
+  gap: PropTypes.oneOf(['small', 'medium', 'large', 'xl', '2xl', '3xl', '4xl']),
   align: PropTypes.oneOf(['start', 'center', 'end']),
   justify: PropTypes.oneOf([
     'start',

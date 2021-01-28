@@ -43,9 +43,9 @@ describe('Box', () => {
     const wrapper = mount(<Box border>Lorem ipsum</Box>);
     expect(wrapper.find('.vs-box.vs-box-border').text()).toEqual('Lorem ipsum');
   });
-  it('should render with padding default', () => {
-    const wrapper = mount(<Box padding="default">Lorem ipsum</Box>);
-    expect(wrapper.find('.vs-box.vs-box-padding-default').text()).toEqual(
+  it('should render with padding medium', () => {
+    const wrapper = mount(<Box padding="medium">Lorem ipsum</Box>);
+    expect(wrapper.find('.vs-box.vs-box-padding-medium').text()).toEqual(
       'Lorem ipsum'
     );
   });
@@ -61,9 +61,9 @@ describe('Box', () => {
       'Lorem ipsum'
     );
   });
-  it('should render with paddingLeft default', () => {
-    const wrapper = mount(<Box paddingLeft="default">Lorem ipsum</Box>);
-    expect(wrapper.find('.vs-box.vs-box-padding-left-default').text()).toEqual(
+  it('should render with paddingLeft medium', () => {
+    const wrapper = mount(<Box paddingLeft="medium">Lorem ipsum</Box>);
+    expect(wrapper.find('.vs-box.vs-box-padding-left-medium').text()).toEqual(
       'Lorem ipsum'
     );
   });
@@ -79,9 +79,9 @@ describe('Box', () => {
       'Lorem ipsum'
     );
   });
-  it('should render with paddingRight default', () => {
-    const wrapper = mount(<Box paddingRight="default">Lorem ipsum</Box>);
-    expect(wrapper.find('.vs-box.vs-box-padding-right-default').text()).toEqual(
+  it('should render with paddingRight medium', () => {
+    const wrapper = mount(<Box paddingRight="medium">Lorem ipsum</Box>);
+    expect(wrapper.find('.vs-box.vs-box-padding-right-medium').text()).toEqual(
       'Lorem ipsum'
     );
   });
@@ -97,9 +97,9 @@ describe('Box', () => {
       'Lorem ipsum'
     );
   });
-  it('should render with paddingTop default', () => {
-    const wrapper = mount(<Box paddingTop="default">Lorem ipsum</Box>);
-    expect(wrapper.find('.vs-box.vs-box-padding-top-default').text()).toEqual(
+  it('should render with paddingTop medium', () => {
+    const wrapper = mount(<Box paddingTop="medium">Lorem ipsum</Box>);
+    expect(wrapper.find('.vs-box.vs-box-padding-top-medium').text()).toEqual(
       'Lorem ipsum'
     );
   });
@@ -115,11 +115,11 @@ describe('Box', () => {
       'Lorem ipsum'
     );
   });
-  it('should render with paddingBottom default', () => {
-    const wrapper = mount(<Box paddingBottom="default">Lorem ipsum</Box>);
-    expect(
-      wrapper.find('.vs-box.vs-box-padding-bottom-default').text()
-    ).toEqual('Lorem ipsum');
+  it('should render with paddingBottom medium', () => {
+    const wrapper = mount(<Box paddingBottom="medium">Lorem ipsum</Box>);
+    expect(wrapper.find('.vs-box.vs-box-padding-bottom-medium').text()).toEqual(
+      'Lorem ipsum'
+    );
   });
   it('should render with paddingBottom small', () => {
     const wrapper = mount(<Box paddingBottom="small">Lorem ipsum</Box>);
@@ -133,9 +133,9 @@ describe('Box', () => {
       'Lorem ipsum'
     );
   });
-  it('should render with gap default', () => {
-    const wrapper = mount(<Box gap="default">Lorem ipsum</Box>);
-    expect(wrapper.find('.vs-box.vs-box-gap-default').text()).toEqual(
+  it('should render with gap medium', () => {
+    const wrapper = mount(<Box gap="medium">Lorem ipsum</Box>);
+    expect(wrapper.find('.vs-box.vs-box-gap-medium').text()).toEqual(
       'Lorem ipsum'
     );
   });
