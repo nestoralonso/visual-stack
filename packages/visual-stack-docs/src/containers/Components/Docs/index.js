@@ -23,6 +23,7 @@ import SpinnerDocs from './spinner';
 import TableDocs from './table';
 import TabLayoutDocs from './tablayout';
 import CardDocs from './card';
+import ChipDocs from './chip';
 import ListViewDocs from './listview';
 import ExpandingInputButtonDocs from './expanding-input-button';
 import LoadingAnimationDocs from './loading-animation';
@@ -67,6 +68,7 @@ addComponentRoute('spinner', 'Spinner', <SpinnerDocs />);
 addComponentRoute('table', 'Table', <TableDocs />);
 addComponentRoute('tablayout', 'TabLayout', <TabLayoutDocs />);
 addComponentRoute('card', 'Card', <CardDocs />);
+addComponentRoute('chip', 'Chip', <ChipDocs />);
 addComponentRoute('listview', 'List View', <ListViewDocs />);
 addComponentRoute('pagination', 'Pagination', <PaginationDocs />);
 addComponentRoute(
