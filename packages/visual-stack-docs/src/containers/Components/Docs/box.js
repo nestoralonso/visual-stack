@@ -3,7 +3,9 @@ import { Demo, Snippet } from '../../../components/Demo';
 import { Panel, Body, Header } from '@cjdev/visual-stack/lib/components/Panel';
 import IconSuccess from '@cjdev/visual-stack/lib/components/IconSuccess';
 import { Button } from '@cjdev/visual-stack/lib/components/Button';
+/* s1:start */
 import { Box } from '@cjdev/visual-stack';
+/* s1:end */
 import Text from '@cjdev/visual-stack/lib/experimental/Text';
 
 export default () => {
@@ -17,6 +19,12 @@ export default () => {
                 Primitive layout component that renders a flex container with
                 standardized styling props.
               </Text>
+            </Body>
+          </Panel>
+          <Panel>
+            <Header>Import</Header>
+            <Body>
+              <Snippet tag="s1" src={snippets} />
             </Body>
           </Panel>
           <Panel>
