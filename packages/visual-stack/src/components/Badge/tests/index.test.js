@@ -1,21 +1,21 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { Chip } from '../';
+import { Badge } from '..';
 
 import Enzyme from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 Enzyme.configure({ adapter: new Adapter() });
 
-describe('Chip', () => {
+describe('Badge', () => {
   const el = document.createElement('div');
   document.body.appendChild(el);
 
   test('should render children', () => {
     const wrapper = mount(
-      <Chip backgroundColor="red" color="blue">
+      <Badge backgroundColor="red" color="blue">
         CONTENT CERTIFIED
-      </Chip>
+      </Badge>
     );
-    expect(wrapper.find(Chip).text()).toEqual('CONTENT CERTIFIED');
+    expect(wrapper.find(Badge).text()).toEqual('CONTENT CERTIFIED');
   });
 });

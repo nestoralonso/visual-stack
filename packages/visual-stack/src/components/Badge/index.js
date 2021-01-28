@@ -1,10 +1,10 @@
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
-import './Chip.css';
+import './Badge.css';
 import Box from '../../experimental/Box';
 
-export const Chip = ({
+export const Badge = ({
   children,
   className,
   backgroundColor,
@@ -14,7 +14,7 @@ export const Chip = ({
   return (
     <Box
       {...restProps}
-      className={classNames('vs-chip', className)}
+      className={classNames('vs-badge', className)}
       style={{
         backgroundColor,
         color,
@@ -25,7 +25,7 @@ export const Chip = ({
   );
 };
 
-Chip.propTypes = {
+Badge.propTypes = {
   backgroundColor: PropTypes.string,
   children: PropTypes.node,
   className: PropTypes.string,
