@@ -2,10 +2,10 @@
   font-weight: 600;
   font-size: 1rem;
   line-height: 1rem;
-  border-radius: 2px;
+  border-radius: 0.2rem;
   display: inline-block;
   color: #ffffff;
-  padding: 2px 4px;
+  padding: 0.2rem 0.4rem;
   text-align: center;
   text-transform: uppercase;
   width: fit-content;
