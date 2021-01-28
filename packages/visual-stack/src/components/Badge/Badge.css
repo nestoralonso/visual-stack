@@ -4,11 +4,38 @@
   line-height: 1rem;
   border-radius: 0.2rem;
   display: inline-block;
-  background-color: #6d7684;
   color: #ffffff;
   padding: 0.2rem 0.4rem;
   text-align: center;
   text-transform: uppercase;
   width: fit-content;
   height: fit-content;
+}
+
+.vs-badge-variant-default {
+  background-color: #6d7684;
+}
+
+.vs-badge-variant-cj-green {
+  background-color: var(--cj-green);
+}
+
+.vs-badge-variant-1 {
+  background-color: #9c52f7;
+}
+
+.vs-badge-variant-2 {
+  background-color: #ea4b93;
+}
+
+.vs-badge-variant-3 {
+  background-color: #4574e2;
+}
+
+.vs-badge-variant-4 {
+  background-color: #0caaac;
+}
+
+.vs-badge-variant-5 {
+  background-color: #072477;
 }

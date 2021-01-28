@@ -18,28 +18,12 @@ export default () => (
           </Panel>
           <Panel>
             <Body>
-              {/* s4:start */}
-              <Box direction="row" gap="default">
-                <Badge>CJ Performer</Badge>
-                <Badge>CJ Spotlight</Badge>
-                <Badge>Content Certified</Badge>
-                <Badge>New to Network</Badge>
-                <Badge>SubAffiliate</Badge>
-              </Box>
-              {/* s4:end */}
-              <Snippet tag="s4" src={snippets} />
-            </Body>
-          </Panel>
-
-          <Panel>
-            <Body>
               {/* s2:start */}
               <Box direction="row" gap="default">
-                <Badge backgroundColor="#9C52F7">CJ Performer</Badge>
-                <Badge backgroundColor="#EA4B93">CJ Spotlight</Badge>
-                <Badge backgroundColor="#4574E2">Content Certified</Badge>
-                <Badge backgroundColor="#0CAAAC">New to Network</Badge>
-                <Badge backgroundColor="#072477">SubAffiliate</Badge>
+                <Badge>1</Badge>
+                <Badge>2</Badge>
+                <Badge>3</Badge>
+                <Badge>4819</Badge>
               </Box>
               {/* s2:end */}
               <Snippet tag="s2" src={snippets} />
@@ -50,10 +34,13 @@ export default () => (
             <Body>
               {/* s3:start */}
               <Box direction="row" gap="default">
-                <Badge backgroundColor="var(--cj-green)">1</Badge>
-                <Badge backgroundColor="var(--cj-green)">2</Badge>
-                <Badge backgroundColor="var(--cj-green)">3</Badge>
-                <Badge backgroundColor="var(--cj-green)">4819</Badge>
+                <Badge variant="default">0</Badge>
+                <Badge variant="cj-green">CJ Green</Badge>
+                <Badge variant="1">CJ Performer</Badge>
+                <Badge variant="2">CJ Spotlight</Badge>
+                <Badge variant="3">Content Certified</Badge>
+                <Badge variant="4">New to Network</Badge>
+                <Badge variant="5">SubAffiliate</Badge>
               </Box>
               {/* s3:end */}
               <Snippet tag="s3" src={snippets} />
