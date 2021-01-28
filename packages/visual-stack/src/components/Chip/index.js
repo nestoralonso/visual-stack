@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 import './Chip.css';
-import Box from '../../experimental/Box';
+import { Box } from '../Box';
 
 export const Chip = ({
   children,

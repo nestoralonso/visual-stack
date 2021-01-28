@@ -1,10 +1,10 @@
 import React from 'react';
-import { Panel, Body } from '@cjdev/visual-stack/lib/components/Panel';
-import { Demo, Snippet } from '../../../components/Demo';
+import { Box } from '@cjdev/visual-stack';
 /* s2:start */
 import { Chip } from '@cjdev/visual-stack';
 /* s2:end */
-import Box from '@cjdev/visual-stack/lib/experimental/Box';
+import { Panel, Body } from '@cjdev/visual-stack/lib/components/Panel';
+import { Demo, Snippet } from '../../../components/Demo';
 
 export default () => (
   <Demo srcFile="/samples/src/containers/Components/Docs/chip.js">
@@ -14,7 +14,7 @@ export default () => (
           <Panel>
             <Body>
               {/* s1:start */}
-              <Box direction="row" gap="default">
+              <Box direction="right" gap="medium">
                 <Chip backgroundColor="#9C52F7">CJ Performer</Chip>
                 <Chip backgroundColor="#EA4B93">CJ Spotlight</Chip>
                 <Chip backgroundColor="#4574E2">Content Certified</Chip>
