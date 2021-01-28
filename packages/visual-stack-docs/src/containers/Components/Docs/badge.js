@@ -1,9 +1,9 @@
 import React from 'react';
 import { Panel, Body } from '@cjdev/visual-stack/lib/components/Panel';
 import { Demo, Snippet } from '../../../components/Demo';
-/* s2:start */
+/* s1:start */
 import { Badge } from '@cjdev/visual-stack';
-/* s2:end */
+/* s1:end */
 import Box from '@cjdev/visual-stack/lib/experimental/Box';
 
 export default () => (
@@ -13,7 +13,12 @@ export default () => (
         <div>
           <Panel>
             <Body>
-              {/* s1:start */}
+              <Snippet tag="s1" src={snippets} />
+            </Body>
+          </Panel>
+          <Panel>
+            <Body>
+              {/* s2:start */}
               <Box direction="row" gap="default">
                 <Badge backgroundColor="#9C52F7">CJ Performer</Badge>
                 <Badge backgroundColor="#EA4B93">CJ Spotlight</Badge>
@@ -21,9 +26,22 @@ export default () => (
                 <Badge backgroundColor="#0CAAAC">New to Network</Badge>
                 <Badge backgroundColor="#072477">SubAffiliate</Badge>
               </Box>
-              {/* s1:end */}
+              {/* s2:end */}
               <Snippet tag="s2" src={snippets} />
-              <Snippet tag="s1" src={snippets} />
+            </Body>
+          </Panel>
+
+          <Panel>
+            <Body>
+              {/* s3:start */}
+              <Box direction="row" gap="default">
+                <Badge backgroundColor="var(--cj-green)">1</Badge>
+                <Badge backgroundColor="var(--cj-green)">2</Badge>
+                <Badge backgroundColor="var(--cj-green)">3</Badge>
+                <Badge backgroundColor="var(--cj-green)">4819</Badge>
+              </Box>
+              {/* s3:end */}
+              <Snippet tag="s3" src={snippets} />
             </Body>
           </Panel>
         </div>
