@@ -233,9 +233,9 @@ describe('Box', () => {
       'Lorem ipsum'
     );
   });
-  it('should render with grow', () => {
-    const wrapper = mount(<Box grow>Lorem ipsum</Box>);
-    expect(wrapper.find('.vs-box.vs-box-grow').text()).toEqual('Lorem ipsum');
+  it('should render with expand', () => {
+    const wrapper = mount(<Box expand>Lorem ipsum</Box>);
+    expect(wrapper.find('.vs-box.vs-box-expand').text()).toEqual('Lorem ipsum');
   });
   it('should render with arbitrary data-id prop', () => {
     const wrapper = mount(

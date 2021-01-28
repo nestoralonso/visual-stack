@@ -279,17 +279,17 @@ export default () => {
             </Body>
           </Panel>
           <Panel>
-            <Header>Grow</Header>
+            <Header>Expand</Header>
             <Body>
-              Grows component to fill available space in the container component
-              (sets flex to 1).
+              Expands the box along the main axis (direction axis) to fill the
+              available space in the container component (sets flex to 1).
               <Snippet tag="s20" src={snippets} />
               {/* s20:start */}
               <Box direction="right" gap="medium">
                 <Box border padding="medium">
                   <Text>Lorem Ipsum</Text>
                 </Box>
-                <Box border grow padding="medium" align="center">
+                <Box border expand padding="medium" align="center">
                   <Text>Lorem Ipsum</Text>
                 </Box>
               </Box>

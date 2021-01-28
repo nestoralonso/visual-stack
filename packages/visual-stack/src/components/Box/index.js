@@ -10,7 +10,7 @@ export const Box = ({
   className,
   direction,
   gap,
-  grow,
+  expand,
   justify,
   padding,
   paddingBottom,
@@ -33,7 +33,7 @@ export const Box = ({
       paddingTop && `vs-box-padding-top-${paddingTop}`,
       align && `vs-box-align-${align}`,
       justify && `vs-box-justify-${justify}`,
-      grow && 'vs-box-grow',
+      expand && 'vs-box-expand',
       className
     )}
   >
@@ -105,5 +105,5 @@ Box.propTypes = {
     'space-evenly',
   ]),
   border: PropTypes.bool,
-  grow: PropTypes.bool,
+  expand: PropTypes.bool,
 };
