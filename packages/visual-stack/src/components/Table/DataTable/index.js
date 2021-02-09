@@ -59,8 +59,8 @@ const generateHeader = ({ sortable, sortingOption, onSort, data }) => (
 };
 
 const generateRow = ({ onClick, columns }) => (rowItems, index) => (
-  <Tr key={index}>
-    {rowItems.map((item, columnIndex) => {
+  <Tr key={rowItems.id}>
+    {rowItems.row.map((item, columnIndex) => {
       const getColumn = R.compose(
         R.defaultTo({}),
         R.prop(columnIndex)

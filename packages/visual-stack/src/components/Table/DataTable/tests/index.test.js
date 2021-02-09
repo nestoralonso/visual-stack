@@ -12,7 +12,7 @@ describe('DataTable', () => {
   describe('Top Level Header', () => {
     it('should display tool bar', () => {
       const renderToolbar = jest.fn(() => <div id="test">TEST</div>);
-      const data = [[1, 2, 3]];
+      const data = [{ id: 0, row: [1, 2, 3], selected: false }];
       const columns = [
         {
           label: 'hello',
@@ -100,7 +100,10 @@ describe('DataTable', () => {
       const data3 = 'data3';
       const data4 = 'data4';
       const wrapper = mount(
-        <DataTable data={[[data1, data2], [data3, data4]]} />
+        <DataTable data={[
+          { id: 0, row: [data1, data2], selected: false },
+          { id: 1, row: [data3, data4], selected: false }]
+        } />
       );
       expect(wrapper.find('td').map(node => node.text())).toEqual([
         data1,
@@ -134,10 +137,10 @@ describe('DataTable', () => {
         <DataTable
           columns={columns}
           data={[
-            [1, 2, 3, 4],
-            [1, 2, 3, 4],
-            [1, 2, targetData, 4],
-            [1, 2, 3, 4],
+            { id: 0, row: [1, 2, 3, 4], selected: false },
+            { id: 1, row: [1, 2, 3, 4], selected: false },
+            { id: 2, row: [1, 2, targetData, 4], selected: false },
+            { id: 3, row: [1, 2, 3, 4], selected: false },
           ]}
           onClick={onClick}
         />
@@ -167,7 +170,7 @@ describe('DataTable', () => {
       const wrapper = mount(
         <DataTable
           columns={columns}
-          data={[[targetData, 2], [1, 2]]}
+          data={[{ id: 0, row: [targetData, 2], selected: false }, { id: 1, row: [1, 2], selected: false }]}
           onClick={onClick}
         />
       );
@@ -190,7 +193,7 @@ describe('DataTable', () => {
           },
         ];
         const wrapper = mount(
-          <DataTable columns={columns} data={[[targetData]]} />
+          <DataTable columns={columns} data={[{ id: 0, row: [targetData], selected: false }]} />
         );
         const targetTD = wrapper
           .find('td.vs-cell')
@@ -255,9 +258,9 @@ describe('DataTable', () => {
       const group1 = range(1, 26);
       const group2 = range(26, 51);
       const group3 = range(51, 76);
-      const groupedData1 = group1.map(number => [number]);
-      const groupedData2 = group2.map(number => [number]);
-      const groupedData3 = group3.map(number => [number]);
+      const groupedData1 = group1.map(number => ({ id: number, row: [number], selected: false }));
+      const groupedData2 = group2.map(number => ({ id: number, row: [number], selected: false }));
+      const groupedData3 = group3.map(number => ({ id: number, row: [number], selected: false }));
 
       it('should render a fixed number of rows when pagination is enabled', () => {
         const onPageChange = jest.fn();
@@ -513,7 +516,11 @@ describe('DataTable', () => {
               label: 'NOT YOUR TARGET HEADER',
               order: DESCENDING,
             }}
-            data={[[second], [first], [third]]}
+            data={[
+              { id: 0, row: [second], selected: false },
+              { id: 1, row: [first], selected: false },
+              { id: 2, row: [third], selected: false }
+            ]}
             onSort={onSort}
             sortable
           />
@@ -524,9 +531,9 @@ describe('DataTable', () => {
         targetHeaderWrapper.simulate('click');
 
         expect(onSort.mock.calls[0][0].data).toEqual([
-          [third],
-          [second],
-          [first],
+          { id: 2, row: [third], selected: false },
+          { id: 0, row: [second], selected: false },
+          { id: 1, row: [first], selected: false },
         ]);
       });
 
@@ -547,7 +554,11 @@ describe('DataTable', () => {
               label,
               order: DESCENDING,
             }}
-            data={[[second], [first], [third]]}
+            data={[
+              { id: 0, row: [second], selected: false },
+              { id: 1, row: [first], selected: false },
+              { id: 2, row: [third], selected: false }
+            ]}
             onSort={onSort}
             sortable
           />
@@ -558,9 +569,9 @@ describe('DataTable', () => {
         targetHeaderWrapper.simulate('click');
 
         expect(onSort.mock.calls[0][0].data).toEqual([
-          [first],
-          [second],
-          [third],
+          { id: 1, row: [first], selected: false },
+          { id: 0, row: [second], selected: false },
+          { id: 2, row: [third], selected: false },
         ]);
       });
 
@@ -581,7 +592,10 @@ describe('DataTable', () => {
               label,
               order: ASCENDING,
             }}
-            data={[[second], [first], [third]]}
+            data={[
+              { id: 0, row: [second], selected: false },
+              { id: 1, row: [first], selected: false },
+              { id: 2, row: [third], selected: false }]}
             onSort={onSort}
             sortable
           />
@@ -591,9 +605,9 @@ describe('DataTable', () => {
           .filterWhere(node => trim(node.text()) === label);
         targetHeaderWrapper.simulate('click');
         expect(onSort.mock.calls[0][0].data).toEqual([
-          [third],
-          [second],
-          [first],
+          { id: 2, row: [third], selected: false },
+          { id: 0, row: [second], selected: false },
+          { id: 1, row: [first], selected: false },
         ]);
       });
     });

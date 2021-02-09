@@ -3,6 +3,7 @@ import { createAction, handleActions } from 'redux-actions';
 import { sortData } from '@cjdev/visual-stack/lib/components/Table/DataTable/sortingHelper';
 
 const defaultToEmpty = R.defaultTo({});
+const defaultToEmptyArray = R.defaultTo([]);
 const collapse = R.set(R.lensProp('expanded'), false);
 
 const OPEN_MODAL = '@cjdev/visual-stack-redux/OPEN_MODAL';
@@ -115,10 +116,13 @@ const findSortingIndex = (sortingOption, columns) =>
   R.findIndex(R.propEq('label', sortingOption.label))(columns);
 
 const getDataTableData = ({ columns, data, sortingOption }) => {
-  if (!sortingOption) return data;
+  const dataWithSelectedProp = defaultToEmptyArray(data).map((row, index) => {
+    return { id: index, row, selected: false };
+  });
+  if (!sortingOption) return dataWithSelectedProp;
 
   const sortingIndex = findSortingIndex(sortingOption, columns);
-  return sortData(sortingIndex, sortingOption.order, data);
+  return sortData(sortingIndex, sortingOption.order, dataWithSelectedProp);
 };
 
 const INITIALIZE_DATA_TABLE = '@cjdev/visual-stack-redux/INITIALIZE_DATA_TABLE';
@@ -264,8 +268,8 @@ export default handleActions(
       ),
     [RESET_CALENDAR_SELECTION]: (state, { payload: { datePickerId } }) =>
       R.set(R.lensPath(['datePicker', datePickerId]), {}, state),
-    [INITIALIZE_DATA_TABLE]: (state, { payload }) =>
-      R.set(
+    [INITIALIZE_DATA_TABLE]: (state, { payload }) => {
+      return R.set(
         R.lensPath(['dataTable', payload.id]),
         {
           data: getDataTableData(payload),
@@ -279,7 +283,8 @@ export default handleActions(
           )(payload),
         },
         state
-      ),
+      );
+    },
     [SET_DATA_TABLE_PAGE]: (state, { payload: { id, pagination } }) =>
       R.set(R.lensPath(['dataTable', id, 'pagination']), pagination, state),
     [SET_DATA_TABLE_SORTING_OPTION]: (

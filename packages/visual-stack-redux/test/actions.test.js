@@ -354,11 +354,7 @@ describe('reducer', () => {
 
   test('should initialize dataTable data', () => {
     const id = 'sample-data-table';
-    const data = [
-      {
-        id: 1,
-      },
-    ];
+    const data = [[1, 'first name', 'last name']];
     const columns = [];
     const sortingOption = null;
     const beforeState = {};
@@ -366,8 +362,15 @@ describe('reducer', () => {
       beforeState,
       initializeDataTable({ id, data, columns, sortingOption })
     );
+    const dataWithSelectedProp = [
+      {
+        id: 0,
+        row: [1, 'first name', 'last name'],
+        selected: false,
+      },
+    ];
     expect(afterState.dataTable[id]).toEqual({
-      data,
+      data: dataWithSelectedProp,
       pagination: {
         page: 1,
         rowsPerPage: 10,
@@ -397,7 +400,13 @@ describe('reducer', () => {
       data: actualData,
       sortingOption: actualSortingOption,
     } = afterState.dataTable[id];
-    expect(actualData).toEqual([[7], [4], [3], [2], [1]]);
+    expect(actualData).toEqual([
+      { id: 2, row: [7], selected: false },
+      { id: 0, row: [4], selected: false },
+      { id: 1, row: [3], selected: false },
+      { id: 4, row: [2], selected: false },
+      { id: 3, row: [1], selected: false },
+    ]);
     expect(actualSortingOption).toEqual(sortingOption);
   });
 
@@ -419,7 +428,7 @@ describe('reducer', () => {
 
   test('should setDataTableSortingOption', () => {
     const id = 'sample-data-table';
-    const data = [{ id: 1 }];
+    const data = [{ id: 0, row: [1], selected: false }];
     const sortingOption = {
       label: 'id',
       order: 'ASCENDING',
