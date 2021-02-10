@@ -12,7 +12,11 @@ describe('DataTable', () => {
   describe('Top Level Header', () => {
     it('should display tool bar', () => {
       const renderToolbar = jest.fn(() => <div id="test">TEST</div>);
-      const data = [{ id: 0, row: [1, 2, 3], selected: false }];
+      const data = [{ id: 0, row: [1, 2, 3], selected: false }, { id: 1, row: [4, 5, 6], selected: true }];
+      const dataWithoutIds = [
+        { row: data[0].row, selected: data[0].selected },
+        { row: data[1].row, selected: data[1].selected },
+      ]
       const columns = [
         {
           label: 'hello',
@@ -25,7 +29,7 @@ describe('DataTable', () => {
           columns={columns}
         />
       );
-      expect(renderToolbar.mock.calls).toEqual([[{ data, columns }]]);
+      expect(renderToolbar.mock.calls).toEqual([[{ data: dataWithoutIds, columns }]]);
       expect(wrapper.find('div#test').text()).toEqual('TEST');
     });
   });
@@ -203,6 +207,17 @@ describe('DataTable', () => {
     });
 
     describe("selecting rows", () => {
+      it("should not have any selectable row if table is not selectable", () => {
+        const data = [{ id: 0, row: [1], selected: true, }, { id: 1, row: [2], selected: false, }]
+        const wrapper = mount(
+          <DataTable data={data} selectable={false} />
+        );
+        const rowCheckboxes = wrapper.find("input[aria-label='Select row from data table']");
+        const selectAllCheckbox = wrapper.find("input[aria-label='Select all from data table']");
+        expect(rowCheckboxes).toHaveLength(0);
+        expect(selectAllCheckbox).toHaveLength(0);
+      })
+
       it("should have selected row when passing data", () => {
         const data = [{ id: 0, row: [1], selected: true, }, { id: 1, row: [2], selected: false, }]
         const wrapper = mount(

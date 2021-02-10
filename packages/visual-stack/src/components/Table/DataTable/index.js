@@ -17,10 +17,18 @@ import PropTypes from 'prop-types';
 import './DataTable.css';
 import LoadingAnimation from '../../LoadingAnimation';
 
-const generateHeader = ({ sortable, sortingOption, onSort, data }) => (
-  { label: currentLabel, width },
-  index
+
+const generateHeaders = ({ columns, ...tableProps }) => {
+  return columns.map((column, index) => generateHeader(column, index, tableProps));
+}
+
+const generateHeader = (
+  column,
+  index,
+  tableProps,
 ) => {
+  const { sortable, sortingOption, onSort, data } = tableProps;
+  const { label: currentLabel, width } = column;
   const isCurrentColumnSorted = () => {
     return sortingOption.label === currentLabel;
   };
@@ -58,14 +66,21 @@ const generateHeader = ({ sortable, sortingOption, onSort, data }) => (
   );
 };
 
-const generateRow = ({ onClick, columns, selectable, onSelect }) => (rowItems, index) => (
-  <Tr key={rowItems.id}>
+const generateRows = ({ data, ...tableProps }) => {
+  return data.map((rowData, index) => generateRow(rowData, index, tableProps));
+}
+
+const generateRow = (rowData, index, tableProps) => {
+  const { onClick, columns, selectable, onSelect } = tableProps;
+  const { id, row, selected } = rowData;
+
+  return <Tr key={id}>
     {selectable && <Td>
-      <input type="checkbox" aria-label="Select row from data table" checked={rowItems.selected} onChange={() => {
-        onSelect(rowItems.id)
+      <input type="checkbox" aria-label="Select row from data table" checked={selected} onChange={() => {
+        onSelect(id)
       }} />
     </Td>}
-    {rowItems.row.map((item, columnIndex) => {
+    {row.map((item, columnIndex) => {
       const getColumn = R.compose(
         R.defaultTo({}),
         R.prop(columnIndex)
@@ -92,7 +107,7 @@ const generateRow = ({ onClick, columns, selectable, onSelect }) => (rowItems, i
       );
     })}
   </Tr>
-);
+};
 
 const getDataWithPagination = (rowsPerPage, page) =>
   R.compose(
@@ -103,6 +118,14 @@ const getDataWithPagination = (rowsPerPage, page) =>
 const NoDataLabel = ({ label }) => {
   return <div className="vs-data-table-no-data-label">{label}</div>;
 };
+
+const omitGeneratedIdsFromData = data => R.map(R.dissoc("id"))(data)
+
+
+const toggleSelectedInRowData = rowData => ({
+  ...rowData,
+  selected: !rowData.selected
+})
 
 export const DataTable = ({
   caption = '',
@@ -127,13 +150,13 @@ export const DataTable = ({
   onSelect,
   ...restProps
 }) => {
-  const normalizedData = pagination
+  const paginatedData = pagination
     ? getDataWithPagination(rowsPerPage, page)(data)
     : data;
 
   const onSelectId = id => {
     const selectedRowIndex = R.findIndex(R.propEq('id', id), data);
-    const dataWithSelectedRow = R.adjust(selectedRowIndex, rowItems => ({ ...rowItems, selected: !rowItems.selected }))(data);
+    const dataWithSelectedRow = R.adjust(selectedRowIndex, toggleSelectedInRowData)(data);
     onSelect({ data: dataWithSelectedRow })
   }
 
@@ -145,7 +168,7 @@ export const DataTable = ({
             {caption}
             <p>{description}</p>
           </div>
-          <div>{renderToolbar && renderToolbar({ columns, data })}</div>
+          <div>{renderToolbar && renderToolbar({ columns, data: omitGeneratedIdsFromData(data) })}</div>
         </div>
       </TableTitle>
       {isLoading ? (
@@ -160,16 +183,26 @@ export const DataTable = ({
                   {selectable && <Th>
                     <input type="checkbox" arial-label="Select all from data table" />
                   </Th>}
-                  {columns.map(
-                    generateHeader({ sortable, sortingOption, onSort, data })
-                  )}
+                  {generateHeaders({
+                    columns,
+                    sortable,
+                    sortingOption,
+                    onSort,
+                    data
+                  })}
                 </Tr>
               </THead>
               <TBody>
-                {normalizedData.map(generateRow({ onClick, columns, selectable, onSelect: onSelectId }))}
+                {generateRows({
+                  data: paginatedData,
+                  onClick,
+                  columns,
+                  selectable,
+                  onSelect: onSelectId
+                })}
               </TBody>
             </Table>
-            {normalizedData.length === 0 && <NoDataLabel label={noDataLabel} />}
+            {paginatedData.length === 0 && <NoDataLabel label={noDataLabel} />}
             {pagination && (
               <Pagination
                 className="vs-table-pagination"
@@ -204,6 +237,8 @@ DataTable.propTypes = {
   }),
   sortable: PropTypes.bool,
   onSort: PropTypes.func,
+  selectable: PropTypes.bool,
+  onSelect: PropTypes.func,
   onClick: PropTypes.func,
   renderToolbar: PropTypes.func,
   noDataLabel: PropTypes.string,
