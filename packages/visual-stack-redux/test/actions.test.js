@@ -17,6 +17,7 @@ import reducer, {
   initializeDataTable,
   setDataTablePage,
   setDataTableSortingOption,
+  setDataTableRows,
 } from '../src/actions';
 import { selectDataTable } from '../src/actions';
 import { DESCENDING } from '@cjdev/visual-stack/lib/components/Table/DataTable/sortingHelper';
@@ -34,6 +35,7 @@ describe('reducer', () => {
       tabLayout: {},
       pagination: {},
       datePicker: {},
+      dataTable: {},
     });
   });
 
@@ -428,7 +430,6 @@ describe('reducer', () => {
 
   test('should setDataTableSortingOption', () => {
     const id = 'sample-data-table';
-    const data = [{ id: 0, row: [1], selected: false }];
     const sortingOption = {
       label: 'id',
       order: 'ASCENDING',
@@ -436,11 +437,20 @@ describe('reducer', () => {
     const beforeState = {};
     const afterState = reducer(
       beforeState,
-      setDataTableSortingOption({ id, data, sortingOption })
+      setDataTableSortingOption({ id, sortingOption })
     );
     expect(afterState.dataTable[id]).toEqual({
-      data,
       sortingOption,
+    });
+  });
+
+  test('should setDataTableRows', () => {
+    const id = 'sample-data-table';
+    const data = [{ id: 0, row: [1], selected: false }];
+    const beforeState = {};
+    const afterState = reducer(beforeState, setDataTableRows({ id, data }));
+    expect(afterState.dataTable[id]).toEqual({
+      data,
     });
   });
 

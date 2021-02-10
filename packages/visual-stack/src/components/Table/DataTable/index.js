@@ -58,8 +58,13 @@ const generateHeader = ({ sortable, sortingOption, onSort, data }) => (
   );
 };
 
-const generateRow = ({ onClick, columns }) => (rowItems, index) => (
+const generateRow = ({ onClick, columns, selectable, onSelect }) => (rowItems, index) => (
   <Tr key={rowItems.id}>
+    {selectable && <Td>
+      <input type="checkbox" aria-label="Select row from data table" checked={rowItems.selected} onChange={() => {
+        onSelect(rowItems.id)
+      }} />
+    </Td>}
     {rowItems.row.map((item, columnIndex) => {
       const getColumn = R.compose(
         R.defaultTo({}),
@@ -118,11 +123,19 @@ export const DataTable = ({
   noDataLabel = 'No data available.',
   rowsPerPageTemplate,
   totalRecordsTemplate,
+  selectable = false,
+  onSelect,
   ...restProps
 }) => {
   const normalizedData = pagination
     ? getDataWithPagination(rowsPerPage, page)(data)
     : data;
+
+  const onSelectId = id => {
+    const selectedRowIndex = R.findIndex(R.propEq('id', id), data);
+    const dataWithSelectedRow = R.adjust(selectedRowIndex, rowItems => ({ ...rowItems, selected: !rowItems.selected }))(data);
+    onSelect({ data: dataWithSelectedRow })
+  }
 
   return (
     <TableContainer {...restProps} className="vs-data-table-container">
@@ -140,33 +153,36 @@ export const DataTable = ({
           <LoadingAnimation loadingMessage={loadingMessage} />
         </div>
       ) : (
-        <>
-          <Table>
-            <THead>
-              <Tr>
-                {columns.map(
-                  generateHeader({ sortable, sortingOption, onSort, data })
-                )}
-              </Tr>
-            </THead>
-            <TBody>
-              {normalizedData.map(generateRow({ onClick, columns }))}
-            </TBody>
-          </Table>
-          {normalizedData.length === 0 && <NoDataLabel label={noDataLabel} />}
-          {pagination && (
-            <Pagination
-              className="vs-table-pagination"
-              numberOfRows={data.length}
-              rowsPerPage={rowsPerPage}
-              page={page}
-              onChange={onPageChange}
-              rowsPerPageTemplate={rowsPerPageTemplate}
-              totalRecordsTemplate={totalRecordsTemplate}
-            />
-          )}
-        </>
-      )}
+          <>
+            <Table>
+              <THead>
+                <Tr>
+                  {selectable && <Th>
+                    <input type="checkbox" arial-label="Select all from data table" />
+                  </Th>}
+                  {columns.map(
+                    generateHeader({ sortable, sortingOption, onSort, data })
+                  )}
+                </Tr>
+              </THead>
+              <TBody>
+                {normalizedData.map(generateRow({ onClick, columns, selectable, onSelect: onSelectId }))}
+              </TBody>
+            </Table>
+            {normalizedData.length === 0 && <NoDataLabel label={noDataLabel} />}
+            {pagination && (
+              <Pagination
+                className="vs-table-pagination"
+                numberOfRows={data.length}
+                rowsPerPage={rowsPerPage}
+                page={page}
+                onChange={onPageChange}
+                rowsPerPageTemplate={rowsPerPageTemplate}
+                totalRecordsTemplate={totalRecordsTemplate}
+              />
+            )}
+          </>
+        )}
     </TableContainer>
   );
 };

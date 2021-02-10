@@ -1,5 +1,5 @@
 import * as R from 'ramda';
-import { createAction, handleActions } from 'redux-actions';
+import { createAction, handleActions, combineActions } from 'redux-actions';
 import { sortData } from '@cjdev/visual-stack/lib/components/Table/DataTable/sortingHelper';
 
 const defaultToEmpty = R.defaultTo({});
@@ -137,6 +137,9 @@ export const setDataTableSortingOption = createAction(
   SET_DATA_TABLE_SORTING_OPTION
 );
 
+const SET_DATA_TABLE_ROWS = '@cjdev/visual-stack-redux/SET_DATA_TABLE_ROWS';
+export const setDataTableRows = createAction(SET_DATA_TABLE_ROWS);
+
 export const selectDataTable = id => state => {
   const dataTable = R.view(R.lensPath(['visualStack', 'dataTable', id]))(state);
   const defaultTable = { data: [], pagination: {} };
@@ -215,7 +218,6 @@ export default handleActions(
       R.set(R.lensPath(['slidingPanel', filterLabel, 'expanded']), true, state),
     [SET_SLIDING_PANEL_ACTIVE_STATE]: (state, { payload: newActiveState }) =>
       R.set(R.lensPath(['slidingPanel', 'active']), newActiveState, state),
-
     [SELECT_TAB]: (state, { payload: { tabLayoutId, index } }) => {
       return R.set(
         R.lensPath(['tabLayout', tabLayoutId, 'index']),
@@ -289,19 +291,16 @@ export default handleActions(
       R.set(R.lensPath(['dataTable', id, 'pagination']), pagination, state),
     [SET_DATA_TABLE_SORTING_OPTION]: (
       state,
-      { payload: { id, data, sortingOption } }
+      { payload: { id, sortingOption } }
     ) => {
-      const stateWithSortingOption = R.set(
+      return R.set(
         R.lensPath(['dataTable', id, 'sortingOption']),
         sortingOption,
         state
       );
-
-      return R.set(
-        R.lensPath(['dataTable', id, 'data']),
-        data,
-        stateWithSortingOption
-      );
+    },
+    [SET_DATA_TABLE_ROWS]: (state, { payload: { id, data } }) => {
+      return R.set(R.lensPath(['dataTable', id, 'data']), data, state);
     },
   },
   {
@@ -314,5 +313,6 @@ export default handleActions(
     tabLayout: {},
     pagination: {},
     datePicker: {},
+    dataTable: {},
   }
 );

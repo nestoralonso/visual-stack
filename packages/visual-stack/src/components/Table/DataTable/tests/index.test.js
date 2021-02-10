@@ -181,7 +181,7 @@ describe('DataTable', () => {
       expect(onClick.mock.calls).toHaveLength(0);
     });
 
-    describe('Displaying custom cell', () => {
+    describe('displaying custom cell', () => {
       it('should display custom cell when there is renderCell function', () => {
         const label = 'change';
         const targetData = 'value';
@@ -201,6 +201,38 @@ describe('DataTable', () => {
         expect(targetTD).toHaveLength(1);
       });
     });
+
+    describe("selecting rows", () => {
+      it("should have selected row when passing data", () => {
+        const data = [{ id: 0, row: [1], selected: true, }, { id: 1, row: [2], selected: false, }]
+        const wrapper = mount(
+          <DataTable data={data} selectable />
+        );
+        const firstRowSelected = wrapper.find("input[aria-label='Select row from data table']").at(0).prop("checked")
+        const secondRowSelected = wrapper.find("input[aria-label='Select row from data table']").at(1).prop("checked")
+
+        expect(firstRowSelected).toEqual(true);
+        expect(secondRowSelected).toEqual(false);
+      })
+
+      it("should select one row", () => {
+        const onSelect = jest.fn();
+        const data = [{ id: 0, row: [1], selected: false, }, { id: 1, row: [2], selected: false, }]
+        const wrapper = mount(
+          <DataTable data={data} selectable onSelect={onSelect} />
+        );
+        wrapper.find("input[aria-label='Select row from data table']").at(0).simulate('change');
+
+        expect(onSelect).lastCalledWith({
+          data: [{
+            id: 0, row: [1], selected: true
+          },
+          {
+            id: 1, row: [2], selected: false
+          }]
+        })
+      })
+    })
   });
 
   describe('pagination', () => {

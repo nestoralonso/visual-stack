@@ -68,6 +68,7 @@ export default () => (
         <div>
           {/* s7:start */}
           <DataTable
+            selectable
             id="sample-data-table"
             caption="Sortable Data Table with Pagination"
             description="Description Text"
@@ -146,6 +147,7 @@ export default () => (
             )}
             sortable
             pagination
+            selectable
           />
           {/* s7:end */}
 

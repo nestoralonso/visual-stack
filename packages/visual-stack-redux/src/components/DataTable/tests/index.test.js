@@ -53,9 +53,10 @@ describe('DataTablePure', () => {
     ]);
   });
 
-  it('should call setDataTableSortingOption when sorting from VSDataTable', () => {
+  it('should call setDataTableSortingOption and setDataTableRows when sorting from VSDataTable', () => {
     const id = '1';
     const setDataTableSortingOption = jest.fn();
+    const setDataTableRows = jest.fn();
     const sortingPayload = {
       sortingOption: { label: 'id', order: 'ASCENDING' },
       data: [{ id: 1 }],
@@ -66,6 +67,7 @@ describe('DataTablePure', () => {
         dataTable={{ pagination: {} }}
         initializeDataTable={() => {}}
         setDataTableSortingOption={setDataTableSortingOption}
+        setDataTableRows={setDataTableRows}
       />
     );
     const { onSort } = wrapper.find(VSDataTable).props();
@@ -74,7 +76,41 @@ describe('DataTablePure', () => {
       [
         {
           id,
-          ...sortingPayload,
+          sortingOption: sortingPayload.sortingOption,
+        },
+      ],
+    ]);
+    expect(setDataTableRows.mock.calls).toEqual([
+      [
+        {
+          id,
+          data: sortingPayload.data,
+        },
+      ],
+    ]);
+  });
+
+  it('should call setDataTableRows when selecting rows from VSDataTable', () => {
+    const id = '1';
+    const setDataTableRows = jest.fn();
+    const payload = {
+      data: [{ id: 1 }],
+    };
+    const wrapper = shallow(
+      <DataTablePure
+        id={id}
+        dataTable={{ pagination: {} }}
+        initializeDataTable={() => {}}
+        setDataTableRows={setDataTableRows}
+      />
+    );
+    const { onSelect } = wrapper.find(VSDataTable).props();
+    onSelect(payload);
+    expect(setDataTableRows.mock.calls).toEqual([
+      [
+        {
+          id,
+          data: payload.data,
         },
       ],
     ]);
