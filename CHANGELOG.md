@@ -1,5 +1,16 @@
 # Upcoming
 
+## New Feature
+
+- Add selectable rows to DataTable.
+
+## Breaking Changes in DataTable
+
+- renderToolbar's data prop now return an array of objects instead of array of arrays.
+- Before: data = [['first', 'last']], After: data = [{row: ['first', 'last'], selected: true}]
+
+# Upcoming
+
 ## New Component
 
 - Add Chip component

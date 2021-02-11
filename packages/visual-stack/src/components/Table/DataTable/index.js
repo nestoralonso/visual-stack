@@ -17,7 +17,6 @@ import PropTypes from 'prop-types';
 import './DataTable.css';
 import LoadingAnimation from '../../LoadingAnimation';
 
-
 const generateHeaders = ({ columns, ...tableProps }) => {
   return columns.map((column, index) => generateHeader(column, index, tableProps));
 }
