@@ -1,5 +1,5 @@
 import * as R from 'ramda';
-import { createAction, handleActions, combineActions } from 'redux-actions';
+import { createAction, handleActions } from 'redux-actions';
 import { sortData } from '@cjdev/visual-stack/lib/components/Table/DataTable/sortingHelper';
 
 const defaultToEmpty = R.defaultTo({});
