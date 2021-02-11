@@ -127,6 +127,15 @@ const toggleSelectedInRowData = rowData => ({
   selected: !rowData.selected
 })
 
+const selectAllCheckbox = ({ data, onSelect }) => {
+  const checked = R.all(R.propEq('selected', true))(data);
+  let onChange = () => onSelect({
+    data: R.map(rowData => ({ ...rowData, selected: !checked }))(data)
+  });
+  return <input type="checkbox" aria-label="Select all from data table" checked={checked} onChange={(onChange)} />
+}
+
+
 export const DataTable = ({
   caption = '',
   description = '',
@@ -181,7 +190,7 @@ export const DataTable = ({
               <THead>
                 <Tr>
                   {selectable && <Th>
-                    <input type="checkbox" arial-label="Select all from data table" />
+                    {selectAllCheckbox({ data, onSelect })}
                   </Th>}
                   {generateHeaders({
                     columns,

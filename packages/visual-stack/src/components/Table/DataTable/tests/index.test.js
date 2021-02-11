@@ -207,7 +207,7 @@ describe('DataTable', () => {
     });
 
     describe("selecting rows", () => {
-      it("should not have any selectable row if table is not selectable", () => {
+      it("should not display any selectable rows if table is not selectable", () => {
         const data = [{ id: 0, row: [1], selected: true, }, { id: 1, row: [2], selected: false, }]
         const wrapper = mount(
           <DataTable data={data} selectable={false} />
@@ -218,8 +218,11 @@ describe('DataTable', () => {
         expect(selectAllCheckbox).toHaveLength(0);
       })
 
-      it("should have selected row when passing data", () => {
-        const data = [{ id: 0, row: [1], selected: true, }, { id: 1, row: [2], selected: false, }]
+      it("should display selected rows", () => {
+        const data = [
+          { id: 0, row: [1], selected: true, },
+          { id: 1, row: [2], selected: false, },
+        ]
         const wrapper = mount(
           <DataTable data={data} selectable />
         );
@@ -246,6 +249,78 @@ describe('DataTable', () => {
             id: 1, row: [2], selected: false
           }]
         })
+      })
+
+      it("should check selected all checkbox when all rows are selected", () => {
+        const data = [
+          { id: 0, row: [1], selected: true, },
+          { id: 1, row: [2], selected: true, },
+        ]
+        const wrapper = mount(
+          <DataTable data={data} selectable />
+        );
+
+        const selectedAllRowsCheckbox = wrapper.find("input[aria-label='Select all from data table']").prop("checked")
+
+        expect(selectedAllRowsCheckbox).toEqual(true);
+      })
+
+      it("should uncheck selected all checkbox when some rows are not selected", () => {
+        const data = [
+          { id: 0, row: [1], selected: true, },
+          { id: 1, row: [2], selected: false, },
+        ]
+        const wrapper = mount(
+          <DataTable data={data} selectable />
+        );
+
+        const selectedAllRowsCheckbox = wrapper.find("input[aria-label='Select all from data table']").prop("checked")
+
+        expect(selectedAllRowsCheckbox).toEqual(false);
+      })
+
+      it("should select all rows at once when clicking on select all checkbox", () => {
+        const data = [
+          { id: 0, row: [1], selected: false, },
+          { id: 1, row: [2], selected: false, },
+        ]
+        const onSelect = jest.fn();
+
+        const wrapper = mount(
+          <DataTable data={data} selectable onSelect={onSelect} />
+        );
+
+        const selectedAllRowsCheckbox = wrapper.find("input[aria-label='Select all from data table']");
+        selectedAllRowsCheckbox.simulate('change');
+
+        expect(onSelect).lastCalledWith({
+          data: [
+            { id: 0, row: [1], selected: true, },
+            { id: 1, row: [2], selected: true, },
+          ]
+        });
+      })
+
+      it("should unselect all rows at once when clicking on select all checkbox", () => {
+        const data = [
+          { id: 0, row: [1], selected: true, },
+          { id: 1, row: [2], selected: true, },
+        ]
+        const onSelect = jest.fn();
+
+        const wrapper = mount(
+          <DataTable data={data} selectable onSelect={onSelect} />
+        );
+
+        const selectedAllRowsCheckbox = wrapper.find("input[aria-label='Select all from data table']");
+        selectedAllRowsCheckbox.simulate('change');
+
+        expect(onSelect).lastCalledWith({
+          data: [
+            { id: 0, row: [1], selected: false, },
+            { id: 1, row: [2], selected: false, },
+          ]
+        });
       })
     })
   });
