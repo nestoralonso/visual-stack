@@ -1,4 +1,4 @@
-# Upcoming
+# 7.0.0
 
 ## New Feature
 
@@ -8,8 +8,6 @@
 
 - renderToolbar's data prop now return an array of objects instead of array of arrays.
 - Before: data = [['first', 'last']], After: data = [{row: ['first', 'last'], selected: true}]
-
-# Upcoming
 
 ## New Component
 
