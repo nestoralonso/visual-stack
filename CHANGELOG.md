@@ -13,7 +13,7 @@
 
 ## New Component
 
-- Add Chip component
+- Add Badge component
 
 # 6.10.0
 

@@ -7,16 +7,19 @@ import ArrowRightIcon from 'mdi-react/ArrowRightIcon';
 import ChevronRightIcon from 'mdi-react/ChevronRightIcon';
 import { Button } from '../Button.js';
 import * as R from 'ramda';
-const Badge = ({ children }) => {
-  return <div className="vs-badge">{children}</div>
-}
 
-const removeUnrelatedProps = R.omit(["initialActive",
-  "syncStateToOpen",
-  "expandFilterDropdown",
-  "hideFilterDropdown",
-  "toggleSlidingPanel",
-  "setSlidingPanelActiveState"]);
+const Badge = ({ children }) => {
+  return <div className="vs-sliding-panel-badge">{children}</div>;
+};
+
+const removeUnrelatedProps = R.omit([
+  'initialActive',
+  'syncStateToOpen',
+  'expandFilterDropdown',
+  'hideFilterDropdown',
+  'toggleSlidingPanel',
+  'setSlidingPanelActiveState',
+]);
 
 export const ToggleIcon = ({
   onClick,
@@ -120,14 +123,19 @@ export const SlidingPanelDropdown = ({
     'vs-expanded': expanded,
   });
   return (
-    <ul className={containerClasses} id={id} {...removeUnrelatedProps(restProps)}>
+    <ul
+      className={containerClasses}
+      id={id}
+      {...removeUnrelatedProps(restProps)}
+    >
       <li>
-        <a onClick={onClick} className="vs-sliding-panel-section-container-label">
+        <a
+          onClick={onClick}
+          className="vs-sliding-panel-section-container-label"
+        >
           <div className="vs-sliding-panel-section-label">
             {label}
-            {badge && <Badge>
-              {badge}
-            </Badge>}
+            {badge && <Badge>{badge}</Badge>}
           </div>
           <div className="vs-sliding-panel-chevron-container">
             <ChevronRightIcon />
