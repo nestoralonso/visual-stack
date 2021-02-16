@@ -26,5 +26,5 @@ Badge.defaultProps = {
 Badge.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
-  variant: PropTypes.oneOf('default', 'cj-green', '1', '2', '3', '4', '5'),
+  variant: PropTypes.oneOf(['default', 'cj-green', '1', '2', '3', '4', '5']),
 };

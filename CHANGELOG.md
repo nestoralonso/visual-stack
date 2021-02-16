@@ -1,3 +1,9 @@
+# Upcoming
+
+## Fix
+
+- Fix Badge PropTypes
+
 # 7.0.1
 
 ## Updates
