@@ -7,7 +7,7 @@ import { Badge } from '@cjdev/visual-stack';
 import Box from '@cjdev/visual-stack/lib/experimental/Box';
 
 export default () => (
-  <Demo srcFile="/samples/src/containers/Components/Docs/Badge.js">
+  <Demo srcFile="/samples/src/containers/Components/Docs/badge.js">
     {snippets => {
       return (
         <div>
