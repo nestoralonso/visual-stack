@@ -11,11 +11,7 @@ describe('Badge', () => {
   document.body.appendChild(el);
 
   test('should render children', () => {
-    const wrapper = mount(
-      <Badge backgroundColor="red" color="blue">
-        CONTENT CERTIFIED
-      </Badge>
-    );
+    const wrapper = mount(<Badge>CONTENT CERTIFIED</Badge>);
     expect(wrapper.find(Badge).text()).toEqual('CONTENT CERTIFIED');
   });
 });
