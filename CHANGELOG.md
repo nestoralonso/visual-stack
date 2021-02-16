@@ -1,3 +1,9 @@
+# Upcoming
+
+## Updates
+
+- Update Badge docs
+
 # 7.0.0
 
 ## New Feature
