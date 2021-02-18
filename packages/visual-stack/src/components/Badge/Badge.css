@@ -12,30 +12,38 @@
   height: fit-content;
 }
 
-.vs-badge-variant-default {
-  background-color: #6d7684;
-}
-
 .vs-badge-variant-cj-green {
   background-color: #49c5b1;
 }
 
 .vs-badge-variant-1 {
-  background-color: #9c52f7;
+  background-color: #6d7684;
 }
 
 .vs-badge-variant-2 {
-  background-color: #ea4b93;
+  background-color: #7824b6;
 }
 
 .vs-badge-variant-3 {
-  background-color: #4574e2;
+  background-color: #2a76c6;
 }
 
 .vs-badge-variant-4 {
-  background-color: #0caaac;
+  background-color: #1eb1c1;
 }
 
 .vs-badge-variant-5 {
-  background-color: #072477;
+  background-color: #28b189;
+}
+
+.vs-badge-variant-6 {
+  background-color: #e88700;
+}
+
+.vs-badge-variant-7 {
+  background-color: #d9166b;
+}
+
+.vs-badge-variant-8 {
+  background-color: #df49d8;
 }
