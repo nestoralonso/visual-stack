@@ -20,11 +20,21 @@ export const Badge = ({ children, className, variant, ...restProps }) => {
 };
 
 Badge.defaultProps = {
-  variant: 'default',
+  variant: '1',
 };
 
 Badge.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
-  variant: PropTypes.oneOf(['default', 'cj-green', '1', '2', '3', '4', '5']),
+  variant: PropTypes.oneOf([
+    'cj-green',
+    '1',
+    '2',
+    '3',
+    '4',
+    '5',
+    '6',
+    '7',
+    '8',
+  ]),
 };

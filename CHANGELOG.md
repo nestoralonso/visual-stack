@@ -1,3 +1,9 @@
+# Upcoming
+
+## Updates
+
+- Add new Badge variants
+
 # 7.0.2
 
 ## Fix

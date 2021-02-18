@@ -34,13 +34,15 @@ export default () => (
             <Body>
               {/* s3:start */}
               <Box direction="row" gap="default">
-                <Badge variant="default">0</Badge>
                 <Badge variant="cj-green">CJ Green</Badge>
-                <Badge variant="1">CJ Performer</Badge>
-                <Badge variant="2">CJ Spotlight</Badge>
-                <Badge variant="3">Content Certified</Badge>
-                <Badge variant="4">New to Network</Badge>
-                <Badge variant="5">SubAffiliate</Badge>
+                <Badge variant="1">One</Badge>
+                <Badge variant="2">Two</Badge>
+                <Badge variant="3">Three</Badge>
+                <Badge variant="4">Four</Badge>
+                <Badge variant="5">Five</Badge>
+                <Badge variant="6">Six</Badge>
+                <Badge variant="7">Seven</Badge>
+                <Badge variant="8">Eight</Badge>
               </Box>
               {/* s3:end */}
               <Snippet tag="s3" src={snippets} />
