@@ -40,24 +40,44 @@ describe('TriStateCheckbox', () => {
     checkbox.props().onClick();
     expect(clicked).toEqual(true);
   });
-  //it.only('should run _updateInnerCheckboxState if flag is set', () => {
+
+  it('should run always update checkbox state if flag is set', () => {
+    const wrapper = mount(<uut.TriStateCheckbox
+      value={1}
+      alwaysUpdateInnerCheckboxState
+    />);
+
+    const checkbox = wrapper.find('input[type="checkbox"]');
+    expect(checkbox.getDOMNode().checked).toEqual(true);
+    expect(checkbox.getDOMNode().indeterminate).toEqual(false);
     
-    //const wrapper = mount(<uut.TriStateCheckbox
-      //value={-1}
-    ///>);
+    //toggle checkbox state
+    checkbox.getDOMNode().dispatchEvent(new Event("click"));
+    expect(checkbox.getDOMNode().checked).toEqual(false);
+
+    //update with the same value prop
+    wrapper.setProps({ value: 1 });
+    expect(checkbox.getDOMNode().checked).toEqual(true);
+    expect(checkbox.getDOMNode().indeterminate).toEqual(false);
+  });
+
+  it('should not update checkbox state if flag is not set', () => {
+    const wrapper = mount(<uut.TriStateCheckbox
+      value={1}
+      alwaysUpdateInnerCheckboxState={false}
+    />);
+
+    const checkbox = wrapper.find('input[type="checkbox"]');
+    expect(checkbox.getDOMNode().checked).toEqual(true);
+    expect(checkbox.getDOMNode().indeterminate).toEqual(false);
     
-    //const checkbox = () => wrapper.find('input[type="checkbox"]');
-    //checkbox().simulate('change', {target: {checked: true}});
-    //expect(checkbox()).toBeChecked();
-    //expect(checkbox().getDOMNode().indeterminate).toEqual(true);
+    //toggle checkbox state
+    checkbox.getDOMNode().dispatchEvent(new Event("click"));
+    expect(checkbox.getDOMNode().checked).toEqual(false);
 
-    //checkbox().simulate('click', {target: {checked: true}});
-    //checkbox().getDOMNode().dispatchEvent(new Event("click"));
-    //wrapper.setProps({value: -1});
-
-    //wrapper.update();
-
-    //expect(checkbox().getDOMNode().checked).toEqual(false);
-    //expect(checkbox().getDOMNode().indeterminate).toEqual(true);
-  //});
+    //update with the same value prop
+    wrapper.setProps({ value: 1 });
+    expect(checkbox.getDOMNode().checked).toEqual(false);
+    expect(checkbox.getDOMNode().indeterminate).toEqual(false);
+  });
 });
