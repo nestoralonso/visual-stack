@@ -40,4 +40,24 @@ describe('TriStateCheckbox', () => {
     checkbox.props().onClick();
     expect(clicked).toEqual(true);
   });
+  //it.only('should run _updateInnerCheckboxState if flag is set', () => {
+    
+    //const wrapper = mount(<uut.TriStateCheckbox
+      //value={-1}
+    ///>);
+    
+    //const checkbox = () => wrapper.find('input[type="checkbox"]');
+    //checkbox().simulate('change', {target: {checked: true}});
+    //expect(checkbox()).toBeChecked();
+    //expect(checkbox().getDOMNode().indeterminate).toEqual(true);
+
+    //checkbox().simulate('click', {target: {checked: true}});
+    //checkbox().getDOMNode().dispatchEvent(new Event("click"));
+    //wrapper.setProps({value: -1});
+
+    //wrapper.update();
+
+    //expect(checkbox().getDOMNode().checked).toEqual(false);
+    //expect(checkbox().getDOMNode().indeterminate).toEqual(true);
+  //});
 });
