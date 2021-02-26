@@ -1,0 +1,49 @@
+.vs-badge {
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1rem;
+  border-radius: 0.2rem;
+  display: inline-block;
+  color: #ffffff;
+  padding: 0.2rem 0.4rem;
+  text-align: center;
+  text-transform: uppercase;
+  width: fit-content;
+  height: fit-content;
+}
+
+.vs-badge-variant-cj-green {
+  background-color: #49c5b1;
+}
+
+.vs-badge-variant-1 {
+  background-color: #6d7684;
+}
+
+.vs-badge-variant-2 {
+  background-color: #7824b6;
+}
+
+.vs-badge-variant-3 {
+  background-color: #2a76c6;
+}
+
+.vs-badge-variant-4 {
+  background-color: #1eb1c1;
+}
+
+.vs-badge-variant-5 {
+  background-color: #28b189;
+}
+
+.vs-badge-variant-6 {
+  background-color: #e88700;
+}
+
+.vs-badge-variant-7 {
+  background-color: #d9166b;
+}
+
+.vs-badge-variant-8 {
+  background-color: #df49d8;
+}
