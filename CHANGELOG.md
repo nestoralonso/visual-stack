@@ -1,3 +1,8 @@
+# Upcoming
+
+- Add optional alwaysUpdateInnerCheckboxState prop to TriStateCheckbox
+- Allow additional className to be applied to Modal components
+
 # 7.1.0
 
 ## Updates
