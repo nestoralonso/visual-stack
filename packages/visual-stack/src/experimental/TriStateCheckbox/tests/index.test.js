@@ -40,4 +40,44 @@ describe('TriStateCheckbox', () => {
     checkbox.props().onClick();
     expect(clicked).toEqual(true);
   });
+
+  it('should run always update checkbox state if flag is set', () => {
+    const wrapper = mount(<uut.TriStateCheckbox
+      value={1}
+      alwaysUpdateInnerCheckboxState
+    />);
+
+    const checkbox = wrapper.find('input[type="checkbox"]');
+    expect(checkbox.getDOMNode().checked).toEqual(true);
+    expect(checkbox.getDOMNode().indeterminate).toEqual(false);
+    
+    //toggle checkbox state
+    checkbox.getDOMNode().dispatchEvent(new Event("click"));
+    expect(checkbox.getDOMNode().checked).toEqual(false);
+
+    //update with the same value prop
+    wrapper.setProps({ value: 1 });
+    expect(checkbox.getDOMNode().checked).toEqual(true);
+    expect(checkbox.getDOMNode().indeterminate).toEqual(false);
+  });
+
+  it('should not update checkbox state if flag is not set', () => {
+    const wrapper = mount(<uut.TriStateCheckbox
+      value={1}
+      alwaysUpdateInnerCheckboxState={false}
+    />);
+
+    const checkbox = wrapper.find('input[type="checkbox"]');
+    expect(checkbox.getDOMNode().checked).toEqual(true);
+    expect(checkbox.getDOMNode().indeterminate).toEqual(false);
+    
+    //toggle checkbox state
+    checkbox.getDOMNode().dispatchEvent(new Event("click"));
+    expect(checkbox.getDOMNode().checked).toEqual(false);
+
+    //update with the same value prop
+    wrapper.setProps({ value: 1 });
+    expect(checkbox.getDOMNode().checked).toEqual(false);
+    expect(checkbox.getDOMNode().indeterminate).toEqual(false);
+  });
 });
