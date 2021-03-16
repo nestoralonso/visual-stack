@@ -79,6 +79,19 @@
   margin: 0 0 0 8px;
 }
 
+.layout-action {
+  color: var(--light-text-color);
+  cursor: pointer;
+}
+
+.layout-action-text {
+  color: var(--light-text-color);
+}
+
+a.feedback-link-container:hover {
+  text-decoration: none;
+}
+
 
 
 /*.vs-dialog-layout .layout-action-text.vs-text {*/
