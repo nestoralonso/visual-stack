@@ -5,7 +5,6 @@ import Box from '../Box'
 import { BackToCjLink } from './BackToCjLink'
 import { CjSupportLink } from './CjSupportLink'
 import CJLogo from '../../components/CJLogo'
-// import CJLogo from '@cjdev/visual-stack/lib/components/CJLogo';
 
 export const TopNav = ({
   className,
@@ -30,14 +29,16 @@ export const TopNav = ({
           <Box direction="row" grow>
             <Box grow><h1 className="vs-topnav-title">{title}</h1></Box>
           </Box>
-          <Box direction="row" gap="xl" align="center">
-            <BackToCjLink title={backToCjTitle} onClick={backToCjOnClick} />
-          </Box>
-          <Box direction="row" gap="xl" align="center">
-            <CjSupportLink title={supportTitle} link={supportLink} />
-          </Box>
         </div>
-        <div className="vs-topnav-button-bar">
+        <div className={"vs-topnav-button-bar"}>
+          <Box direction="row" gap="xl" align="center" grow>
+            {/*<Box direction="row" gap="xl" align="center" className="layout-action-text">*/}
+              <BackToCjLink title={backToCjTitle} onClick={backToCjOnClick} />
+            {/*</Box>*/}
+            {/*<Box direction="row" gap="xl" align="center" className="layout-action-text">*/}
+              <CjSupportLink title={supportTitle} link={supportLink} />
+            {/*</Box>*/}
+          </Box>
         </div>
       </div>
       <div

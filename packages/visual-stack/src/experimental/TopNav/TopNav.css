@@ -79,13 +79,17 @@
   margin: 0 0 0 8px;
 }
 
+/*.vs-topnav-cjlinks {*/
+/*  margin-left: auto;*/
+/*}*/
+
 .layout-action {
-  color: var(--light-text-color);
+  color: var(--light-text-color) !important;
   cursor: pointer;
 }
 
 .layout-action-text {
-  color: var(--light-text-color);
+  color: var(--light-text-color) !important;
 }
 
 a.feedback-link-container:hover {
