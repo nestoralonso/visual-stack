@@ -11,14 +11,10 @@ export const BackToCjLink = ({ title, onClick }) => {
       gap="default"
       align="center"
       onClick={onClick}
-      className="layout-action"
+      className="topnav-action"
     >
-      <Text className="layout-action-text">
-        <ArrowBackIcon />
-      </Text>
-      <Text className="layout-action-text">
-        {title}
-      </Text>
+      <Text className="topnav-action-text"><ArrowBackIcon /></Text>
+      <Text className="topnav-action-text">{title}</Text>
     </Box>
   )
 }

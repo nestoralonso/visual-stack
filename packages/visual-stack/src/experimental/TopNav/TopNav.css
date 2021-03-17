@@ -15,6 +15,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-left: 12px;
 }
 
 .vs-topnav-logo-title-container {
@@ -78,13 +79,13 @@
   margin: 0 0 0 8px;
 }
 
-.layout-action {
-  color: var(--light-text-color) !important;
+.topnav-action {
+  color: #bebfc0 !important;
   cursor: pointer;
 }
 
-.layout-action-text {
-  color: var(--light-text-color) !important;
+.topnav-action-text {
+  color: #bebfc0 !important;
 }
 
 a.feedback-link-container:hover {

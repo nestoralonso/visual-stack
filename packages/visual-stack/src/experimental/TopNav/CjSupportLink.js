@@ -19,12 +19,12 @@ export const CjSupportLink = ({
         direction="row"
         gap="default"
         align="center"
-        className="layout-action"
+        className="topnav-action"
       >
-        <Text className="layout-action-text">
+        <Text className="topnav-action-text">
           <QuestionMarkCircleOutlineIcon />
         </Text>
-        <Text className="layout-action-text">
+        <Text className="topnav-action-text">
           {title}
         </Text>
       </Box>

@@ -42,10 +42,8 @@ export const TopNav = ({
           `vs-topnav-content-${contentSize ? contentSize : 'normal'}`
         )}
       >
-        {/*{children}*/}
+        {children}
       </div>
     </div>
   )
-
-
 }
