@@ -1,4 +1,3 @@
-
 import React from 'react'
 import cn from 'classnames'
 import Box from '../Box'
@@ -32,12 +31,8 @@ export const TopNav = ({
         </div>
         <div className={"vs-topnav-button-bar"}>
           <Box direction="row" gap="xl" align="center" grow>
-            {/*<Box direction="row" gap="xl" align="center" className="layout-action-text">*/}
               <BackToCjLink title={backToCjTitle} onClick={backToCjOnClick} />
-            {/*</Box>*/}
-            {/*<Box direction="row" gap="xl" align="center" className="layout-action-text">*/}
               <CjSupportLink title={supportTitle} link={supportLink} />
-            {/*</Box>*/}
           </Box>
         </div>
       </div>
@@ -47,7 +42,7 @@ export const TopNav = ({
           `vs-topnav-content-${contentSize ? contentSize : 'normal'}`
         )}
       >
-        {children}
+        {/*{children}*/}
       </div>
     </div>
   )

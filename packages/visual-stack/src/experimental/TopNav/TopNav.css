@@ -1,4 +1,3 @@
-
 .vs-topnav-header {
   position: fixed;
   top: 0;
@@ -79,10 +78,6 @@
   margin: 0 0 0 8px;
 }
 
-/*.vs-topnav-cjlinks {*/
-/*  margin-left: auto;*/
-/*}*/
-
 .layout-action {
   color: var(--light-text-color) !important;
   cursor: pointer;
@@ -95,32 +90,3 @@
 a.feedback-link-container:hover {
   text-decoration: none;
 }
-
-
-
-/*.vs-dialog-layout .layout-action-text.vs-text {*/
-/*  color: var(--light-text-color);*/
-/*}*/
-
-/*.vs-dialog-layout .layout-action {*/
-/*  color: var(--light-text-color);*/
-/*  cursor: pointer;*/
-/*}*/
-
-/*.vs-dialog-layout .vs-dialog-layout-header {*/
-/*  padding-left: 12px;*/
-/*}*/
-
-/*a.feedback-link-container:hover {*/
-/*  text-decoration: none;*/
-/*}*/
-
-/*.vs-dialog-layout-logo-title-container,*/
-/*.vs-dialog-layout-title {*/
-/*  display: flex;*/
-/*  flex: 1;*/
-/*}*/
-
-/*.vs-dialog-layout .vs-dialog-layout-button-bar {*/
-/*  display: none;*/
-/*}*/
