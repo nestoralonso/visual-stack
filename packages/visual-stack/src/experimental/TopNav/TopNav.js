@@ -15,12 +15,11 @@ export const TopNav = ({
   backToCjOnClick,
   supportTitle,
   supportLink,
-  children,
-  ...restProps
+  children
 }) => {
 
   return (
-    <div className={cn(`vs-topnav`, className)} {...restProps}>
+    <div className={cn(`vs-topnav`, className)} >
       <div className="vs-topnav-header vs-topnav-page-title">
         <div className="vs-topnav-logo-title-container">
           <div className="vs-topnav-logo-container">
@@ -50,14 +49,11 @@ export const TopNav = ({
 }
 
 TopNav.propTypes = {
-  className: PropTypes.string,
   contentSize: PropTypes.string,
-  logo: PropTypes.object,
   title: PropTypes.string,
   backToCjTitle: PropTypes.string,
   backToCjOnClick: PropTypes.func,
   supportTitle: PropTypes.string,
   supportLink: PropTypes.string,
   children: PropTypes.array,
-  restProps: PropTypes.array,
 }

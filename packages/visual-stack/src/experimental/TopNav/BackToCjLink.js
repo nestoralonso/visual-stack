@@ -15,8 +15,8 @@ export const BackToCjLink = ({ title, onClick }) => {
       onClick={onClick}
       className="topnav-action"
     >
-      <Text className="topnav-action-text"><ArrowLeftIcon /></Text>
-      <Text className="topnav-action-text">{title}</Text>
+      <Text id="topnav-back-icon" className="topnav-action-text"><ArrowLeftIcon /></Text>
+      <Text id="topnav-back-title" className="topnav-action-text">{title}</Text>
     </Box>
   )
 }

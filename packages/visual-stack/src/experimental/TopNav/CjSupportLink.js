@@ -22,10 +22,10 @@ export const CjSupportLink = ({
         align="center"
         className="topnav-action"
       >
-        <Text className="topnav-action-text">
+        <Text id="topnav-help-icon" className="topnav-action-text">
           <InformationOutlineIcon />
         </Text>
-        <Text className="topnav-action-text">
+        <Text id="topnav-help-title" className="topnav-action-text">
           {title}
         </Text>
       </Box>
