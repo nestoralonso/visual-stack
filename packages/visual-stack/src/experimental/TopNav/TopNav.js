@@ -4,7 +4,7 @@ import Box from '../Box'
 import { BackToCjLink } from './BackToCjLink'
 import { CjSupportLink } from './CjSupportLink'
 import CJLogo from '../../components/CJLogo'
-// import PropTypes from "prop-types";
+import PropTypes from 'prop-types'
 
 export const TopNav = ({
   className,
@@ -49,15 +49,15 @@ export const TopNav = ({
   )
 }
 
-// TopNav.propTypes = {
-//   className: PropTypes.string,
-//   contentSize: PropTypes.string,
-//   logo: PropTypes.object,
-//   title: PropTypes.string,
-//   backToCjTitle: PropTypes.string,
-//   backToCjOnClick: PropTypes.func,
-//   supportTitle: PropTypes.string,
-//   supportLink: PropTypes.string,
-//   children: PropTypes.array,
-//   restProps: PropTypes.array,
-// };
+TopNav.propTypes = {
+  className: PropTypes.string,
+  contentSize: PropTypes.string,
+  logo: PropTypes.object,
+  title: PropTypes.string,
+  backToCjTitle: PropTypes.string,
+  backToCjOnClick: PropTypes.func,
+  supportTitle: PropTypes.string,
+  supportLink: PropTypes.string,
+  children: PropTypes.array,
+  restProps: PropTypes.array,
+}

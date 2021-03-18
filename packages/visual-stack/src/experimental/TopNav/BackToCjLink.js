@@ -3,6 +3,8 @@ import React from 'react'
 import Box from '../Box'
 import Text from '../Text'
 import ArrowLeftIcon from 'mdi-react/ArrowLeftIcon'
+import {TopNav} from "./TopNav";
+import PropTypes from 'prop-types'
 
 export const BackToCjLink = ({ title, onClick }) => {
   return (
@@ -17,4 +19,9 @@ export const BackToCjLink = ({ title, onClick }) => {
       <Text className="topnav-action-text">{title}</Text>
     </Box>
   )
+}
+
+BackToCjLink.propTypes = {
+  title: PropTypes.string,
+  onClick: PropTypes.func,
 }
