@@ -2,7 +2,7 @@ import React from 'react'
 
 import Box from '../Box'
 import Text from '../Text'
-import ArrowBackIcon from 'mdi-react/ArrowBackIcon'
+import ArrowLeftIcon from 'mdi-react/ArrowLeftIcon'
 
 export const BackToCjLink = ({ title, onClick }) => {
   return (
@@ -13,7 +13,7 @@ export const BackToCjLink = ({ title, onClick }) => {
       onClick={onClick}
       className="topnav-action"
     >
-      <Text className="topnav-action-text"><ArrowBackIcon /></Text>
+      <Text className="topnav-action-text"><ArrowLeftIcon /></Text>
       <Text className="topnav-action-text">{title}</Text>
     </Box>
   )

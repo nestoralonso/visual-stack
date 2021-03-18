@@ -4,6 +4,7 @@ import Box from '../Box'
 import { BackToCjLink } from './BackToCjLink'
 import { CjSupportLink } from './CjSupportLink'
 import CJLogo from '../../components/CJLogo'
+// import PropTypes from "prop-types";
 
 export const TopNav = ({
   className,
@@ -29,7 +30,7 @@ export const TopNav = ({
             <Box grow><h1 className="vs-topnav-title">{title}</h1></Box>
           </Box>
         </div>
-        <div className={"vs-topnav-button-bar"}>
+        <div className={'vs-topnav-button-bar'}>
           <Box direction="row" gap="xl" align="center" grow>
               <BackToCjLink title={backToCjTitle} onClick={backToCjOnClick} />
               <CjSupportLink title={supportTitle} link={supportLink} />
@@ -47,3 +48,16 @@ export const TopNav = ({
     </div>
   )
 }
+
+// TopNav.propTypes = {
+//   className: PropTypes.string,
+//   contentSize: PropTypes.string,
+//   logo: PropTypes.object,
+//   title: PropTypes.string,
+//   backToCjTitle: PropTypes.string,
+//   backToCjOnClick: PropTypes.func,
+//   supportTitle: PropTypes.string,
+//   supportLink: PropTypes.string,
+//   children: PropTypes.array,
+//   restProps: PropTypes.array,
+// };

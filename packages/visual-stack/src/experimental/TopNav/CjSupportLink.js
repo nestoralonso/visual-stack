@@ -2,7 +2,7 @@ import React from 'react'
 
 import Box from '../Box'
 import Text from '../Text'
-import QuestionMarkCircleOutlineIcon from 'mdi-react/QuestionMarkCircleOutlineIcon'
+import InformationOutlineIcon from 'mdi-react/InformationOutlineIcon'
 
 export const CjSupportLink = ({
   title,
@@ -22,7 +22,7 @@ export const CjSupportLink = ({
         className="topnav-action"
       >
         <Text className="topnav-action-text">
-          <QuestionMarkCircleOutlineIcon />
+          <InformationOutlineIcon />
         </Text>
         <Text className="topnav-action-text">
           {title}
