@@ -1,20 +1,14 @@
 import React from 'react'
 import cn from 'classnames'
 import Box from '../Box'
-import { BackToCjLink } from './BackToCjLink'
-import { CjSupportLink } from './CjSupportLink'
 import CJLogo from '../../components/CJLogo'
 import PropTypes from 'prop-types'
 
 export const TopNav = ({
   className,
   contentSize,
-  logo,
   title,
-  backToCjTitle,
-  backToCjOnClick,
-  supportTitle,
-  supportLink,
+  actionChildren,
   children
 }) => {
 
@@ -29,11 +23,8 @@ export const TopNav = ({
             <Box grow><h1 className="vs-topnav-title">{title}</h1></Box>
           </Box>
         </div>
-        <div className={'vs-topnav-button-bar'}>
-          <Box direction="row" gap="xl" align="center" grow>
-              <BackToCjLink title={backToCjTitle} onClick={backToCjOnClick} />
-              <CjSupportLink title={supportTitle} link={supportLink} />
-          </Box>
+        <div className="vs-topnav-button-bar">
+          {actionChildren}
         </div>
       </div>
       <div
@@ -51,9 +42,6 @@ export const TopNav = ({
 TopNav.propTypes = {
   contentSize: PropTypes.string,
   title: PropTypes.string,
-  backToCjTitle: PropTypes.string,
-  backToCjOnClick: PropTypes.func,
-  supportTitle: PropTypes.string,
-  supportLink: PropTypes.string,
-  children: PropTypes.array,
+  children: PropTypes.object,
+  actionChildren: PropTypes.object,
 }
