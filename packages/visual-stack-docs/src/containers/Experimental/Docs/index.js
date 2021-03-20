@@ -9,8 +9,9 @@ import PageContent from '@cjdev/visual-stack/lib/components/PageContent';
 import TextDocs from './text';
 import BoxDocs from './box';
 import Tree from './tree';
-import TopNav from './topnav'
+import TopNavDocs from './topnav'
 import TriStateCheckboxDocs from './tristatecheckbox';
+import TopNavParent from "./topnav";
 
 const experimentalRouteMap = {};
 
@@ -22,7 +23,7 @@ const addComponentRoute = (path, linkName, component) => {
 addComponentRoute('text', 'Text', <TextDocs />);
 addComponentRoute('box', 'Box', <BoxDocs />);
 addComponentRoute('tree', 'Tree', <Tree />);
-// addComponentRoute('topnav', 'TopNav', <TopNavDocs />);
+addComponentRoute('topnav', 'Top Navigation', <TopNavParent />);
 addComponentRoute(
   'tristatecheckbox',
   'TriStateCheckbox',

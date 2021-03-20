@@ -23,6 +23,7 @@ import {
   SubmittingDialogLayoutDemo,
   WideDialogLayoutDemo,
 } from './containers/Layouts/DialogLayout';
+import { TopNavDemo } from './containers/Experimental/Docs/topnav'
 
 const reducer = combineReducers({
   visualStack: vsReducer,
@@ -62,6 +63,8 @@ ReactDOM.render(
         component={NoButtonDialogLayoutDemo}
       />
       <Route path="/wideDialogLayout" component={WideDialogLayoutDemo} />
+      <Route path="/topNavDemo" component={TopNavDemo} />
+
     </Router>
   </Provider>,
   document.getElementById('root')
