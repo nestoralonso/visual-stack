@@ -10,8 +10,6 @@ import {PageHeader, PageTitle} from "@cjdev/visual-stack/lib/components/PageHead
 import PageContent from '@cjdev/visual-stack/lib/components/PageContent';
 import {Button} from "@cjdev/visual-stack/lib/components/Button";
 import { withRouter } from 'react-router';
-import DialogLayout from "@cjdev/visual-stack/lib/layouts/DialogLayout";
-import CJLogo from "@cjdev/visual-stack/lib/components/CJLogo";
 
 class TopNavParent extends React.Component {
 
@@ -60,7 +58,7 @@ const NotRenderedComponent = () => (
       contentSize="wide"
       actionChildren={
         <Box direction="row" gap="xl" align="center" grow>
-          <BackToCjLink title="Back to the Home Page" onClick={() => alert("Going home...")}/>
+          <BackToCjLink title="Back to the Home Page" onClick={() => this.props.router.push('/experimental/topnav')}/>
           <CjSupportLink title="Help" link="https://www.help.com/"/>
         </Box>
       }

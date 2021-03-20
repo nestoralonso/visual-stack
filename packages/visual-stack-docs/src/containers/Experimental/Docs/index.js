@@ -9,7 +9,6 @@ import PageContent from '@cjdev/visual-stack/lib/components/PageContent';
 import TextDocs from './text';
 import BoxDocs from './box';
 import Tree from './tree';
-import TopNavDocs from './topnav'
 import TriStateCheckboxDocs from './tristatecheckbox';
 import TopNavParent from "./topnav";
 
