@@ -1,7 +1,7 @@
 import React from 'react'
 
-import Box from '../Box'
-import Text from '../Text'
+import Box from '../../experimental/Box';
+import Text from '../../experimental/Text'
 import InformationOutlineIcon from 'mdi-react/InformationOutlineIcon'
 import PropTypes from 'prop-types'
 

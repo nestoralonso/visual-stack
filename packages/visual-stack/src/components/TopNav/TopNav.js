@@ -1,6 +1,6 @@
 import React from 'react'
 import cn from 'classnames'
-import Box from '../Box'
+import Box from '../../experimental/Box'
 import CJLogo from '../../components/CJLogo'
 import PropTypes from 'prop-types'
 

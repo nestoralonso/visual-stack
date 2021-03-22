@@ -23,7 +23,7 @@ import {
   SubmittingDialogLayoutDemo,
   WideDialogLayoutDemo,
 } from './containers/Layouts/DialogLayout';
-import { TopNavDemo } from './containers/Experimental/Docs/topnav'
+import { TopNavDemo } from './containers/Components/Docs/topnav'
 
 const reducer = combineReducers({
   visualStack: vsReducer,

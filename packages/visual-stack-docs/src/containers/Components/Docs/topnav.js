@@ -3,17 +3,15 @@ import PropTypes from 'prop-types'
 import { withRouter } from 'react-router'
 import {Demo, Snippet} from '../../../components/Demo'
 import {Body, Header, Panel} from '@cjdev/visual-stack/lib/components/Panel'
-import Text from '@cjdev/visual-stack/lib/experimental/Text'
 import Box from '@cjdev/visual-stack/lib/experimental/Box'
-import { TopNav } from '@cjdev/visual-stack/lib/experimental/TopNav'
-import { BackToCjLink } from '@cjdev/visual-stack/lib/experimental/TopNav/BackToCjLink'
-import { CjSupportLink } from '@cjdev/visual-stack/lib/experimental/TopNav/CjSupportLink'
-import {PageHeader, PageTitle} from '@cjdev/visual-stack/lib/components/PageHeader'
+import { TopNav } from '@cjdev/visual-stack/lib/components/TopNav'
+import { BackToCjLink } from '@cjdev/visual-stack/lib/components/TopNav/BackToCjLink'
+import { CjSupportLink } from '@cjdev/visual-stack/lib/components/TopNav/CjSupportLink'
 import PageContent from '@cjdev/visual-stack/lib/components/PageContent'
 import {Button} from '@cjdev/visual-stack/lib/components/Button'
 
 export const TopNavParent = ({router}) => (
-  <Demo srcFile="/samples/src/containers/Experimental/Docs/topnav.js">
+  <Demo srcFile="/samples/src/containers/Components/Docs/topnav.js">
     {snippets => (
       <div>
         <PageContent>
@@ -43,7 +41,7 @@ const CodeSnippet1 = ({router}) => (
       contentSize="wide"
       actionChildren={
         <Box direction="row" gap="xl" align="center" grow>
-          <BackToCjLink title="Back to the Home Page" onClick={() => router.push('/experimental/topnav')}/>
+          <BackToCjLink title="Back to the Home Page" onClick={() => router.push('/components/topnav')}/>
           <CjSupportLink title="Help" link="https://www.help.com/"/>
         </Box>
       }
@@ -63,7 +61,7 @@ export const TopNavDemo = ({ router }) => (
       contentSize="normal"
       actionChildren={
         <Box direction="row" gap="xl" align="center" grow>
-          <BackToCjLink title="Back to the Home Page" onClick={() => router.push('/experimental/topnav')}/>
+          <BackToCjLink title="Back to the Home Page" onClick={() => router.push('/components/topnav')}/>
           <CjSupportLink title="Help" link="https://www.help.com/"/>
         </Box>
       }
