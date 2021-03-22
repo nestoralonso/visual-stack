@@ -8,6 +8,7 @@ import { TopNav } from '@cjdev/visual-stack/lib/components/TopNav'
 import { BackToCjLink } from '@cjdev/visual-stack/lib/components/TopNav/BackToCjLink'
 import { CjSupportLink } from '@cjdev/visual-stack/lib/components/TopNav/CjSupportLink'
 import {Button} from '@cjdev/visual-stack/lib/components/Button'
+import CloseIcon from 'mdi-react/CloseIcon'
 
 export const TopNavDocs = ({router}) => (
     <Demo srcFile="/samples/src/containers/Components/Docs/topnav.js">
@@ -18,12 +19,25 @@ export const TopNavDocs = ({router}) => (
             <Body>
               <Button
                 type="solid-primary"
-                onClick={() => router.push('/topNavDemo')}
+                onClick={() => router.push('/topNavDemo1')}
               >
                 Show the TopNav
               </Button>
               <p/>
               <Snippet tag="s1" src={snippets} />
+            </Body>
+          </Panel>
+          <Panel>
+            <Header>Display a header with control buttons</Header>
+            <Body>
+              <Button
+                type="solid-primary"
+                onClick={() => router.push('/topNavDemo2')}
+              >
+                Show the TopNav
+              </Button>
+              <p/>
+              <Snippet tag="s2" src={snippets} />
             </Body>
           </Panel>
         </div>
@@ -49,8 +63,32 @@ const CodeSnippet1 = ({router}) => (
     /* s1:end */
 )
 
-/* s2:start */
-export const TopNavDemo = ({ router }) => (
+const CodeSnippet2 = ({router}) => (
+  /* s2:start */
+  <TopNav
+    title="Header Title"
+    contentSize="wide"
+    actionChildren={
+      <TopNavControls
+        onSubmit={() => {
+          alert('Success!'); // eslint-disable-line no-alert
+          router.push('/components/topnav');
+        }}
+        onCancel={() => router.push('/components/topnav')}
+        submitButtonText={'Save Program Terms'}
+        cancelButtonText={'Cancel'}
+        disableSubmit={true}
+        showSubmitButtonSpinner={true}
+      />
+    }
+    children={
+      <DemoContent/>
+    }
+  />
+  /* s2:end */
+)
+
+export const TopNavWithBackToCjAndSupportDemo = ({ router }) => (
   <div>
     <TopNav
       title="Header Title"
@@ -67,7 +105,64 @@ export const TopNavDemo = ({ router }) => (
     />
   </div>
 )
-/* s2:end */
+
+export const TopNavWithButtonsDemo = ({ router }) => (
+  <div>
+    <TopNav
+      title="Header Title"
+      contentSize="normal"
+      actionChildren={
+        <TopNavControls
+          onSubmit={() => {
+            alert('Success!'); // eslint-disable-line no-alert
+            router.push('/components/topnav');
+          }}
+          onCancel={() => router.push('/components/topnav')}
+          submitButtonText={'Save Program Terms'}
+          cancelButtonText={'Cancel'}
+          disableSubmit={true}
+        />
+      }
+      children={
+        <DemoContent/>
+      }
+    />
+  </div>
+)
+
+const TopNavControls = ({
+                          onSubmit,
+                          onCancel,
+                          submitButtonText,
+                          cancelButtonText,
+                          disableSubmit
+                        }) => (
+  <div className="vs-dialog-layout-button-bar">
+    {cancelButtonText && (
+      <Button id="vs-dialog-layout-cancel" type="text" onClick={onCancel}>
+        {cancelButtonText}
+      </Button>
+    )}
+
+    {submitButtonText && (
+      <Button
+        id="vs-dialog-layout-submit"
+        type="solid-primary"
+        disabled={disableSubmit === true}
+        onClick={onSubmit}
+      >
+        {submitButtonText}
+      </Button>
+    )}
+    {!submitButtonText && !cancelButtonText && (
+      <CloseIcon
+        className="vs-dialog-layout-icon-close"
+        onClick={onCancel}
+      />
+    )}
+  </div>
+)
+
 
 TopNavDocs.propTypes = {
   router: PropTypes.object
@@ -75,7 +170,13 @@ TopNavDocs.propTypes = {
 CodeSnippet1.propTypes = {
   router: PropTypes.object
 }
-TopNavDemo.propTypes = {
+CodeSnippet2.propTypes = {
+  router: PropTypes.object
+}
+TopNavWithBackToCjAndSupportDemo.propTypes = {
+  router: PropTypes.object
+}
+TopNavWithButtonsDemo.propTypes = {
   router: PropTypes.object
 }
 
