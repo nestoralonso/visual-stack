@@ -22,7 +22,7 @@ const addComponentRoute = (path, linkName, component) => {
 addComponentRoute('text', 'Text', <TextDocs />);
 addComponentRoute('box', 'Box', <BoxDocs />);
 addComponentRoute('tree', 'Tree', <Tree />);
-addComponentRoute('topnav', 'Top Navigation', <TopNavParent />);
+addComponentRoute('topnav', 'TopNav Header', <TopNavParent />);
 addComponentRoute(
   'tristatecheckbox',
   'TriStateCheckbox',

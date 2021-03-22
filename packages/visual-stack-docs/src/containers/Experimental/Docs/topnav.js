@@ -1,75 +1,43 @@
 import React from 'react'
-import {Demo, Snippet} from "../../../components/Demo";
-import {Body, Header, Panel} from "@cjdev/visual-stack/lib/components/Panel";
-import Text from "@cjdev/visual-stack/lib/experimental/Text";
-import Box from "@cjdev/visual-stack/lib/experimental/Box";
+import PropTypes from 'prop-types'
+import { withRouter } from 'react-router'
+import {Demo, Snippet} from '../../../components/Demo'
+import {Body, Header, Panel} from '@cjdev/visual-stack/lib/components/Panel'
+import Text from '@cjdev/visual-stack/lib/experimental/Text'
+import Box from '@cjdev/visual-stack/lib/experimental/Box'
 import { TopNav } from '@cjdev/visual-stack/lib/experimental/TopNav'
 import { BackToCjLink } from '@cjdev/visual-stack/lib/experimental/TopNav/BackToCjLink'
 import { CjSupportLink } from '@cjdev/visual-stack/lib/experimental/TopNav/CjSupportLink'
-import {PageHeader, PageTitle} from "@cjdev/visual-stack/lib/components/PageHeader";
-import PageContent from '@cjdev/visual-stack/lib/components/PageContent';
-import {Button} from "@cjdev/visual-stack/lib/components/Button";
-import { withRouter } from 'react-router';
+import {PageHeader, PageTitle} from '@cjdev/visual-stack/lib/components/PageHeader'
+import PageContent from '@cjdev/visual-stack/lib/components/PageContent'
+import {Button} from '@cjdev/visual-stack/lib/components/Button'
 
-class TopNavParent extends React.Component {
+export const TopNavParent = ({router}) => (
+  <Demo srcFile="/samples/src/containers/Experimental/Docs/topnav.js">
+    {snippets => (
+      <div>
+        <PageContent>
+          <Panel>
+            <Header>Display a header with a back to CJ link and a help icon</Header>
+            <Body>
+              <Button
+                type="solid-primary"
+                onClick={() => router.push('/topNavDemo')}
+              >
+                Show the TopNav
+              </Button>
+              <p/>
+              <Snippet tag="s1" src={snippets} />
+            </Body>
+          </Panel>
+        </PageContent>
+      </div>
+    )}
+  </Demo>
+)
 
-  render () {
-    return (
-      <Demo srcFile="/samples/src/containers/Experimental/Docs/topnav.js">
-        {snippets => (
-          <div>
-            <PageHeader>
-              <PageTitle>TopNav Header</PageTitle>
-            </PageHeader>
-            <PageContent>
-              <Panel>
-                <Body>
-                  <Text>
-                    Header component with a CJ logo
-                  </Text>
-                </Body>
-              </Panel>
-              <Panel>
-                <Header>Display a header with a back to CJ link and a help icon</Header>
-                <Body>
-                  <Button
-                    type="solid-primary"
-                    onClick={() => this.props.router.push('/topNavDemo')}
-                  >
-                    Show the TopNav
-                  </Button>
-                  <p/>
-                  <Snippet tag="s1" src={snippets} />
-                </Body>
-              </Panel>
-            </PageContent>
-          </div>
-      )}
-      </Demo>
-    )
-  }
-}
-
-const NotRenderedComponent = () => (
-  /* s1:start */
-  <>
-    <TopNav
-      title="Header Title"
-      contentSize="wide"
-      actionChildren={
-        <Box direction="row" gap="xl" align="center" grow>
-          <BackToCjLink title="Back to the Home Page" onClick={() => this.props.router.push('/experimental/topnav')}/>
-          <CjSupportLink title="Help" link="https://www.help.com/"/>
-        </Box>
-      }
-    />
-  </>
-  /* s1:end */
-);
-
-/* s2:start */
-export const TopNavDemo = ({ router }) => (
-  <div>
+const CodeSnippet1 = ({router}) => (
+    /* s1:start */
     <TopNav
       title="Header Title"
       contentSize="wide"
@@ -83,11 +51,39 @@ export const TopNavDemo = ({ router }) => (
         <DemoContent/>
       }
     />
+    /* s1:end */
+)
+
+
+/* s2:start */
+export const TopNavDemo = ({ router }) => (
+  <div>
+    <TopNav
+      title="Header Title"
+      contentSize="normal"
+      actionChildren={
+        <Box direction="row" gap="xl" align="center" grow>
+          <BackToCjLink title="Back to the Home Page" onClick={() => router.push('/experimental/topnav')}/>
+          <CjSupportLink title="Help" link="https://www.help.com/"/>
+        </Box>
+      }
+      children={
+        <DemoContent/>
+      }
+    />
   </div>
-);
+)
 /* s2:end */
 
-NotRenderedComponent.propTypes = {};
+TopNavParent.propTypes = {
+  router: PropTypes.object
+}
+CodeSnippet1.propTypes = {
+  router: PropTypes.object
+}
+TopNavDemo.propTypes = {
+  router: PropTypes.object
+}
 
 export const DemoContent = () => (
   <Body>
@@ -120,8 +116,8 @@ export const DemoContent = () => (
       est laborum.
     </p>
   </Body>
-);
+)
 
-export default withRouter(TopNavParent);
+export default withRouter(TopNavParent)
 
 
