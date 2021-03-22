@@ -5,15 +5,16 @@ import CJLogo from '../../components/CJLogo'
 import PropTypes from 'prop-types'
 
 export const TopNav = ({
-  className,
-  contentSize,
-  title,
-  actionChildren,
-  children
-}) => {
+    className,
+    title,
+    actionChildren,
+    children,
+    contentSize,
+    ...restProps
+  }) => {
 
   return (
-    <div className={cn(`vs-topnav`, className)} >
+    <div className={cn(`vs-topnav`, className)} {...restProps}>
       <div className="vs-topnav-header vs-topnav-page-title">
         <div className="vs-topnav-logo-title-container">
           <div className="vs-topnav-logo-container">
@@ -40,8 +41,9 @@ export const TopNav = ({
 }
 
 TopNav.propTypes = {
-  contentSize: PropTypes.string,
+  className: PropTypes.string,
   title: PropTypes.string,
-  children: PropTypes.object,
   actionChildren: PropTypes.object,
+  children: PropTypes.object,
+  contentSize: PropTypes.string,
 }
