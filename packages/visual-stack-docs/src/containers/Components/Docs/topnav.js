@@ -17,6 +17,7 @@ export const TopNavDocs = ({router}) => (
           <Panel>
             <Header>Display a header with a back to CJ link and a help icon</Header>
             <Body>
+              <p>In this example, other VS components like BackToCjLink or CjSupportLink are passed in as <i>actionChildren</i></p>
               <Button
                 type="solid-primary"
                 onClick={() => router.push('/topNavDemo1')}
@@ -25,6 +26,17 @@ export const TopNavDocs = ({router}) => (
               </Button>
               <p/>
               <Snippet tag="s1" src={snippets} />
+              <p>
+                <i>children</i> are optional, they're only necessary when you want TopNav to wrap the rest of the page. However, that's not a common approach.<br/>
+                A better way is to stack the TopNav component on top of your page content like in the following example:
+              </p>
+              <Button
+                type="solid-primary"
+                onClick={() => router.push('/topNavDemo3')}
+              >
+                Show the TopNav
+              </Button>
+              <Snippet tag="s3" src={snippets} />
             </Body>
           </Panel>
           <Panel>
@@ -45,29 +57,27 @@ export const TopNavDocs = ({router}) => (
     </Demo>
 )
 
-const CodeSnippet1 = ({router}) => (
+export const TopNavCodeSnippet1 = ({router}) => (
     /* s1:start */
     <TopNav
       title="Header Title"
-      contentSize="wide"
       actionChildren={
         <Box direction="row" gap="xl" align="center" grow>
           <BackToCjLink title="Back to the Home Page" onClick={() => router.push('/components/topnav')}/>
           <CjSupportLink title="Help" link="https://www.help.com/"/>
         </Box>
       }
-      children={
-        <DemoContent/>
-      }
-    />
+      children={<DemoContent title="I'm DemoContent passed in as a prop"/>}
+      contentSize="wide"
+    >
+    </TopNav>
     /* s1:end */
 )
 
-const CodeSnippet2 = ({router}) => (
+export const TopNavCodeSnippet2 = ({router}) => (
   /* s2:start */
   <TopNav
     title="Header Title"
-    contentSize="wide"
     actionChildren={
       <TopNavControls
         onSubmit={() => {
@@ -78,56 +88,30 @@ const CodeSnippet2 = ({router}) => (
         submitButtonText={'Save Program Terms'}
         cancelButtonText={'Cancel'}
         disableSubmit={true}
-        showSubmitButtonSpinner={true}
       />
     }
-    children={
-      <DemoContent/>
-    }
-  />
+    contentSize="normal"
+  >
+    <DemoContent title="I'm DemoContent passed in as a child"/>
+  </TopNav>
   /* s2:end */
 )
 
-export const TopNavWithBackToCjAndSupportDemo = ({ router }) => (
+export const TopNavCodeSnippet3 = ({router}) => (
+  /* s3:start */
   <div>
     <TopNav
       title="Header Title"
-      contentSize="normal"
       actionChildren={
         <Box direction="row" gap="xl" align="center" grow>
           <BackToCjLink title="Back to the Home Page" onClick={() => router.push('/components/topnav')}/>
           <CjSupportLink title="Help" link="https://www.help.com/"/>
         </Box>
       }
-      children={
-        <DemoContent/>
-      }
     />
+    <DemoContent title="I'm the DemoContent component below the TopNav"/>
   </div>
-)
-
-export const TopNavWithButtonsDemo = ({ router }) => (
-  <div>
-    <TopNav
-      title="Header Title"
-      contentSize="normal"
-      actionChildren={
-        <TopNavControls
-          onSubmit={() => {
-            alert('Success!'); // eslint-disable-line no-alert
-            router.push('/components/topnav');
-          }}
-          onCancel={() => router.push('/components/topnav')}
-          submitButtonText={'Save Program Terms'}
-          cancelButtonText={'Cancel'}
-          disableSubmit={true}
-        />
-      }
-      children={
-        <DemoContent/>
-      }
-    />
-  </div>
+  /* s3:end */
 )
 
 const TopNavControls = ({
@@ -167,22 +151,19 @@ const TopNavControls = ({
 TopNavDocs.propTypes = {
   router: PropTypes.object
 }
-CodeSnippet1.propTypes = {
+TopNavCodeSnippet1.propTypes = {
   router: PropTypes.object
 }
-CodeSnippet2.propTypes = {
+TopNavCodeSnippet2.propTypes = {
   router: PropTypes.object
 }
-TopNavWithBackToCjAndSupportDemo.propTypes = {
-  router: PropTypes.object
-}
-TopNavWithButtonsDemo.propTypes = {
+TopNavCodeSnippet3.propTypes = {
   router: PropTypes.object
 }
 
-export const DemoContent = () => (
+export const DemoContent = ({title}) => (
   <Body>
-    <h2>I am here, below the Top Nav</h2>
+    <h2>{title}</h2>
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
