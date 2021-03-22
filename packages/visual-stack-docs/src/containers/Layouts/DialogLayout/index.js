@@ -150,7 +150,6 @@ export const DialogLayoutDemo = ({ router }) => (
         alert('Success!'); // eslint-disable-line no-alert
         router.push('/layouts/dialogLayout');
       }}
-      logo={<CJLogo />}
     >
       <DemoForm />
     </DialogLayout>
@@ -172,7 +171,6 @@ export const SubmittingDialogLayoutDemo = ({ router }) => (
         alert('Success!'); // eslint-disable-line no-alert
         router.push('/layouts/dialogLayout');
       }}
-      logo={<CJLogo />}
     >
       <DemoForm />
     </DialogLayout>
@@ -186,7 +184,6 @@ export const NoButtonDialogLayoutDemo = ({ router }) => (
     <DialogLayout
       title={'Create Program Term'}
       onCancel={() => router.push('/layouts/dialogLayout')}
-      logo={<CJLogo />}
     >
       <Panel>
         <Header>Panel Header</Header>
@@ -209,7 +206,6 @@ export const WideDialogLayoutDemo = ({ router }) => (
         alert('Success!'); // eslint-disable-line no-alert
         router.push('/layouts/dialogLayout');
       }}
-      logo={<CJLogo />}
       contentSize={'wide'}
     >
       <DemoForm />

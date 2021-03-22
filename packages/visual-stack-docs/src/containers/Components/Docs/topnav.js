@@ -7,14 +7,12 @@ import Box from '@cjdev/visual-stack/lib/experimental/Box'
 import { TopNav } from '@cjdev/visual-stack/lib/components/TopNav'
 import { BackToCjLink } from '@cjdev/visual-stack/lib/components/TopNav/BackToCjLink'
 import { CjSupportLink } from '@cjdev/visual-stack/lib/components/TopNav/CjSupportLink'
-import PageContent from '@cjdev/visual-stack/lib/components/PageContent'
 import {Button} from '@cjdev/visual-stack/lib/components/Button'
 
-export const TopNavParent = ({router}) => (
-  <Demo srcFile="/samples/src/containers/Components/Docs/topnav.js">
-    {snippets => (
-      <div>
-        <PageContent>
+export const TopNavDocs = ({router}) => (
+    <Demo srcFile="/samples/src/containers/Components/Docs/topnav.js">
+      {snippets => (
+        <div>
           <Panel>
             <Header>Display a header with a back to CJ link and a help icon</Header>
             <Body>
@@ -28,10 +26,9 @@ export const TopNavParent = ({router}) => (
               <Snippet tag="s1" src={snippets} />
             </Body>
           </Panel>
-        </PageContent>
-      </div>
-    )}
-  </Demo>
+        </div>
+      )}
+    </Demo>
 )
 
 const CodeSnippet1 = ({router}) => (
@@ -51,7 +48,6 @@ const CodeSnippet1 = ({router}) => (
     />
     /* s1:end */
 )
-
 
 /* s2:start */
 export const TopNavDemo = ({ router }) => (
@@ -73,7 +69,7 @@ export const TopNavDemo = ({ router }) => (
 )
 /* s2:end */
 
-TopNavParent.propTypes = {
+TopNavDocs.propTypes = {
   router: PropTypes.object
 }
 CodeSnippet1.propTypes = {
@@ -116,6 +112,6 @@ export const DemoContent = () => (
   </Body>
 )
 
-export default withRouter(TopNavParent)
+export default withRouter(TopNavDocs)
 
 
