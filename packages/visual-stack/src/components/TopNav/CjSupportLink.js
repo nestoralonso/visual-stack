@@ -5,10 +5,7 @@ import Text from '../../experimental/Text'
 import InformationOutlineIcon from 'mdi-react/InformationOutlineIcon'
 import PropTypes from 'prop-types'
 
-export const CjSupportLink = ({
-  title,
-  link
-}) => {
+export const CjSupportLink = ({title, link}) => {
   return (
     <a
       href={link}

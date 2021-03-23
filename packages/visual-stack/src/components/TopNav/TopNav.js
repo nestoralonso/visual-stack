@@ -18,7 +18,7 @@ export const TopNav = ({
       <div className="vs-topnav-header vs-topnav-page-title">
         <div className="vs-topnav-logo-title-container">
           <div className="vs-topnav-logo-container">
-            <span className="vs-cj-logo">{<CJLogo />}</span>
+            <span>{<CJLogo />}</span>
           </div>
           <Box direction="row" grow>
             <Box grow><h1 className="vs-topnav-title">{title}</h1></Box>
