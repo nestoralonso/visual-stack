@@ -9,6 +9,7 @@ import { BackToCjLink } from '@cjdev/visual-stack/lib/components/TopNav/BackToCj
 import { CjSupportLink } from '@cjdev/visual-stack/lib/components/TopNav/CjSupportLink'
 import {Button} from '@cjdev/visual-stack/lib/components/Button'
 import CloseIcon from 'mdi-react/CloseIcon'
+import './topnav.css'
 
 export const TopNavDocs = ({router}) => (
     <Demo srcFile="/samples/src/containers/Components/Docs/topnav.js">
@@ -109,7 +110,9 @@ export const TopNavCodeSnippet3 = ({router}) => (
         </Box>
       }
     />
-    <DemoContent title="I'm the DemoContent component below the TopNav"/>
+    <div className='topnav-content-wrapper'>
+      <DemoContent title="I'm the DemoContent component below the TopNav"/>
+    </div>
   </div>
   /* s3:end */
 )

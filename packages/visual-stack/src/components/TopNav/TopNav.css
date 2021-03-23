@@ -52,12 +52,12 @@
 
 .vs-topnav-content-normal {
   max-width: 800px;
-  padding: 64px 24px 24px;
+  padding: 112px 24px 24px;
 }
 
 .vs-topnav-content-wide {
   max-width: 100%;
-  padding: 64px 48px 48px;
+  padding: 112px 48px 48px;
 }
 
 .vs-topnav-button-bar .vs-text-btn {

@@ -31,7 +31,7 @@ export const TopNav = ({
       <div
         className={cn(
           'vs-topnav-content',
-          `vs-topnav-content-${contentSize ? contentSize : 'normal'}`
+          `vs-topnav-content-${contentSize ? contentSize : ''}`
         )}
       >
         {children}

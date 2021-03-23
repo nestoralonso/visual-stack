@@ -18,7 +18,6 @@ import {
   TextField,
 } from '@cjdev/visual-stack/lib/components/Form';
 import { Demo, Snippet } from '../../../components/Demo';
-import CJLogo from '@cjdev/visual-stack/lib/components/CJLogo';
 import './index.css';
 import {
   PageHeader,
