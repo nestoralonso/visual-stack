@@ -147,10 +147,6 @@ fieldset.group ul.checkbox li.focus {
   margin-top: -4px;
 }
 
-.vs-field {
-  margin-bottom: 24px;
-}
-
 .vs-field-optional {
   color: #777;
   font-size: 1.3rem;
