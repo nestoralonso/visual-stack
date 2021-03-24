@@ -26,6 +26,9 @@ For components from visual-stack that require state management, this library pro
 This is a microsite providing documentation and live examples of components. This package depends on the other two.
 
 ### Running locally
+Install lerna: `npm install -g lerna`
+
+Make sure you are using node 14 or below (`npm install -g n` can be helpful here)
 
 From a fresh clone of the repo, start by bootstrapping the project from the root with `npm run bootstrap`. This will install all external dependencies, create links between local dependent packages and build all three packages.
 
