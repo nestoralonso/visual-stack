@@ -1,6 +1,5 @@
 import React from 'react'
 import cn from 'classnames'
-import Box from '../../experimental/Box'
 import CJLogo from '../../components/CJLogo'
 import PropTypes from 'prop-types'
 
@@ -20,18 +19,13 @@ export const TopNav = ({
           <div className="vs-topnav-logo-container">
             <span>{<CJLogo />}</span>
           </div>
-          <Box direction="row" grow>
-            <Box grow><h1 className="vs-topnav-title">{title}</h1></Box>
-          </Box>
+          <h1 className="vs-topnav-title">{title}</h1>
         </div>
-        <div className={cn(`vs-topnav-button-bar`, className)} >
+        <div className="vs-topnav-button-bar">
           {actionChildren}
         </div>
       </div>
-      <div
-        className={cn('vs-topnav-content', `vs-topnav-content-${contentSize ? contentSize : ''}`
-        )}
-      >
+      <div className={cn('vs-topnav-content', `vs-topnav-content-${contentSize ? contentSize : ''}`)}>
         {children}
       </div>
     </div>
