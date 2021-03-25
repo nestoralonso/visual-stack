@@ -4,18 +4,26 @@ import Box from '../../experimental/Box';
 import Text from '../../experimental/Text'
 import ArrowLeftIcon from 'mdi-react/ArrowLeftIcon'
 import PropTypes from 'prop-types'
+import cn from 'classnames'
 
-export const BackToCjLink = ({ title, onClick }) => {
+export const BackToCjLink = ({
+                    className,
+                    title,
+                    onClick,
+                    ...restProps
+}) => {
   return (
     <Box
+      {...restProps}
+      className={cn(`vs-cj-link`, className)}
       direction="row"
       gap="default"
       align="center"
       onClick={onClick}
       className="topnav-action"
     >
-      <Text id="topnav-back-icon" className="topnav-action-text"><ArrowLeftIcon /></Text>
-      <Text id="topnav-back-title" className="topnav-action-text">{title}</Text>
+      <Text id="topnav-back-icon" className="vs-topnav-action-text"><ArrowLeftIcon /></Text>
+      <Text id="topnav-back-title" className="vs-topnav-action-text">{title}</Text>
     </Box>
   )
 }

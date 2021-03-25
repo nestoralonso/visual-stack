@@ -79,15 +79,15 @@
   margin: 0 0 0 8px;
 }
 
-.topnav-action {
+.vs-topnav-action {
   color: #bebfc0 !important;
   cursor: pointer;
 }
 
-.topnav-action-text {
+.vs-topnav-action-text {
   color: #bebfc0 !important;
 }
 
-a.feedback-link-container:hover {
+a.vs-cj-support-link-container:hover {
   text-decoration: none;
 }

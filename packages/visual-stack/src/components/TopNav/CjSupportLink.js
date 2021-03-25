@@ -4,29 +4,40 @@ import Box from '../../experimental/Box';
 import Text from '../../experimental/Text'
 import InformationOutlineIcon from 'mdi-react/InformationOutlineIcon'
 import PropTypes from 'prop-types'
+import cn from 'classnames'
 
-export const CjSupportLink = ({title, link}) => {
+export const CjSupportLink = ({
+                    className,
+                    title,
+                    link,
+                    ...restProps
+}) => {
   return (
-    <a
-      href={link}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="feedback-link-container"
+    <div
+      {...restProps}
+      className={cn(`vs-cj-support-link`, className)}
     >
-      <Box
-        direction="row"
-        gap="default"
-        align="center"
-        className="topnav-action"
+      <a
+        href={link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="vs-cj-support-link-container"
       >
-        <Text id="topnav-help-icon" className="topnav-action-text">
-          <InformationOutlineIcon />
-        </Text>
-        <Text id="topnav-help-title" className="topnav-action-text">
-          {title}
-        </Text>
-      </Box>
-    </a>
+        <Box
+          direction="row"
+          gap="default"
+          align="center"
+          className="vs-topnav-action"
+        >
+          <Text id="topnav-help-icon" className="vs-topnav-action-text">
+            <InformationOutlineIcon />
+          </Text>
+          <Text id="topnav-help-title" className="vs-topnav-action-text">
+            {title}
+          </Text>
+        </Box>
+      </a>
+    </div>
   )
 }
 

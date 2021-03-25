@@ -67,7 +67,7 @@ describe('BackToCjLink', () => {
     )
     expect(wrapper.find(BackToCjLink).prop('title')).toBe("title")
     expect(wrapper.find(BackToCjLink).prop('onClick')()).toBe(2)
-    expect(wrapper.find('.topnav-action>#topnav-back-title').text()).toEqual('title')
+    expect(wrapper.find('.vs-topnav-action-text>#topnav-back-title').text()).toEqual('title')
   })
 })
 
@@ -81,7 +81,7 @@ describe('CjSupportLink', () => {
     )
     expect(wrapper.find(CjSupportLink).prop('title')).toBe('title')
     expect(wrapper.find(CjSupportLink).prop('link')).toBe('link')
-    expect(wrapper.find('.topnav-action>#topnav-help-title').text()).toEqual('title')
-    expect(wrapper.find('.feedback-link-container').props().href).toEqual('link')
+    expect(wrapper.find('.vs-topnav-action>#topnav-help-title').text()).toEqual('title')
+    expect(wrapper.find('.vs-cj-support-link-container').props().href).toEqual('link')
   })
 })

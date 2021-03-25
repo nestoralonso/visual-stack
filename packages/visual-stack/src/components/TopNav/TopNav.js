@@ -14,7 +14,7 @@ export const TopNav = ({
   }) => {
 
   return (
-    <div className={cn(`vs-topnav`, className)} {...restProps}>
+    <div {...restProps} className={cn(`vs-topnav`, className)}>
       <div className="vs-topnav-header vs-topnav-page-title">
         <div className="vs-topnav-logo-title-container">
           <div className="vs-topnav-logo-container">
@@ -24,14 +24,12 @@ export const TopNav = ({
             <Box grow><h1 className="vs-topnav-title">{title}</h1></Box>
           </Box>
         </div>
-        <div className="vs-topnav-button-bar">
+        <div className={cn(`vs-topnav-button-bar`, className)} >
           {actionChildren}
         </div>
       </div>
       <div
-        className={cn(
-          'vs-topnav-content',
-          `vs-topnav-content-${contentSize ? contentSize : ''}`
+        className={cn('vs-topnav-content', `vs-topnav-content-${contentSize ? contentSize : ''}`
         )}
       >
         {children}
