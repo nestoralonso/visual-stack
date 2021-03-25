@@ -1,9 +1,8 @@
 
 
-# Upcoming
+# 7.1.2
 
 - Add TopNav component
-
 
 # 7.1.1
 
