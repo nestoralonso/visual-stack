@@ -1,5 +1,13 @@
+.snippet pre {
+  margin: 0;
+}
+
 .margin-top-snippet {
   margin-top: 10px;
+}
+
+.margin-top-snippet pre {
+  margin: 0 0 1.6rem;
 }
 
 .inline-snippet {

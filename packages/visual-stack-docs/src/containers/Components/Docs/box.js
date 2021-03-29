@@ -137,7 +137,7 @@ export default () => {
                       <Td>expand</Td>
                       <Td>
                         Expands the box along the main axis (direction axis) to
-                        fill available space (sets flex to 1).
+                        fill available space. (Sets flex to 1.)
                       </Td>
                       <Td>true | false</Td>
                       <Td>false</Td>
