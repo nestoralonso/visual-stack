@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Panel, Body, Header } from '@cjdev/visual-stack/lib/components/Panel';
 import { Button } from '@cjdev/visual-stack/lib/components/Button';
-import { Demo, Snippet } from '../../../components/Demo';
+import { Demo, MarginTopSnippet as Snippet } from '../../../components/Demo';
 
 /* s1:start */
 // import the actions, mountPoint and Modal pieces

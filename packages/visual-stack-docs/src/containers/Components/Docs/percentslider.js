@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Body, Header, Panel } from '@cjdev/visual-stack/lib/components/Panel';
-import { Demo, Snippet } from '../../../components/Demo';
+import { Demo, MarginTopSnippet as Snippet } from '../../../components/Demo';
 
 /* s1:start */
 import { PercentSlider } from '@cjdev/visual-stack/lib/components/PercentSlider';
@@ -19,7 +19,7 @@ export default () => {
             <Panel>
               <Header>Percent Slider</Header>
               <Body>
-                <div style={{width: "300px"}}>
+                <div style={{ width: '300px' }}>
                   {/* s3:start */}
                   <PercentSlider
                     label="Example Percent"
@@ -29,7 +29,7 @@ export default () => {
                   />
                   {/* s3:end */}
                 </div>
-                
+
                 <Snippet tag="s1" src={snippets} />
                 <Snippet tag="s2" src={snippets} />
                 <Snippet tag="s3" src={snippets} />

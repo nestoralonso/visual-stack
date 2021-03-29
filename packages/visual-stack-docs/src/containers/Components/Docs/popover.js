@@ -1,6 +1,6 @@
 import React from 'react';
 import { Body, Header, Panel } from '@cjdev/visual-stack/lib/components/Panel';
-import { Demo, Snippet } from '../../../components/Demo';
+import { Demo, MarginTopSnippet as Snippet } from '../../../components/Demo';
 import InformationOutlineIcon from 'mdi-react/InformationOutlineIcon';
 import './popover.css';
 /* s1:start */

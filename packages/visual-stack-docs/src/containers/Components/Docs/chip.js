@@ -4,7 +4,7 @@ import { Box } from '@cjdev/visual-stack';
 import { Chip } from '@cjdev/visual-stack';
 /* s2:end */
 import { Panel, Body } from '@cjdev/visual-stack/lib/components/Panel';
-import { Demo, Snippet } from '../../../components/Demo';
+import { Demo, MarginTopSnippet as Snippet } from '../../../components/Demo';
 
 export default () => (
   <Demo srcFile="/samples/src/containers/Components/Docs/chip.js">

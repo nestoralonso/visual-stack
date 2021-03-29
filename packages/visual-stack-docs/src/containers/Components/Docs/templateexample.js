@@ -1,7 +1,6 @@
 import React from 'react';
 import { Body, Header, Panel } from '@cjdev/visual-stack/lib/components/Panel';
-import { Demo, Snippet } from '../../../components/Demo';
-
+import { Demo, MarginTopSnippet as Snippet } from '../../../components/Demo';
 
 /* s1:start */
 // uncomment line below

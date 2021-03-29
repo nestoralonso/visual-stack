@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import React from 'react';
 import { Panel, Body, Header } from '@cjdev/visual-stack/lib/components/Panel';
-import { Demo, Snippet } from '../../../components/Demo';
+import { Demo, MarginTopSnippet as Snippet } from '../../../components/Demo';
 
 /* s7:start */
 import {
@@ -136,7 +136,6 @@ class SlidingPanelDemo extends React.Component {
                         >
                           <div>Look at me!!!</div>
                         </SlidingPanelDropdown>
-
                       </SlidingPanelSection>
                     </SlidingPanel>
                     {/* s3:end */}

@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars */
 /** @prettier */
-import { Demo, Snippet } from '../../../components/Demo';
 /* s1:start */
 import React from 'react';
 import { createStore, combineReducers } from 'redux';

@@ -2,7 +2,7 @@
 /* eslint-disable no-console */
 import React, { useState } from 'react';
 import { Body, Header, Panel } from '@cjdev/visual-stack/lib/components/Panel';
-import { Demo, Snippet } from '../../../components/Demo';
+import { Demo, MarginTopSnippet as Snippet } from '../../../components/Demo';
 import Select from '@cjdev/visual-stack/lib/components/Select';
 import CreatableSelect from '@cjdev/visual-stack/lib/components/CreatableSelect';
 import './form.css';

@@ -5,7 +5,11 @@ import {
   PageTitle,
 } from '@cjdev/visual-stack/lib/components/PageHeader';
 import { Panel, Body, Header } from '@cjdev/visual-stack/lib/components/Panel';
-import { Demo, InlineSnippet, Snippet } from '../../components/Demo';
+import {
+  Demo,
+  InlineSnippet,
+  MarginTopSnippet as Snippet,
+} from '../../components/Demo';
 import './index.css';
 
 import {
