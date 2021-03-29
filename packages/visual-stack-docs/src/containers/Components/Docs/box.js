@@ -24,8 +24,9 @@ export default () => {
           <Panel>
             <Box padding="2xl" gap="2xl">
               <Text>
-                Primitive layout component that renders a flex container with
-                standardized styling props.
+                A Box is a primitive layout component with standardized styling
+                props that renders a div container using flexbox. You can think
+                of it as a div with superpowers.
               </Text>
               <Box gap="large">
                 <Text type="h4">Import</Text>
@@ -65,7 +66,7 @@ export default () => {
                         "small" (4px) | "medium" (8px) | "large" (16px) | "xl"
                         (24px) | "2xl" (32px) | "3xl" (40px) | "4xl" (48px)
                       </Td>
-                      <Td>0</Td>
+                      <Td>unset</Td>
                     </Tr>
                     <Tr>
                       <Td>align</Td>
@@ -74,7 +75,7 @@ export default () => {
                         the direction).
                       </Td>
                       <Td>"start" | "center" | "end"</Td>
-                      <Td>0</Td>
+                      <Td>unset</Td>
                     </Tr>
                     <Tr>
                       <Td>justify</Td>
@@ -85,7 +86,7 @@ export default () => {
                         "start" | "center" | "end" | "space-around" |
                         "space-between" | "space-evenly"
                       </Td>
-                      <Td>0</Td>
+                      <Td>unset</Td>
                     </Tr>
                     <Tr>
                       <Td>padding</Td>
@@ -94,43 +95,43 @@ export default () => {
                         "small" (4px) | "medium" (8px) | "large" (16px) | "xl"
                         (24px) | "2xl" (32px) | "3xl" (40px) | "4xl" (48px)
                       </Td>
-                      <Td>0</Td>
+                      <Td>unset</Td>
                     </Tr>
                     <Tr>
                       <Td>paddingTop</Td>
-                      <Td>Adds top padding inside the box.</Td>
+                      <Td>Adds padding-top inside the box.</Td>
                       <Td>
                         "small" (4px) | "medium" (8px) | "large" (16px) | "xl"
                         (24px) | "2xl" (32px) | "3xl" (40px) | "4xl" (48px)
                       </Td>
-                      <Td>0</Td>
+                      <Td>unset</Td>
                     </Tr>
                     <Tr>
                       <Td>paddingBottom</Td>
-                      <Td>Adds bottom padding inside the box.</Td>
+                      <Td>Adds padding-bottom inside the box.</Td>
                       <Td>
                         "small" (4px) | "medium" (8px) | "large" (16px) | "xl"
                         (24px) | "2xl" (32px) | "3xl" (40px) | "4xl" (48px)
                       </Td>
-                      <Td>0</Td>
+                      <Td>unset</Td>
                     </Tr>
                     <Tr>
                       <Td>paddingLeft</Td>
-                      <Td>Adds left padding inside the box.</Td>
+                      <Td>Adds padding-left inside the box.</Td>
                       <Td>
                         "small" (4px) | "medium" (8px) | "large" (16px) | "xl"
                         (24px) | "2xl" (32px) | "3xl" (40px) | "4xl" (48px)
                       </Td>
-                      <Td>0</Td>
+                      <Td>unset</Td>
                     </Tr>
                     <Tr>
                       <Td>paddingRight</Td>
-                      <Td>Adds right padding inside the box.</Td>
+                      <Td>Adds padding-right inside the box.</Td>
                       <Td>
                         "small" (4px) | "medium" (8px) | "large" (16px) | "xl"
                         (24px) | "2xl" (32px) | "3xl" (40px) | "4xl" (48px)
                       </Td>
-                      <Td>0</Td>
+                      <Td>unset</Td>
                     </Tr>
                     <Tr>
                       <Td>expand</Td>
@@ -143,52 +144,96 @@ export default () => {
                     </Tr>
                   </TBody>
                 </Table>
+                <Text type="light" italic>
+                  Note: the absence of a margin prop is intentional. Exporting
+                  components using outer margin or any spacing around its
+                  contents is considered a bad practice since it makes it harder
+                  for its container to control the layout.
+                </Text>
               </Box>
 
               <Box gap="large">
-                <Text type="h4">Examples</Text>
-                <Box gap="medium">
-                  <Text type="h5">A confirmation dialog</Text>
-                  {/* s21:start */}
-                  <Box border gap="large" padding="xl" paddingTop="2xl">
-                    <Box direction="row" align="center" gap="medium">
-                      <IconSuccess />
-                      <Text type="h4">Your offer has been sent!</Text>
+                <Text type="h4">A confirmation dialog</Text>
+                {/* s2:start */}
+                <Box padding="xl" paddingTop="2xl" gap="large" border>
+                  <Box direction="row" gap="medium" align="center">
+                    <IconSuccess />
+                    <Text type="h4">Your offer has been sent!</Text>
+                  </Box>
+                  <Text>
+                    You will be notified by email if the publisher accepts your
+                    offer.
+                  </Text>
+                  <Box gap="small">
+                    <Text type="bold">Program Terms</Text>
+                    <Text>Test terms 1</Text>
+                  </Box>
+                  <Box gap="small">
+                    <Text type="bold">Publisher Group</Text>
+                    <Text>Test group 1</Text>
+                  </Box>
+                  <Box direction="row" gap="medium" justify="end">
+                    <Button type="text">Close</Button>
+                    <Button type="solid-primary">Submit</Button>
+                  </Box>
+                </Box>
+                {/* s2:end */}
+                <Snippet tag="s2" src={snippets} />
+              </Box>
+
+              <Box gap="large">
+                <Text type="h4">An expanded box</Text>
+                {/* s3:start */}
+                <Box direction="row" gap="medium">
+                  <Box expand padding="medium" align="center" border>
+                    <Text>Lorem Ipsum</Text>
+                  </Box>
+                  <Box padding="medium" border>
+                    <Text>Lorem Ipsum</Text>
+                  </Box>
+                </Box>
+                {/* s3:end */}
+                <Snippet tag="s3" src={snippets} />
+              </Box>
+
+              <Box gap="large">
+                <Text type="h4">A bunch of boxes stacking other boxes</Text>
+                {/* s4:start */}
+                <Box padding="medium" gap="medium" border>
+                  <Box padding="medium" gap="medium" border>
+                    <Text>📦</Text>
+                  </Box>
+                  <Box direction="row" padding="medium" gap="medium" border>
+                    <Box padding="medium" gap="medium" border>
+                      <Text>📦</Text>
                     </Box>
-                    <Text>
-                      You will be notified by email if the publisher accepts
-                      your offer.
-                    </Text>
-                    <Box gap="small">
-                      <Text type="bold">Program Terms</Text>
-                      <Text>Test terms 1</Text>
-                    </Box>
-                    <Box gap="small">
-                      <Text type="bold">Publisher Group</Text>
-                      <Text>Test group 1</Text>
-                    </Box>
-                    <Box direction="row" justify="end" gap="medium">
-                      <Button type="text">Close</Button>
-                      <Button type="solid-primary">Submit</Button>
+                    <Box padding="medium" gap="medium" border>
+                      <Text>📦</Text>
                     </Box>
                   </Box>
-                  {/* s21:end */}
-                  <Snippet tag="s21" src={snippets} />
-                </Box>
-                <Box gap="medium">
-                  <Text type="h5">An expanded box</Text>
-                  {/* s20:start */}
-                  <Box direction="row" gap="medium">
-                    <Box border expand padding="medium" align="center">
-                      <Text>Lorem Ipsum</Text>
+                  <Box direction="row" padding="medium" gap="medium" border>
+                    <Box padding="medium" gap="medium" border>
+                      <Box padding="medium" border>
+                        <Text>📦</Text>
+                      </Box>
+                      <Box padding="medium" border>
+                        <Text>📦</Text>
+                      </Box>
                     </Box>
-                    <Box border padding="medium">
-                      <Text>Lorem Ipsum</Text>
+                    <Box
+                      direction="row"
+                      expand
+                      padding="medium"
+                      align="center"
+                      justify="center"
+                      border
+                    >
+                      <Text>📦</Text>
                     </Box>
                   </Box>
-                  {/* s20:end */}
-                  <Snippet tag="s20" src={snippets} />
                 </Box>
+                {/* s4:end */}
+                <Snippet tag="s4" src={snippets} />
               </Box>
             </Box>
           </Panel>
