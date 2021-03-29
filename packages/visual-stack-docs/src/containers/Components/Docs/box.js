@@ -145,8 +145,8 @@ export default () => {
                   </TBody>
                 </Table>
                 <Text type="light" italic>
-                  Note: the absence of a margin prop is intentional. Exporting
-                  components using outer margin or any spacing around its
+                  Note: the absence of a margin prop is intentional. Exporting a
+                  component using outer margin or any spacing around its
                   contents is considered a bad practice since it makes it harder
                   for its container to control the layout.
                 </Text>
