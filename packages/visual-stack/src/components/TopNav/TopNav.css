@@ -1,0 +1,93 @@
+.vs-topnav-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 64px;
+  padding: 0 16px;
+  background: #4d5051;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.16);
+  z-index: 20;
+}
+
+.vs-topnav-page-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 12px;
+}
+
+.vs-topnav-logo-title-container {
+  display: flex;
+  align-items: center;
+}
+
+.vs-topnav-page-title .vs-topnav-logo-container {
+  display: inline-block;
+  margin-right: 12px;
+}
+.vs-topnav-page-title .vs-cj-logo {
+  width: 40px;
+  height: 40px;
+  fill: #fff;
+}
+
+.vs-topnav-page-title .vs-topnav-title {
+  display: inline-block;
+  margin: 0;
+  font-size: 2rem;
+  color: #fff;
+}
+
+.vs-topnav-content {
+  position: relative;
+  margin: 0 auto;
+  z-index: 10;
+}
+
+.vs-topnav-content p {
+  max-width: 580px;
+}
+
+.vs-topnav-content-normal {
+  max-width: 800px;
+  padding: 112px 24px 24px;
+}
+
+.vs-topnav-content-wide {
+  max-width: 100%;
+  padding: 112px 48px 48px;
+}
+
+.vs-topnav-button-bar .vs-text-btn {
+  color: #fff;
+  opacity: 0.64;
+}
+.vs-topnav-button-bar .vs-text-btn:hover {
+  color: #fff;
+  opacity: 1;
+}
+
+.vs-topnav-button-bar {
+  text-align: right;
+  float: right;
+  display: inline-block;
+}
+
+.vs-topnav-button-bar .vs-btn-d {
+  margin: 0 0 0 8px;
+}
+
+.vs-topnav-action {
+  color: #bebfc0 !important;
+  cursor: pointer;
+}
+
+.vs-topnav-action-text {
+  color: #bebfc0 !important;
+}
+
+a.vs-cj-support-link-container:hover {
+  text-decoration: none;
+}

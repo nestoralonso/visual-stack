@@ -1,3 +1,10 @@
+
+
+# 7.1.2
+
+## New Component
+- Add TopNav component
+
 # 7.1.1
 
 ## Updates
