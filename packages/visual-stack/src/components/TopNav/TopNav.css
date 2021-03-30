@@ -46,18 +46,17 @@
   z-index: 10;
 }
 
-.vs-topnav-content p {
+.vs-topnav-content {
   max-width: 580px;
+  padding: 24px;
 }
 
 .vs-topnav-content-normal {
   max-width: 800px;
-  padding: 112px 24px 24px;
 }
 
 .vs-topnav-content-wide {
   max-width: 100%;
-  padding: 112px 48px 48px;
 }
 
 .vs-topnav-button-bar .vs-text-btn {
