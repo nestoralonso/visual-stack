@@ -25,7 +25,7 @@ export const TopNav = ({
           {actionChildren}
         </div>
       </div>
-      <div className={cn('vs-topnav-content', `vs-topnav-content-${contentSize ? contentSize : ''}`)}>
+      <div className={cn('vs-topnav-content', `vs-topnav-content-${contentSize ? contentSize : 'normal'}`)}>
         {children}
       </div>
     </div>
