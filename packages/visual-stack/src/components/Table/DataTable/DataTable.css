@@ -28,6 +28,8 @@
   min-height: 32px;
   padding: 4px 8px;
   vertical-align: bottom;
+  border-bottom: 2px solid #D8DCDF;
+  color: #757575;
 }
 
 .vs-data-table-container .vs-tbody .vs-cell {

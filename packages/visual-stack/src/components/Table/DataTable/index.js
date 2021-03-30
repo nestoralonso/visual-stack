@@ -1,5 +1,4 @@
 import React from 'react';
-import './DataTable.css';
 import {
   TableContainer,
   TableTitle,
