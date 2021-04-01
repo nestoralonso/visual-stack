@@ -26,10 +26,13 @@ const generateHeader = (
   tableProps,
 ) => {
   const { sortable, sortingOption, onSort, data } = tableProps;
-  const { label: currentLabel, width } = column;
+  const { label: currentLabel, width, alignment } = column;
   const isCurrentColumnSorted = () => {
     return sortingOption.label === currentLabel;
   };
+
+  const right = alignment === 'right' ? alignment : '';
+  const center = alignment === 'center' ? alignment : '';
 
   const headerClickHandler = () => {
     const { order } = sortingOption;
@@ -47,6 +50,8 @@ const generateHeader = (
 
   return (
     <Th
+      right={right}
+      center={center}
       id="label"
       style={width && { width }}
       className={`
