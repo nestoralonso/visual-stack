@@ -146,6 +146,7 @@ export default () => (
             )}
             sortable
             pagination
+            selectable
           />
           {/* s7:end */}
 

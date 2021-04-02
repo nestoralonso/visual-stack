@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withErrorBoundary } from '../../components/ErrorBoundary';
+import * as R from 'ramda';
 
 export class TriStateCheckbox extends React.Component {
   constructor() {
@@ -13,7 +14,7 @@ export class TriStateCheckbox extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (prevProps.value !== this.props.value) {
+    if (prevProps.alwaysUpdateInnerCheckboxState || (prevProps.value !== this.props.value)) {
       this._updateInnerCheckBoxState();
     }
   }
@@ -23,10 +24,11 @@ export class TriStateCheckbox extends React.Component {
   }
 
   render() {
+    const currentProps = R.omit(['alwaysUpdateInnerCheckboxState'], this.props);
     return (
       <input
-        {...this.props}
-        className={`vs-tristatecheckbox ${this.props.className}`}
+        {...currentProps}
+        className={`vs-tristatecheckbox ${currentProps.className}`}
         type="checkbox"
         onClick={ev => this.onBoxClick(ev)}
         ref={this.inputRef}
@@ -60,6 +62,11 @@ export class TriStateCheckbox extends React.Component {
 TriStateCheckbox.propTypes = {
   value: PropTypes.number.isRequired,
   onClick: PropTypes.func,
+  alwaysUpdateInnerCheckboxState: PropTypes.bool,
 };
+
+TriStateCheckbox.defaultProps = {
+  alwaysUpdateInnerCheckboxState: false,
+}
 
 export default withErrorBoundary(TriStateCheckbox);

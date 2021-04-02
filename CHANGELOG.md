@@ -1,4 +1,45 @@
-# Upcoming
+
+
+# 7.1.2
+
+## New Component
+- Add TopNav component
+
+# 7.1.1
+
+## Updates
+
+- Add optional alwaysUpdateInnerCheckboxState prop to TriStateCheckbox
+- Allow additional className to be applied to Modal components
+
+# 7.1.0
+
+## Updates
+
+- Add new Badge variants
+
+# 7.0.2
+
+## Fix
+
+- Fix Badge PropTypes
+
+# 7.0.1
+
+## Updates
+
+- Update Badge docs
+
+# 7.0.0
+
+## New Feature
+
+- Add selectable rows to DataTable.
+
+## Breaking Changes in DataTable
+
+- renderToolbar's data prop now return an array of objects instead of array of arrays.
+- Before: data = [['first', 'last']], After: data = [{row: ['first', 'last'], selected: true}]
 
 ## New Feature
 
@@ -8,7 +49,7 @@
 
 ## New Component
 
-- Add Chip component
+- Add Badge component
 
 # 6.10.0
 

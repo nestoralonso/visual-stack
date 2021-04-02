@@ -23,7 +23,7 @@ import SpinnerDocs from './spinner';
 import TableDocs from './table';
 import TabLayoutDocs from './tablayout';
 import CardDocs from './card';
-import ChipDocs from './chip';
+import BadgeDocs from './badge';
 import ListViewDocs from './listview';
 import ExpandingInputButtonDocs from './expanding-input-button';
 import LoadingAnimationDocs from './loading-animation';
@@ -32,6 +32,7 @@ import PopoverDocs from './popover';
 import CollapsiblePanelDocs from './collapsiblepanel';
 import PaginationDocs from './pagination';
 import PercentSliderDocs from './percentslider';
+import TopNavDocs from "./topnav";
 
 const routeComponentMap = {};
 
@@ -57,6 +58,7 @@ addComponentRoute('pageheader', 'Page Header', <PageHeaderDocs />);
 addComponentRoute('percentslider', 'Percent Slider', <PercentSliderDocs />);
 addComponentRoute('select', 'Select', <SelectDocs />);
 addComponentRoute('sidenav', 'SideNav', <SideNavDocs />);
+addComponentRoute('topnav', 'TopNav', <TopNavDocs />);
 addComponentRoute('slidingpanel', 'Sliding Panel', <SlidingPanelDocs />);
 addComponentRoute(
   'loading-animation',
@@ -68,7 +70,7 @@ addComponentRoute('spinner', 'Spinner', <SpinnerDocs />);
 addComponentRoute('table', 'Table', <TableDocs />);
 addComponentRoute('tablayout', 'TabLayout', <TabLayoutDocs />);
 addComponentRoute('card', 'Card', <CardDocs />);
-addComponentRoute('chip', 'Chip', <ChipDocs />);
+addComponentRoute('badge', 'Badge', <BadgeDocs />);
 addComponentRoute('listview', 'List View', <ListViewDocs />);
 addComponentRoute('pagination', 'Pagination', <PaginationDocs />);
 addComponentRoute(

@@ -20,7 +20,7 @@ export const getSortingIcon = (sortingOption, currentLabel) => {
   return icon;
 };
 
-const sort = order => (index, data) => R.sortWith([order(R.prop(index))])(data);
+const sort = order => (index, data) => R.sortWith([order(R.path(["row", index]))])(data);
 const sortAscendingByIndex = sort(R.ascend);
 const sortDescendingByIndex = sort(R.descend);
 const sortingFunctionMap = {

@@ -4,7 +4,7 @@ import './global';
 // they export can be scoped to VisualStack.<component>
 export * from './components/Box';
 export * from './components/Button';
-export * from './components/Chip';
+export * from './components/Badge';
 export * from './components/Spinner';
 
 // modules that need scoping. i.e. the components they

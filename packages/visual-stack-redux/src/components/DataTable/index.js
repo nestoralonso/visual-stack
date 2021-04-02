@@ -6,6 +6,7 @@ import {
   setDataTablePage,
   setDataTableSortingOption,
   selectDataTable,
+  setDataTableRows,
 } from '../../actions';
 import * as R from 'ramda';
 import PropTypes from 'prop-types';
@@ -48,12 +49,14 @@ export class DataTablePure extends Component {
       id,
       setDataTablePage,
       setDataTableSortingOption,
+      setDataTableRows,
       onClick,
       renderToolbar,
       rowsPerPageTemplate,
       totalRecordsTemplate,
       isLoading,
       loadingMessage,
+      selectable,
     } = this.props;
     return (
       <div>
@@ -63,6 +66,7 @@ export class DataTablePure extends Component {
           description={description}
           noDataLabel={noDataLabel}
           sortable={sortable}
+          selectable={selectable}
           pagination={pagination}
           data={dataTable.data}
           isLoading={isLoading}
@@ -75,11 +79,15 @@ export class DataTablePure extends Component {
             setDataTablePage({ id, pagination });
           }}
           onSort={({ data, sortingOption }) => {
-            setDataTableSortingOption({ id, data, sortingOption });
+            setDataTableSortingOption({ id, sortingOption });
+            setDataTableRows({ id, data });
           }}
           renderToolbar={renderToolbar}
           rowsPerPageTemplate={rowsPerPageTemplate}
           totalRecordsTemplate={totalRecordsTemplate}
+          onSelect={({ data }) => {
+            setDataTableRows({ id, data });
+          }}
         />
       </div>
     );
@@ -124,6 +132,7 @@ const mapDispatchToProps = {
   initializeDataTable,
   setDataTablePage,
   setDataTableSortingOption,
+  setDataTableRows,
 };
 
 export const DataTable = connect(
