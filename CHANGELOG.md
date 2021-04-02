@@ -1,5 +1,11 @@
 # Upcoming
 
+## New Feature
+
+- Box: move out of experimental
+- Box: refactor props
+- Box: update docs
+
 ## New Component
 
 - Add Chip component
