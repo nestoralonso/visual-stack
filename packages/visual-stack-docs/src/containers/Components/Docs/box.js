@@ -40,8 +40,8 @@ export default () => {
                     <Tr>
                       <Th>Name</Th>
                       <Th>Description</Th>
-                      <Th>Values</Th>
-                      <Th>Default</Th>
+                      <Th>Type</Th>
+                      <Th>Default Value</Th>
                     </Tr>
                   </THead>
                   <TBody>
@@ -54,19 +54,13 @@ export default () => {
                       <Td>"column"</Td>
                     </Tr>
                     <Tr>
-                      <Td>border</Td>
-                      <Td>Adds a border around the box.</Td>
-                      <Td>true | false</Td>
-                      <Td>false</Td>
-                    </Tr>
-                    <Tr>
                       <Td>gap</Td>
                       <Td>Adds spacing between the children.</Td>
                       <Td>
-                        "small" (4px) | "medium" (8px) | "large" (16px) | "xl"
-                        (24px) | "2xl" (32px) | "3xl" (40px) | "4xl" (48px)
+                        "small" | "medium" | "large" | "xl" | "2xl" | "3xl" |
+                        "4xl"
                       </Td>
-                      <Td>unset</Td>
+                      <Td></Td>
                     </Tr>
                     <Tr>
                       <Td>align</Td>
@@ -75,7 +69,7 @@ export default () => {
                         the direction).
                       </Td>
                       <Td>"start" | "center" | "end"</Td>
-                      <Td>unset</Td>
+                      <Td></Td>
                     </Tr>
                     <Tr>
                       <Td>justify</Td>
@@ -86,52 +80,58 @@ export default () => {
                         "start" | "center" | "end" | "space-around" |
                         "space-between" | "space-evenly"
                       </Td>
-                      <Td>unset</Td>
+                      <Td></Td>
                     </Tr>
                     <Tr>
                       <Td>padding</Td>
                       <Td>Adds padding inside the box.</Td>
                       <Td>
-                        "small" (4px) | "medium" (8px) | "large" (16px) | "xl"
-                        (24px) | "2xl" (32px) | "3xl" (40px) | "4xl" (48px)
+                        "small" | "medium" | "large" | "xl" | "2xl" | "3xl" |
+                        "4xl"
                       </Td>
-                      <Td>unset</Td>
+                      <Td></Td>
                     </Tr>
                     <Tr>
                       <Td>paddingTop</Td>
                       <Td>Adds padding-top inside the box.</Td>
                       <Td>
-                        "small" (4px) | "medium" (8px) | "large" (16px) | "xl"
-                        (24px) | "2xl" (32px) | "3xl" (40px) | "4xl" (48px)
+                        "small" | "medium" | "large" | "xl" | "2xl" | "3xl" |
+                        "4xl"
                       </Td>
-                      <Td>unset</Td>
+                      <Td></Td>
                     </Tr>
                     <Tr>
                       <Td>paddingBottom</Td>
                       <Td>Adds padding-bottom inside the box.</Td>
                       <Td>
-                        "small" (4px) | "medium" (8px) | "large" (16px) | "xl"
-                        (24px) | "2xl" (32px) | "3xl" (40px) | "4xl" (48px)
+                        "small" | "medium" | "large" | "xl" | "2xl" | "3xl" |
+                        "4xl"
                       </Td>
-                      <Td>unset</Td>
+                      <Td></Td>
                     </Tr>
                     <Tr>
                       <Td>paddingLeft</Td>
                       <Td>Adds padding-left inside the box.</Td>
                       <Td>
-                        "small" (4px) | "medium" (8px) | "large" (16px) | "xl"
-                        (24px) | "2xl" (32px) | "3xl" (40px) | "4xl" (48px)
+                        "small" | "medium" | "large" | "xl" | "2xl" | "3xl" |
+                        "4xl"
                       </Td>
-                      <Td>unset</Td>
+                      <Td></Td>
                     </Tr>
                     <Tr>
                       <Td>paddingRight</Td>
                       <Td>Adds padding-right inside the box.</Td>
                       <Td>
-                        "small" (4px) | "medium" (8px) | "large" (16px) | "xl"
-                        (24px) | "2xl" (32px) | "3xl" (40px) | "4xl" (48px)
+                        "small" | "medium" | "large" | "xl" | "2xl" | "3xl" |
+                        "4xl"
                       </Td>
-                      <Td>unset</Td>
+                      <Td></Td>
+                    </Tr>
+                    <Tr>
+                      <Td>border</Td>
+                      <Td>Adds a border around the box.</Td>
+                      <Td>Boolean</Td>
+                      <Td></Td>
                     </Tr>
                     <Tr>
                       <Td>expand</Td>
@@ -139,8 +139,8 @@ export default () => {
                         Expands the box along the main axis (direction axis) to
                         fill available space. (Sets flex to 1.)
                       </Td>
-                      <Td>true | false</Td>
-                      <Td>false</Td>
+                      <Td>Boolean</Td>
+                      <Td></Td>
                     </Tr>
                   </TBody>
                 </Table>
@@ -150,6 +150,67 @@ export default () => {
                   contents is considered a bad practice since it makes it harder
                   for its container to control the layout.
                 </Text>
+              </Box>
+
+              <Box gap="large">
+                <Text type="h4">Size Aliases</Text>
+                <Text>
+                  Props with size values like padding and gap use a set of
+                  standardized string aliases instead of number values. This is
+                  so that we have a predefined standard scaling system. They
+                  work in increments of 8px, e.g. "medium" is 8px, "large" is
+                  16px, and so on. Here's the full set and the equivalent px
+                  values:
+                </Text>
+
+                <Box direction="row">
+                  <Box>
+                    <Box padding="small">
+                      <Text type="light">"small"</Text>
+                    </Box>
+                    <Box padding="small">
+                      <Text type="light">"medium"</Text>
+                    </Box>
+                    <Box padding="small">
+                      <Text type="light">"large"</Text>
+                    </Box>
+                    <Box padding="small">
+                      <Text type="light">"xl"</Text>
+                    </Box>
+                    <Box padding="small">
+                      <Text type="light">"2xl"</Text>
+                    </Box>
+                    <Box padding="small">
+                      <Text type="light">"3xl"</Text>
+                    </Box>
+                    <Box padding="small">
+                      <Text type="light">"4xl"</Text>
+                    </Box>
+                  </Box>
+                  <Box>
+                    <Box padding="small">
+                      <Text type="light">4px</Text>
+                    </Box>
+                    <Box padding="small">
+                      <Text type="light">8px</Text>
+                    </Box>
+                    <Box padding="small">
+                      <Text type="light">16px</Text>
+                    </Box>
+                    <Box padding="small">
+                      <Text type="light">24px</Text>
+                    </Box>
+                    <Box padding="small">
+                      <Text type="light">32px</Text>
+                    </Box>
+                    <Box padding="small">
+                      <Text type="light">40px</Text>
+                    </Box>
+                    <Box padding="small">
+                      <Text type="light">48px</Text>
+                    </Box>
+                  </Box>
+                </Box>
               </Box>
 
               <Box gap="large">
