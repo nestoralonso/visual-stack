@@ -26,7 +26,8 @@ export default () => {
               <Text>
                 A Box is a primitive layout component with standardized styling
                 props that renders a div container using flexbox. You can think
-                of it as a div with superpowers.
+                of it as a div with superpowers. Use it to lay out components in
+                columns, rows, add spacing between them, center them, and more.
               </Text>
               <Box gap="large">
                 <Text type="h4">Import</Text>
