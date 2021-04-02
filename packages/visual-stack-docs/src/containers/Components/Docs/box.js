@@ -3,6 +3,7 @@ import { Demo, Snippet } from '../../../components/Demo';
 import { Panel } from '@cjdev/visual-stack/lib/components/Panel';
 import IconSuccess from '@cjdev/visual-stack/lib/components/IconSuccess';
 import { Button } from '@cjdev/visual-stack/lib/components/Button';
+import { AppIcon } from '@cjdev/visual-stack/lib/components/Icons';
 import {
   Table,
   THead,
@@ -263,23 +264,23 @@ export default () => {
                 {/* s4:start */}
                 <Box padding="medium" gap="medium" border>
                   <Box padding="medium" gap="medium" border>
-                    <Text>📦</Text>
+                    <AppIcon />
                   </Box>
                   <Box direction="row" padding="medium" gap="medium" border>
                     <Box padding="medium" gap="medium" border>
-                      <Text>📦</Text>
+                      <AppIcon />
                     </Box>
                     <Box padding="medium" gap="medium" border>
-                      <Text>📦</Text>
+                      <AppIcon />
                     </Box>
                   </Box>
                   <Box direction="row" padding="medium" gap="medium" border>
                     <Box padding="medium" gap="medium" border>
                       <Box padding="medium" border>
-                        <Text>📦</Text>
+                        <AppIcon />
                       </Box>
                       <Box padding="medium" border>
-                        <Text>📦</Text>
+                        <AppIcon />
                       </Box>
                     </Box>
                     <Box
@@ -290,7 +291,7 @@ export default () => {
                       justify="center"
                       border
                     >
-                      <Text>📦</Text>
+                      <AppIcon />
                     </Box>
                   </Box>
                 </Box>
