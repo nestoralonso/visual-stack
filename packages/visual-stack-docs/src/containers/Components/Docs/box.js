@@ -40,108 +40,185 @@ export default () => {
                 <Table>
                   <THead>
                     <Tr>
-                      <Th>Name</Th>
-                      <Th>Description</Th>
-                      <Th>Type</Th>
-                      <Th>Default Value</Th>
+                      <Th>
+                        <Text type="bold">Name</Text>
+                      </Th>
+                      <Th>
+                        <Text type="bold">Description</Text>
+                      </Th>
+                      <Th>
+                        <Text type="bold">Type</Text>
+                      </Th>
+                      <Th>
+                        <Text type="bold">Default Value</Text>
+                      </Th>
                     </Tr>
                   </THead>
                   <TBody>
                     <Tr>
-                      <Td>direction</Td>
                       <Td>
-                        Sets the direction in which the children are laid out.
+                        <Text>direction</Text>
                       </Td>
-                      <Td>"column" | "row"</Td>
-                      <Td>"column"</Td>
+                      <Td>
+                        <Text>
+                          Sets the direction in which the children are laid out.
+                        </Text>
+                      </Td>
+                      <Td>
+                        <Text>"column" | "row"</Text>
+                      </Td>
+                      <Td>
+                        <Text>"column"</Text>
+                      </Td>
                     </Tr>
                     <Tr>
-                      <Td>gap</Td>
-                      <Td>Adds spacing between the children.</Td>
                       <Td>
-                        "small" | "medium" | "large" | "xl" | "2xl" | "3xl" |
-                        "4xl"
+                        <Text>gap</Text>
+                      </Td>
+                      <Td>
+                        <Text>Adds spacing between the children.</Text>
+                      </Td>
+                      <Td>
+                        <Text>
+                          "small" | "medium" | "large" | "xl" | "2xl" | "3xl" |
+                          "4xl"
+                        </Text>
                       </Td>
                       <Td></Td>
                     </Tr>
                     <Tr>
-                      <Td>align</Td>
                       <Td>
-                        Aligns children along the cross axis (perpendicular to
-                        the direction).
-                      </Td>
-                      <Td>"start" | "center" | "end"</Td>
-                      <Td></Td>
-                    </Tr>
-                    <Tr>
-                      <Td>justify</Td>
-                      <Td>
-                        Justifies children along the main axis (direction axis).
+                        <Text>align</Text>
                       </Td>
                       <Td>
-                        "start" | "center" | "end" | "space-around" |
-                        "space-between" | "space-evenly"
+                        <Text>
+                          Aligns children along the cross axis (perpendicular to
+                          the direction).
+                        </Text>
+                      </Td>
+                      <Td>
+                        <Text>"start" | "center" | "end"</Text>
                       </Td>
                       <Td></Td>
                     </Tr>
                     <Tr>
-                      <Td>padding</Td>
-                      <Td>Adds padding inside the box.</Td>
                       <Td>
-                        "small" | "medium" | "large" | "xl" | "2xl" | "3xl" |
-                        "4xl"
+                        <Text>justify</Text>
+                      </Td>
+                      <Td>
+                        <Text>
+                          Justifies children along the main axis (direction
+                          axis).
+                        </Text>
+                      </Td>
+                      <Td>
+                        <Text>
+                          "start" | "center" | "end" | "space-around" |
+                          "space-between" | "space-evenly"
+                        </Text>
                       </Td>
                       <Td></Td>
                     </Tr>
                     <Tr>
-                      <Td>paddingTop</Td>
-                      <Td>Adds padding-top inside the box.</Td>
                       <Td>
-                        "small" | "medium" | "large" | "xl" | "2xl" | "3xl" |
-                        "4xl"
+                        <Text>padding</Text>
+                      </Td>
+                      <Td>
+                        <Text>Adds padding inside the box.</Text>
+                      </Td>
+                      <Td>
+                        <Text>
+                          "small" | "medium" | "large" | "xl" | "2xl" | "3xl" |
+                          "4xl"
+                        </Text>
                       </Td>
                       <Td></Td>
                     </Tr>
                     <Tr>
-                      <Td>paddingBottom</Td>
-                      <Td>Adds padding-bottom inside the box.</Td>
                       <Td>
-                        "small" | "medium" | "large" | "xl" | "2xl" | "3xl" |
-                        "4xl"
+                        <Text>paddingTop</Text>
+                      </Td>
+                      <Td>
+                        <Text>Adds padding-top inside the box.</Text>
+                      </Td>
+                      <Td>
+                        <Text>
+                          "small" | "medium" | "large" | "xl" | "2xl" | "3xl" |
+                          "4xl"
+                        </Text>
                       </Td>
                       <Td></Td>
                     </Tr>
                     <Tr>
-                      <Td>paddingLeft</Td>
-                      <Td>Adds padding-left inside the box.</Td>
                       <Td>
-                        "small" | "medium" | "large" | "xl" | "2xl" | "3xl" |
-                        "4xl"
+                        <Text>paddingBottom</Text>
+                      </Td>
+                      <Td>
+                        <Text>Adds padding-bottom inside the box.</Text>
+                      </Td>
+                      <Td>
+                        <Text>
+                          "small" | "medium" | "large" | "xl" | "2xl" | "3xl" |
+                          "4xl"
+                        </Text>
                       </Td>
                       <Td></Td>
                     </Tr>
                     <Tr>
-                      <Td>paddingRight</Td>
-                      <Td>Adds padding-right inside the box.</Td>
                       <Td>
-                        "small" | "medium" | "large" | "xl" | "2xl" | "3xl" |
-                        "4xl"
+                        <Text>paddingLeft</Text>
+                      </Td>
+                      <Td>
+                        <Text>Adds padding-left inside the box.</Text>
+                      </Td>
+                      <Td>
+                        <Text>
+                          "small" | "medium" | "large" | "xl" | "2xl" | "3xl" |
+                          "4xl"
+                        </Text>
                       </Td>
                       <Td></Td>
                     </Tr>
                     <Tr>
-                      <Td>border</Td>
-                      <Td>Adds a border around the box.</Td>
-                      <Td>Boolean</Td>
+                      <Td>
+                        <Text>paddingRight</Text>
+                      </Td>
+                      <Td>
+                        <Text>Adds padding-right inside the box.</Text>
+                      </Td>
+                      <Td>
+                        <Text>
+                          "small" | "medium" | "large" | "xl" | "2xl" | "3xl" |
+                          "4xl"
+                        </Text>
+                      </Td>
                       <Td></Td>
                     </Tr>
                     <Tr>
-                      <Td>expand</Td>
                       <Td>
-                        Expands the box along the main axis (direction axis) to
-                        fill available space. (Sets flex to 1.)
+                        <Text>border</Text>
                       </Td>
-                      <Td>Boolean</Td>
+                      <Td>
+                        <Text>Adds a border around the box.</Text>
+                      </Td>
+                      <Td>
+                        <Text>Boolean</Text>
+                      </Td>
+                      <Td></Td>
+                    </Tr>
+                    <Tr>
+                      <Td>
+                        <Text>expand</Text>
+                      </Td>
+                      <Td>
+                        <Text>
+                          Expands the box along the main axis (direction axis)
+                          to fill available space. (Sets flex to 1.)
+                        </Text>
+                      </Td>
+                      <Td>
+                        <Text>Boolean</Text>
+                      </Td>
                       <Td></Td>
                     </Tr>
                   </TBody>
@@ -165,52 +242,24 @@ export default () => {
                   values:
                 </Text>
 
-                <Box direction="row">
-                  <Box>
-                    <Box padding="small">
-                      <Text type="light">"small"</Text>
-                    </Box>
-                    <Box padding="small">
-                      <Text type="light">"medium"</Text>
-                    </Box>
-                    <Box padding="small">
-                      <Text type="light">"large"</Text>
-                    </Box>
-                    <Box padding="small">
-                      <Text type="light">"xl"</Text>
-                    </Box>
-                    <Box padding="small">
-                      <Text type="light">"2xl"</Text>
-                    </Box>
-                    <Box padding="small">
-                      <Text type="light">"3xl"</Text>
-                    </Box>
-                    <Box padding="small">
-                      <Text type="light">"4xl"</Text>
-                    </Box>
+                <Box direction="row" gap="xl">
+                  <Box gap="small">
+                    <Text>"small"</Text>
+                    <Text>"medium"</Text>
+                    <Text>"large"</Text>
+                    <Text>"xl"</Text>
+                    <Text>"2xl"</Text>
+                    <Text>"3xl"</Text>
+                    <Text>"4xl"</Text>
                   </Box>
-                  <Box>
-                    <Box padding="small">
-                      <Text type="light">4px</Text>
-                    </Box>
-                    <Box padding="small">
-                      <Text type="light">8px</Text>
-                    </Box>
-                    <Box padding="small">
-                      <Text type="light">16px</Text>
-                    </Box>
-                    <Box padding="small">
-                      <Text type="light">24px</Text>
-                    </Box>
-                    <Box padding="small">
-                      <Text type="light">32px</Text>
-                    </Box>
-                    <Box padding="small">
-                      <Text type="light">40px</Text>
-                    </Box>
-                    <Box padding="small">
-                      <Text type="light">48px</Text>
-                    </Box>
+                  <Box gap="small">
+                    <Text>4px</Text>
+                    <Text>8px</Text>
+                    <Text>16px</Text>
+                    <Text>24px</Text>
+                    <Text>32px</Text>
+                    <Text>40px</Text>
+                    <Text>48px</Text>
                   </Box>
                 </Box>
               </Box>
