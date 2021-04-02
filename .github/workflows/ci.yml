@@ -38,8 +38,9 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
       - name: Deploy visual-stack-docs to S3
-      - if: github.ref == 'refs/heads/master'
+        if: github.ref == 'refs/heads/master'
         run: aws s3 sync . s3://visual-stack-docs --delete --acl public-read
-      - if: github.ref != 'refs/heads/master'
+      - name: Deploy visual-stack-docs branch to S3
+        if: github.ref != 'refs/heads/master'
         uses: nelonoel/branch-name@v1
         run: aws s3 sync . s3://${BRANCH_NAME}.visual-stack-docs --delete --acl public-read
