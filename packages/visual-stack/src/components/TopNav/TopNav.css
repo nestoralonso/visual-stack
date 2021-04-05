@@ -88,6 +88,7 @@
 
 .vs-topnav-action-text {
   color: #bebfc0 !important;
+  cursor: pointer;
 }
 
 a.vs-cj-support-link-container:hover {
