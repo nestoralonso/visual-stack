@@ -312,14 +312,19 @@ export default () => {
                 <Text type="h4">A bunch of boxes stacking other boxes</Text>
                 {/* s4:start */}
                 <Box padding="medium" gap="medium" border>
-                  <Box padding="medium" gap="medium" border>
+                  <Box padding="medium" border>
                     <AppIcon />
                   </Box>
-                  <Box direction="row" padding="medium" gap="medium" border>
-                    <Box padding="medium" gap="medium" border>
+                  <Box
+                    direction="row"
+                    padding="medium"
+                    justify="space-between"
+                    border
+                  >
+                    <Box padding="medium" border>
                       <AppIcon />
                     </Box>
-                    <Box padding="medium" gap="medium" border>
+                    <Box padding="medium" border>
                       <AppIcon />
                     </Box>
                   </Box>
