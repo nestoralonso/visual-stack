@@ -5,7 +5,7 @@ import cn from 'classnames';
 
 import './index.css';
 import Spinner from '../../components/Spinner';
-import { TopNav } from '../../components/TopNav'
+import { TopNav } from '../../components/TopNav';
 
 function getSubmitButtonText(submitButtonText, showSubmitButtonSpinner) {
   if (showSubmitButtonSpinner) {
@@ -55,13 +55,13 @@ export const DialogLayout = ({
 );
 
 const TopNavControls = ({
-                          onSubmit,
-                          onCancel,
-                          submitButtonText,
-                          cancelButtonText,
-                          disableSubmit,
-                          showSubmitButtonSpinner,
-                        }) => (
+  onSubmit,
+  onCancel,
+  submitButtonText,
+  cancelButtonText,
+  disableSubmit,
+  showSubmitButtonSpinner,
+}) => (
   <div className="vs-dialog-layout-button-bar">
     {cancelButtonText && (
       <Button id="vs-dialog-layout-cancel" type="text" onClick={onCancel}>
@@ -80,12 +80,9 @@ const TopNavControls = ({
       </Button>
     )}
     {!submitButtonText && !cancelButtonText && (
-      <CloseIcon
-        className="vs-dialog-layout-icon-close"
-        onClick={onCancel}
-      />
+      <CloseIcon className="vs-dialog-layout-icon-close" onClick={onCancel} />
     )}
   </div>
-)
+);
 
 export default DialogLayout;
