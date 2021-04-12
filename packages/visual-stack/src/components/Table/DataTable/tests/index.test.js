@@ -12,11 +12,14 @@ describe('DataTable', () => {
   describe('Top Level Header', () => {
     it('should display tool bar', () => {
       const renderToolbar = jest.fn(() => <div id="test">TEST</div>);
-      const data = [{ id: 0, row: [1, 2, 3], selected: false }, { id: 1, row: [4, 5, 6], selected: true }];
+      const data = [
+        { id: 0, row: [1, 2, 3], selected: false },
+        { id: 1, row: [4, 5, 6], selected: true },
+      ];
       const dataWithoutIds = [
         { row: data[0].row, selected: data[0].selected },
         { row: data[1].row, selected: data[1].selected },
-      ]
+      ];
       const columns = [
         {
           label: 'hello',
@@ -29,7 +32,9 @@ describe('DataTable', () => {
           columns={columns}
         />
       );
-      expect(renderToolbar.mock.calls).toEqual([[{ data: dataWithoutIds, columns }]]);
+      expect(renderToolbar.mock.calls).toEqual([
+        [{ data: dataWithoutIds, columns }],
+      ]);
       expect(wrapper.find('div#test').text()).toEqual('TEST');
     });
   });
@@ -104,10 +109,12 @@ describe('DataTable', () => {
       const data3 = 'data3';
       const data4 = 'data4';
       const wrapper = mount(
-        <DataTable data={[
-          { id: 0, row: [data1, data2], selected: false },
-          { id: 1, row: [data3, data4], selected: false }]
-        } />
+        <DataTable
+          data={[
+            { id: 0, row: [data1, data2], selected: false },
+            { id: 1, row: [data3, data4], selected: false },
+          ]}
+        />
       );
       expect(wrapper.find('td').map(node => node.text())).toEqual([
         data1,
@@ -174,7 +181,10 @@ describe('DataTable', () => {
       const wrapper = mount(
         <DataTable
           columns={columns}
-          data={[{ id: 0, row: [targetData, 2], selected: false }, { id: 1, row: [1, 2], selected: false }]}
+          data={[
+            { id: 0, row: [targetData, 2], selected: false },
+            { id: 1, row: [1, 2], selected: false },
+          ]}
           onClick={onClick}
         />
       );
@@ -197,7 +207,10 @@ describe('DataTable', () => {
           },
         ];
         const wrapper = mount(
-          <DataTable columns={columns} data={[{ id: 0, row: [targetData], selected: false }]} />
+          <DataTable
+            columns={columns}
+            data={[{ id: 0, row: [targetData], selected: false }]}
+          />
         );
         const targetTD = wrapper
           .find('td.vs-cell')
@@ -206,123 +219,148 @@ describe('DataTable', () => {
       });
     });
 
-    describe("selecting rows", () => {
-      it("should not display any selectable rows if table is not selectable", () => {
-        const data = [{ id: 0, row: [1], selected: true, }, { id: 1, row: [2], selected: false, }]
-        const wrapper = mount(
-          <DataTable data={data} selectable={false} />
+    describe('selecting rows', () => {
+      it('should not display any selectable rows if table is not selectable', () => {
+        const data = [
+          { id: 0, row: [1], selected: true },
+          { id: 1, row: [2], selected: false },
+        ];
+        const wrapper = mount(<DataTable data={data} selectable={false} />);
+        const rowCheckboxes = wrapper.find(
+          "input[aria-label='Select row from data table']"
         );
-        const rowCheckboxes = wrapper.find("input[aria-label='Select row from data table']");
-        const selectAllCheckbox = wrapper.find("input[aria-label='Select all from data table']");
+        const selectAllCheckbox = wrapper.find(
+          "input[aria-label='Select all from data table']"
+        );
         expect(rowCheckboxes).toHaveLength(0);
         expect(selectAllCheckbox).toHaveLength(0);
-      })
+      });
 
-      it("should display selected rows", () => {
+      it('should display selected rows', () => {
         const data = [
-          { id: 0, row: [1], selected: true, },
-          { id: 1, row: [2], selected: false, },
-        ]
-        const wrapper = mount(
-          <DataTable data={data} selectable />
-        );
-        const firstRowSelected = wrapper.find("input[aria-label='Select row from data table']").at(0).prop("checked")
-        const secondRowSelected = wrapper.find("input[aria-label='Select row from data table']").at(1).prop("checked")
+          { id: 0, row: [1], selected: true },
+          { id: 1, row: [2], selected: false },
+        ];
+        const wrapper = mount(<DataTable data={data} selectable />);
+        const firstRowSelected = wrapper
+          .find("input[aria-label='Select row from data table']")
+          .at(0)
+          .prop('checked');
+        const secondRowSelected = wrapper
+          .find("input[aria-label='Select row from data table']")
+          .at(1)
+          .prop('checked');
 
         expect(firstRowSelected).toEqual(true);
         expect(secondRowSelected).toEqual(false);
-      })
+      });
 
-      it("should select one row", () => {
+      it('should select one row', () => {
         const onSelect = jest.fn();
-        const data = [{ id: 0, row: [1], selected: false, }, { id: 1, row: [2], selected: false, }]
+        const data = [
+          { id: 0, row: [1], selected: false },
+          { id: 1, row: [2], selected: false },
+        ];
         const wrapper = mount(
           <DataTable data={data} selectable onSelect={onSelect} />
         );
-        wrapper.find("input[aria-label='Select row from data table']").at(0).simulate('change');
+        wrapper
+          .find("input[aria-label='Select row from data table']")
+          .at(0)
+          .simulate('change');
 
         expect(onSelect).lastCalledWith({
-          data: [{
-            id: 0, row: [1], selected: true
-          },
-          {
-            id: 1, row: [2], selected: false
-          }]
-        })
-      })
+          data: [
+            {
+              id: 0,
+              row: [1],
+              selected: true,
+            },
+            {
+              id: 1,
+              row: [2],
+              selected: false,
+            },
+          ],
+        });
+      });
 
-      it("should check selected all checkbox when all rows are selected", () => {
+      it('should check selected all checkbox when all rows are selected', () => {
         const data = [
-          { id: 0, row: [1], selected: true, },
-          { id: 1, row: [2], selected: true, },
-        ]
-        const wrapper = mount(
-          <DataTable data={data} selectable />
-        );
+          { id: 0, row: [1], selected: true },
+          { id: 1, row: [2], selected: true },
+        ];
+        const wrapper = mount(<DataTable data={data} selectable />);
 
-        const selectedAllRowsCheckbox = wrapper.find("input[aria-label='Select all from data table']").prop("checked")
+        const selectedAllRowsCheckbox = wrapper
+          .find("input[aria-label='Select all from data table']")
+          .prop('checked');
 
         expect(selectedAllRowsCheckbox).toEqual(true);
-      })
+      });
 
-      it("should uncheck selected all checkbox when some rows are not selected", () => {
+      it('should uncheck selected all checkbox when some rows are not selected', () => {
         const data = [
-          { id: 0, row: [1], selected: true, },
-          { id: 1, row: [2], selected: false, },
-        ]
-        const wrapper = mount(
-          <DataTable data={data} selectable />
-        );
+          { id: 0, row: [1], selected: true },
+          { id: 1, row: [2], selected: false },
+        ];
+        const wrapper = mount(<DataTable data={data} selectable />);
 
-        const selectedAllRowsCheckbox = wrapper.find("input[aria-label='Select all from data table']").prop("checked")
+        const selectedAllRowsCheckbox = wrapper
+          .find("input[aria-label='Select all from data table']")
+          .prop('checked');
 
         expect(selectedAllRowsCheckbox).toEqual(false);
-      })
+      });
 
-      it("should select all rows at once when clicking on select all checkbox", () => {
+      it('should select all rows at once when clicking on select all checkbox', () => {
         const data = [
-          { id: 0, row: [1], selected: false, },
-          { id: 1, row: [2], selected: false, },
-        ]
+          { id: 0, row: [1], selected: false },
+          { id: 1, row: [2], selected: false },
+        ];
         const onSelect = jest.fn();
 
         const wrapper = mount(
           <DataTable data={data} selectable onSelect={onSelect} />
         );
 
-        const selectedAllRowsCheckbox = wrapper.find("input[aria-label='Select all from data table']");
+        const selectedAllRowsCheckbox = wrapper.find(
+          "input[aria-label='Select all from data table']"
+        );
         selectedAllRowsCheckbox.simulate('change');
 
         expect(onSelect).lastCalledWith({
           data: [
-            { id: 0, row: [1], selected: true, },
-            { id: 1, row: [2], selected: true, },
-          ]
+            { id: 0, row: [1], selected: true },
+            { id: 1, row: [2], selected: true },
+          ],
         });
-      })
+      });
 
-      it("should unselect all rows at once when clicking on select all checkbox", () => {
+      it('should unselect all rows at once when clicking on select all checkbox', () => {
         const data = [
-          { id: 0, row: [1], selected: true, },
-          { id: 1, row: [2], selected: true, },
-        ]
+          { id: 0, row: [1], selected: true },
+          { id: 1, row: [2], selected: true },
+        ];
         const onSelect = jest.fn();
 
         const wrapper = mount(
           <DataTable data={data} selectable onSelect={onSelect} />
         );
 
-        const selectedAllRowsCheckbox = wrapper.find("input[aria-label='Select all from data table']");
+        const selectedAllRowsCheckbox = wrapper.find(
+          "input[aria-label='Select all from data table']"
+        );
         selectedAllRowsCheckbox.simulate('change');
 
         expect(onSelect).lastCalledWith({
           data: [
-            { id: 0, row: [1], selected: false, },
-            { id: 1, row: [2], selected: false, },
-          ]
+            { id: 0, row: [1], selected: false },
+            { id: 1, row: [2], selected: false },
+          ],
         });
-      })
-    })
+      });
+    });
   });
 
   describe('pagination', () => {
@@ -380,9 +418,21 @@ describe('DataTable', () => {
       const group1 = range(1, 26);
       const group2 = range(26, 51);
       const group3 = range(51, 76);
-      const groupedData1 = group1.map(number => ({ id: number, row: [number], selected: false }));
-      const groupedData2 = group2.map(number => ({ id: number, row: [number], selected: false }));
-      const groupedData3 = group3.map(number => ({ id: number, row: [number], selected: false }));
+      const groupedData1 = group1.map(number => ({
+        id: number,
+        row: [number],
+        selected: false,
+      }));
+      const groupedData2 = group2.map(number => ({
+        id: number,
+        row: [number],
+        selected: false,
+      }));
+      const groupedData3 = group3.map(number => ({
+        id: number,
+        row: [number],
+        selected: false,
+      }));
 
       it('should render a fixed number of rows when pagination is enabled', () => {
         const onPageChange = jest.fn();
@@ -641,7 +691,7 @@ describe('DataTable', () => {
             data={[
               { id: 0, row: [second], selected: false },
               { id: 1, row: [first], selected: false },
-              { id: 2, row: [third], selected: false }
+              { id: 2, row: [third], selected: false },
             ]}
             onSort={onSort}
             sortable
@@ -679,7 +729,7 @@ describe('DataTable', () => {
             data={[
               { id: 0, row: [second], selected: false },
               { id: 1, row: [first], selected: false },
-              { id: 2, row: [third], selected: false }
+              { id: 2, row: [third], selected: false },
             ]}
             onSort={onSort}
             sortable
@@ -717,7 +767,8 @@ describe('DataTable', () => {
             data={[
               { id: 0, row: [second], selected: false },
               { id: 1, row: [first], selected: false },
-              { id: 2, row: [third], selected: false }]}
+              { id: 2, row: [third], selected: false },
+            ]}
             onSort={onSort}
             sortable
           />

@@ -1,17 +1,16 @@
-import React from 'react'
-import cn from 'classnames'
-import CJLogo from '../../components/CJLogo'
-import PropTypes from 'prop-types'
+import React from 'react';
+import cn from 'classnames';
+import CJLogo from '../../components/CJLogo';
+import PropTypes from 'prop-types';
 
 export const TopNav = ({
-    className,
-    title,
-    actionChildren,
-    children,
-    contentSize,
-    ...restProps
-  }) => {
-
+  className,
+  title,
+  actionChildren,
+  children,
+  contentSize,
+  ...restProps
+}) => {
   return (
     <div {...restProps} className={cn(`vs-topnav`, className)}>
       <div className="vs-topnav-header vs-topnav-page-title">
@@ -21,16 +20,19 @@ export const TopNav = ({
           </div>
           <h1 className="vs-topnav-title">{title}</h1>
         </div>
-        <div className="vs-topnav-button-bar">
-          {actionChildren}
-        </div>
+        <div className="vs-topnav-button-bar">{actionChildren}</div>
       </div>
-      <div className={cn('vs-topnav-content', `vs-topnav-content-${contentSize ? contentSize : ''}`)}>
+      <div
+        className={cn(
+          'vs-topnav-content',
+          `vs-topnav-content-${contentSize ? contentSize : 'normal'}`
+        )}
+      >
         {children}
       </div>
     </div>
-  )
-}
+  );
+};
 
 TopNav.propTypes = {
   className: PropTypes.string,
@@ -38,4 +40,4 @@ TopNav.propTypes = {
   actionChildren: PropTypes.object,
   children: PropTypes.object,
   contentSize: PropTypes.string,
-}
+};
