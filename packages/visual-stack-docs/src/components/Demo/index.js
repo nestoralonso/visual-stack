@@ -23,6 +23,16 @@ export const Snippet = ({ tag, src }) => {
   );
 };
 
+export const MarginTopSnippet = ({ tag, src }) => {
+  const srcTag = R.view(R.lensPath([tag]))(src);
+  if (!srcTag) return null;
+  return (
+    <div className="snippet margin-top-snippet">
+      <pre>{trimLeadingWhiteSpace(src[tag]).join('\n')}</pre>
+    </div>
+  );
+};
+
 export class Demo extends React.Component {
   constructor(props) {
     super(props);

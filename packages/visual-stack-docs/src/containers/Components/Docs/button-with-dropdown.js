@@ -1,7 +1,7 @@
 import * as R from 'ramda';
 import React from 'react';
 import { Panel, Body, Header } from '@cjdev/visual-stack/lib/components/Panel';
-import { Demo, Snippet } from '../../../components/Demo';
+import { Demo, MarginTopSnippet as Snippet } from '../../../components/Demo';
 import { Button } from '@cjdev/visual-stack/lib/components/Button';
 
 /* s1:start */

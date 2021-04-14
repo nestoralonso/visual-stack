@@ -5,7 +5,7 @@ import {
   Header,
   Footer,
 } from '@cjdev/visual-stack/lib/components/Panel';
-import { Demo, Snippet } from '../../../components/Demo';
+import { Demo, MarginTopSnippet as Snippet } from '../../../components/Demo';
 
 export default () => (
   <Demo srcFile="/samples/src/containers/Components/Docs/panel.js">

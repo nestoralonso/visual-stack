@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import { Panel, Body, Header } from '@cjdev/visual-stack/lib/components/Panel';
-import { Demo, Snippet } from '../../../components/Demo';
+import { Demo, MarginTopSnippet as Snippet } from '../../../components/Demo';
 
 import { DateTime } from 'luxon';
 

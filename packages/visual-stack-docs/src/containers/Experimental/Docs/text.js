@@ -1,5 +1,5 @@
 import React from 'react';
-import { Demo, Snippet } from '../../../components/Demo';
+import { Demo, MarginTopSnippet as Snippet } from '../../../components/Demo';
 import { Panel, Body, Header } from '@cjdev/visual-stack/lib/components/Panel';
 import Text from '@cjdev/visual-stack/lib/experimental/Text';
 

@@ -1,6 +1,9 @@
 import * as React from 'react';
 import { Body, Panel, Header } from '@cjdev/visual-stack/lib/components/Panel';
-import { CollapsiblePanel, PureCollapsiblePanel } from '@cjdev/visual-stack/lib/components/CollapsiblePanel';
+import {
+  CollapsiblePanel,
+  PureCollapsiblePanel,
+} from '@cjdev/visual-stack/lib/components/CollapsiblePanel';
 import './collapsiblepanel.css';
 import {
   FieldContent,
@@ -9,7 +12,7 @@ import {
   ChoiceInput,
   Field,
 } from '@cjdev/visual-stack/lib/components/Form';
-import { Demo, Snippet } from '../../../components/Demo';
+import { Demo, MarginTopSnippet as Snippet } from '../../../components/Demo';
 import SVG from 'react-inlinesvg';
 import sampleIconPath from './reporting.svg';
 import { useState } from 'react';
@@ -19,8 +22,7 @@ const SampleIcon = () => {
 };
 
 export default () => {
-
-  const [ collapsed, setCollapsed ] = useState(false);
+  const [collapsed, setCollapsed] = useState(false);
 
   return (
     <Demo srcFile="/samples/src/containers/Components/Docs/collapsiblepanel.js">
@@ -28,17 +30,21 @@ export default () => {
         <Panel>
           <Header>Collapsible Panels</Header>
           <Body paddingSize="none">
-
             {/* s1:start */}
-            <PureCollapsiblePanel onChange={setCollapsed} collapsed={collapsed} title="Pure Collapsible Panel">
-              <div>Use the PureCollapsiblePanel if you want to manage the 'collapsed' state yourself.  Unlike CollapsiblePanel, it
-                does not keep track of the state itself and merely calls you back with the state via 'onChange' when a
-                user clicks on it.
+            <PureCollapsiblePanel
+              onChange={setCollapsed}
+              collapsed={collapsed}
+              title="Pure Collapsible Panel"
+            >
+              <div>
+                Use the PureCollapsiblePanel if you want to manage the
+                'collapsed' state yourself. Unlike CollapsiblePanel, it does not
+                keep track of the state itself and merely calls you back with
+                the state via 'onChange' when a user clicks on it.
               </div>
             </PureCollapsiblePanel>
             {/* s1:end */}
             <Snippet tag="s1" src={snippets} />
-
 
             {/* s2:start */}
             <CollapsiblePanel
@@ -159,7 +165,6 @@ export default () => {
             </CollapsiblePanel>
             {/* s5:end */}
             <Snippet tag="s5" src={snippets} />
-
           </Body>
         </Panel>
       )}

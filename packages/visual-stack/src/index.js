@@ -2,6 +2,7 @@ import './global';
 
 // modules that do not need qualification. i.e., the components
 // they export can be scoped to VisualStack.<component>
+export * from './components/Box';
 export * from './components/Button';
 export * from './components/Badge';
 export * from './components/Spinner';

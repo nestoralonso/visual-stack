@@ -1,4 +1,10 @@
+# Upcoming
 
+## Updates
+
+- Box: move out of experimental. Experimental version is kept for backward compatibility but deprecated. Will be removed in a future release.
+- Box: rename spacing props values from "default" to "medium".
+- Box: update Box docs.
 
 # 7.1.3
 - Update to CONTRIBUTING.md about installing lerna.
@@ -12,6 +18,7 @@
 # 7.1.2
 
 ## New Component
+
 - Add TopNav component
 
 # 7.1.1

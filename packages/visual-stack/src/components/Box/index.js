@@ -1,21 +1,16 @@
-/* eslint-disable no-console */
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 import './Box.css';
 
-console.warn(
-  '@cjdev/visual-stack/lib/experimental/Box is deprecated in favor of import { Box } from "@cjdev/visual-stack"'
-);
-
-const Box = ({
+export const Box = ({
   align,
   border,
   children,
   className,
   direction,
   gap,
-  grow,
+  expand,
   justify,
   padding,
   paddingBottom,
@@ -38,7 +33,7 @@ const Box = ({
       paddingTop && `vs-box-padding-top-${paddingTop}`,
       align && `vs-box-align-${align}`,
       justify && `vs-box-justify-${justify}`,
-      grow && 'vs-box-grow',
+      expand && 'vs-box-expand',
       className
     )}
   >
@@ -47,7 +42,7 @@ const Box = ({
 );
 
 Box.defaultProps = {
-  direction: 'row',
+  direction: 'column',
 };
 
 Box.propTypes = {
@@ -56,7 +51,7 @@ Box.propTypes = {
   direction: PropTypes.oneOf(['column', 'row']),
   padding: PropTypes.oneOf([
     'small',
-    'default',
+    'medium',
     'large',
     'xl',
     '2xl',
@@ -65,7 +60,7 @@ Box.propTypes = {
   ]),
   paddingTop: PropTypes.oneOf([
     'small',
-    'default',
+    'medium',
     'large',
     'xl',
     '2xl',
@@ -74,7 +69,7 @@ Box.propTypes = {
   ]),
   paddingBottom: PropTypes.oneOf([
     'small',
-    'default',
+    'medium',
     'large',
     'xl',
     '2xl',
@@ -83,7 +78,7 @@ Box.propTypes = {
   ]),
   paddingLeft: PropTypes.oneOf([
     'small',
-    'default',
+    'medium',
     'large',
     'xl',
     '2xl',
@@ -92,22 +87,14 @@ Box.propTypes = {
   ]),
   paddingRight: PropTypes.oneOf([
     'small',
-    'default',
+    'medium',
     'large',
     'xl',
     '2xl',
     '3xl',
     '4xl',
   ]),
-  gap: PropTypes.oneOf([
-    'small',
-    'default',
-    'large',
-    'xl',
-    '2xl',
-    '3xl',
-    '4xl',
-  ]),
+  gap: PropTypes.oneOf(['small', 'medium', 'large', 'xl', '2xl', '3xl', '4xl']),
   align: PropTypes.oneOf(['start', 'center', 'end']),
   justify: PropTypes.oneOf([
     'start',
@@ -118,7 +105,5 @@ Box.propTypes = {
     'space-evenly',
   ]),
   border: PropTypes.bool,
-  grow: PropTypes.bool,
+  expand: PropTypes.bool,
 };
-
-export default Box;

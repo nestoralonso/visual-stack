@@ -1,8 +1,8 @@
-import "./styles.css";
+import './styles.css';
 
-import Label from "../Form/Label";
-import Box from "../../experimental/Box";
-import React from "react";
+import Label from '../Form/Label';
+import { Box } from '../Box';
+import React from 'react';
 
 const handleChange = (percentageInput, onChange) => {
   const percentage = parseInt(percentageInput, 10);
@@ -20,8 +20,11 @@ export const PercentSlider = ({ value, onChange, label, id }) => {
   return (
     <div>
       <Label htmlFor={id}>{label}</Label>
-      <Slider onChange={(newValue) => handleChange(newValue, onChange)} 
-      value={value} id={id} />
+      <Slider
+        onChange={newValue => handleChange(newValue, onChange)}
+        value={value}
+        id={id}
+      />
     </div>
   );
 };
@@ -34,18 +37,15 @@ const Slider = ({ value, onChange, id }) => {
         data-testid={`${id}-slider`}
         className="percentage-input"
         value={`${value}`}
-        onChange={(e) => onChange(e.target.value)}
+        onChange={e => onChange(e.target.value)}
         type="range"
         min="0"
         max="100"
-        style={{ "--webkitProgressPercent": `${value}%` }}
+        style={{ '--webkitProgressPercent': `${value}%` }}
       />
 
       <span className="percentage-input-wrapper">
-        <span 
-           data-testid={`${id}-display`} 
-           className="percentage-display"
-        >
+        <span data-testid={`${id}-display`} className="percentage-display">
           {value}
         </span>
         <span>%</span>
