@@ -1,12 +1,11 @@
-# Upcoming
-
-## Updates
+## 7.2.0
 
 - Box: move out of experimental. Experimental version is kept for backward compatibility but deprecated. Will be removed in a future release.
 - Box: rename spacing props values from "default" to "medium".
 - Box: update Box docs.
 
 # 7.1.3
+
 - Update to CONTRIBUTING.md about installing lerna.
 - BlankSlate: Remove hard-coded / default icon graphic and white background Panel per UX.
 - Form: Remove 24px margin between fields per UX.
