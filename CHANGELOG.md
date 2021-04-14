@@ -6,6 +6,15 @@
 - Box: rename spacing props values from "default" to "medium".
 - Box: update Box docs.
 
+# 7.1.3
+- Update to CONTRIBUTING.md about installing lerna.
+- BlankSlate: Remove hard-coded / default icon graphic and white background Panel per UX.
+- Form: Remove 24px margin between fields per UX.
+- Modal: Remove header and footer boarder lines, push top down, add left & right padding of 25px, include a -md class which is not quite as wide as the default. All per UX.
+- DataTable: Change the thickness and color of the header row bottom border, remove the extra DataTable.css import which was causing issues, added alignment argument to header props. All per UX.
+- TopNav: Fixed some sizing and cursor issues.
+- Panel: Now passing down classnames onto the component.
+
 # 7.1.2
 
 ## New Component

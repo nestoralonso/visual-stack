@@ -44,7 +44,9 @@ describe('DialogLayout', () => {
       <DialogLayout disableSubmit={true} submitButtonText="Submit" />
     );
 
-    const submitButton = component.find('.vs-dialog-layout-button-bar>#vs-dialog-layout-submit');
+    const submitButton = component.find(
+      '.vs-dialog-layout-button-bar>#vs-dialog-layout-submit'
+    );
 
     expect(submitButton.prop('disabled')).toEqual(true);
   });
@@ -68,7 +70,9 @@ describe('DialogLayout', () => {
   test('should show the X button when neither of the other buttons shown', () => {
     const component = mount(<DialogLayout />);
 
-    const closeIconButton = component.find('.vs-dialog-layout-button-bar>.vs-dialog-layout-icon-close');
+    const closeIconButton = component.find(
+      '.vs-dialog-layout-button-bar>.vs-dialog-layout-icon-close'
+    );
 
     expect(closeIconButton).toHaveLength(1);
   });
@@ -83,7 +87,9 @@ describe('DialogLayout', () => {
       <DialogLayout onCancel={onClickFake} cancelButtonText="Cancel" />
     );
 
-    const cancelButton = component.find('.vs-dialog-layout-button-bar>#vs-dialog-layout-cancel');
+    const cancelButton = component.find(
+      '.vs-dialog-layout-button-bar>#vs-dialog-layout-cancel'
+    );
 
     cancelButton.simulate('click');
 
@@ -98,7 +104,9 @@ describe('DialogLayout', () => {
 
     const component = mount(<DialogLayout onCancel={onClickFake} />);
 
-    const closeIcon = component.find('.vs-dialog-layout-button-bar>.vs-dialog-layout-icon-close');
+    const closeIcon = component.find(
+      '.vs-dialog-layout-button-bar>.vs-dialog-layout-icon-close'
+    );
 
     closeIcon.simulate('click');
 
@@ -115,7 +123,9 @@ describe('DialogLayout', () => {
       <DialogLayout onSubmit={onClickFake} submitButtonText="Submit" />
     );
 
-    const submitButton = component.find('.vs-dialog-layout-button-bar>#vs-dialog-layout-submit');
+    const submitButton = component.find(
+      '.vs-dialog-layout-button-bar>#vs-dialog-layout-submit'
+    );
 
     submitButton.simulate('click');
 

@@ -1,5 +1,4 @@
 import React from 'react';
-import './DataTable.css';
 import {
   TableContainer,
   TableTitle,
@@ -17,20 +16,15 @@ import PropTypes from 'prop-types';
 import './DataTable.css';
 import LoadingAnimation from '../../LoadingAnimation';
 
-const generateHeaders = ({ columns, ...tableProps }) => {
-  return columns.map((column, index) => generateHeader(column, index, tableProps));
-}
-
-const generateHeader = (
-  column,
-  index,
-  tableProps,
-) => {
+const generateHeader = (column, index, tableProps) => {
   const { sortable, sortingOption, onSort, data } = tableProps;
-  const { label: currentLabel, width } = column;
+  const { label: currentLabel, width, alignment } = column;
   const isCurrentColumnSorted = () => {
     return sortingOption.label === currentLabel;
   };
+
+  const right = alignment === 'right' ? alignment : '';
+  const center = alignment === 'center' ? alignment : '';
 
   const headerClickHandler = () => {
     const { order } = sortingOption;
@@ -48,6 +42,8 @@ const generateHeader = (
 
   return (
     <Th
+      right={right}
+      center={center}
       id="label"
       style={width && { width }}
       className={`
@@ -65,47 +61,64 @@ const generateHeader = (
   );
 };
 
-const generateRows = ({ data, ...tableProps }) => {
-  return data.map((rowData, index) => generateRow(rowData, index, tableProps));
-}
+const generateHeaders = ({ columns, ...tableProps }) => {
+  return columns.map((column, index) =>
+    generateHeader(column, index, tableProps)
+  );
+};
 
 const generateRow = (rowData, index, tableProps) => {
   const { onClick, columns, selectable, onSelect } = tableProps;
   const { id, row, selected } = rowData;
 
-  return <Tr key={id}>
-    {selectable && <Td>
-      <input type="checkbox" aria-label="Select row from data table" checked={selected} onChange={() => {
-        onSelect(id)
-      }} />
-    </Td>}
-    {row.map((item, columnIndex) => {
-      const getColumn = R.compose(
-        R.defaultTo({}),
-        R.prop(columnIndex)
-      );
-      const { label, clickable, renderCell = R.identity } = getColumn(columns);
-      return (
-        <Td key={columnIndex}>
-          {clickable && (
-            <a
-              className="vs-data-table-clickable-cell"
-              onClick={() => {
-                onClick({
-                  value: item,
-                  rowIndex: index,
-                  label,
-                });
-              }}
-            >
-              {renderCell(item)}
-            </a>
-          )}
-          {!clickable && renderCell(item)}
+  return (
+    <Tr key={id}>
+      {selectable && (
+        <Td>
+          <input
+            type="checkbox"
+            aria-label="Select row from data table"
+            checked={selected}
+            onChange={() => {
+              onSelect(id);
+            }}
+          />
         </Td>
-      );
-    })}
-  </Tr>
+      )}
+      {row.map((item, columnIndex) => {
+        const getColumn = R.compose(
+          R.defaultTo({}),
+          R.prop(columnIndex)
+        );
+        const { label, clickable, renderCell = R.identity } = getColumn(
+          columns
+        );
+        return (
+          <Td key={columnIndex}>
+            {clickable && (
+              <a
+                className="vs-data-table-clickable-cell"
+                onClick={() => {
+                  onClick({
+                    value: item,
+                    rowIndex: index,
+                    label,
+                  });
+                }}
+              >
+                {renderCell(item)}
+              </a>
+            )}
+            {!clickable && renderCell(item)}
+          </Td>
+        );
+      })}
+    </Tr>
+  );
+};
+
+const generateRows = ({ data, ...tableProps }) => {
+  return data.map((rowData, index) => generateRow(rowData, index, tableProps));
 };
 
 const getDataWithPagination = (rowsPerPage, page) =>
@@ -118,22 +131,28 @@ const NoDataLabel = ({ label }) => {
   return <div className="vs-data-table-no-data-label">{label}</div>;
 };
 
-const omitGeneratedIdsFromData = data => R.map(R.dissoc("id"))(data)
-
+const omitGeneratedIdsFromData = data => R.map(R.dissoc('id'))(data);
 
 const toggleSelectedInRowData = rowData => ({
   ...rowData,
-  selected: !rowData.selected
-})
+  selected: !rowData.selected,
+});
 
 const selectAllCheckbox = ({ data, onSelect }) => {
   const checked = R.all(R.propEq('selected', true))(data);
-  let onChange = () => onSelect({
-    data: R.map(rowData => ({ ...rowData, selected: !checked }))(data)
-  });
-  return <input type="checkbox" aria-label="Select all from data table" checked={checked} onChange={(onChange)} />
-}
-
+  const onChange = () =>
+    onSelect({
+      data: R.map(rowData => ({ ...rowData, selected: !checked }))(data),
+    });
+  return (
+    <input
+      type="checkbox"
+      aria-label="Select all from data table"
+      checked={checked}
+      onChange={onChange}
+    />
+  );
+};
 
 export const DataTable = ({
   caption = '',
@@ -164,9 +183,12 @@ export const DataTable = ({
 
   const onSelectId = id => {
     const selectedRowIndex = R.findIndex(R.propEq('id', id), data);
-    const dataWithSelectedRow = R.adjust(selectedRowIndex, toggleSelectedInRowData)(data);
-    onSelect({ data: dataWithSelectedRow })
-  }
+    const dataWithSelectedRow = R.adjust(
+      selectedRowIndex,
+      toggleSelectedInRowData
+    )(data);
+    onSelect({ data: dataWithSelectedRow });
+  };
 
   return (
     <TableContainer {...restProps} className="vs-data-table-container">
@@ -176,7 +198,10 @@ export const DataTable = ({
             {caption}
             <p>{description}</p>
           </div>
-          <div>{renderToolbar && renderToolbar({ columns, data: omitGeneratedIdsFromData(data) })}</div>
+          <div>
+            {renderToolbar &&
+              renderToolbar({ columns, data: omitGeneratedIdsFromData(data) })}
+          </div>
         </div>
       </TableTitle>
       {isLoading ? (
@@ -184,46 +209,44 @@ export const DataTable = ({
           <LoadingAnimation loadingMessage={loadingMessage} />
         </div>
       ) : (
-          <>
-            <Table>
-              <THead>
-                <Tr>
-                  {selectable && <Th>
-                    {selectAllCheckbox({ data, onSelect })}
-                  </Th>}
-                  {generateHeaders({
-                    columns,
-                    sortable,
-                    sortingOption,
-                    onSort,
-                    data
-                  })}
-                </Tr>
-              </THead>
-              <TBody>
-                {generateRows({
-                  data: paginatedData,
-                  onClick,
+        <>
+          <Table>
+            <THead>
+              <Tr>
+                {selectable && <Th>{selectAllCheckbox({ data, onSelect })}</Th>}
+                {generateHeaders({
                   columns,
-                  selectable,
-                  onSelect: onSelectId
+                  sortable,
+                  sortingOption,
+                  onSort,
+                  data,
                 })}
-              </TBody>
-            </Table>
-            {paginatedData.length === 0 && <NoDataLabel label={noDataLabel} />}
-            {pagination && (
-              <Pagination
-                className="vs-table-pagination"
-                numberOfRows={data.length}
-                rowsPerPage={rowsPerPage}
-                page={page}
-                onChange={onPageChange}
-                rowsPerPageTemplate={rowsPerPageTemplate}
-                totalRecordsTemplate={totalRecordsTemplate}
-              />
-            )}
-          </>
-        )}
+              </Tr>
+            </THead>
+            <TBody>
+              {generateRows({
+                data: paginatedData,
+                onClick,
+                columns,
+                selectable,
+                onSelect: onSelectId,
+              })}
+            </TBody>
+          </Table>
+          {paginatedData.length === 0 && <NoDataLabel label={noDataLabel} />}
+          {pagination && (
+            <Pagination
+              className="vs-table-pagination"
+              numberOfRows={data.length}
+              rowsPerPage={rowsPerPage}
+              page={page}
+              onChange={onPageChange}
+              rowsPerPageTemplate={rowsPerPageTemplate}
+              totalRecordsTemplate={totalRecordsTemplate}
+            />
+          )}
+        </>
+      )}
     </TableContainer>
   );
 };
