@@ -1,4 +1,12 @@
-## 7.2.0
+# 7.2.1
+
+## Fix
+
+- Box: remove console warning on experimental Box
+
+# 7.2.0
+
+## Updates
 
 - Box: move out of experimental. Experimental version is kept for backward compatibility but deprecated. Will be removed in a future release.
 - Box: rename spacing props values from "default" to "medium".
