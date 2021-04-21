@@ -4,10 +4,6 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import './Box.css';
 
-console.warn(
-  '@cjdev/visual-stack/lib/experimental/Box is deprecated in favor of import { Box } from "@cjdev/visual-stack"'
-);
-
 const Box = ({
   align,
   border,
