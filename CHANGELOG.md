@@ -1,3 +1,9 @@
+# Upcoming
+
+## New Component
+
+- Add Drawer component
+
 # 7.2.1
 
 ## Fix
