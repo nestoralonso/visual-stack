@@ -1,4 +1,4 @@
-# Upcoming
+# 7.3.0
 
 ## New Component
 
