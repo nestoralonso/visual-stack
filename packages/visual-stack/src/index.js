@@ -5,6 +5,7 @@ import './global';
 export * from './components/Box';
 export * from './components/Button';
 export * from './components/Badge';
+export * from './components/Drawer';
 export * from './components/Spinner';
 
 // modules that need scoping. i.e. the components they
