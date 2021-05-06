@@ -1,3 +1,15 @@
+# 7.3.2
+
+## Fix
+
+- DialogLayout: Fixed the padding at the top of the dialog layout.
+
+# 7.3.1
+
+## Fix
+
+- Drawer: Added missing propTypes
+
 # 7.3.0
 
 ## New Component
