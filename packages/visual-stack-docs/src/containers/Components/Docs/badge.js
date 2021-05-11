@@ -1,6 +1,6 @@
 import React from 'react';
 import { Panel, Body } from '@cjdev/visual-stack/lib/components/Panel';
-import { Demo, Snippet } from '../../../components/Demo';
+import { Demo, MarginTopSnippet as Snippet } from '../../../components/Demo';
 /* s1:start */
 import { Badge } from '@cjdev/visual-stack';
 /* s1:end */

@@ -2,7 +2,7 @@
 import React from 'react';
 
 import { Panel, Body, Header } from '@cjdev/visual-stack/lib/components/Panel';
-import { Demo, Snippet } from '../../../components/Demo';
+import { Demo, MarginTopSnippet as Snippet } from '../../../components/Demo';
 
 export default () => (
   <Demo srcFile="/samples/src/containers/App/SideNav.js">

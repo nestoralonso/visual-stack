@@ -8,7 +8,7 @@ import {
 } from '@cjdev/visual-stack/lib/components/PageHeader';
 import { Panel, Body, Header } from '@cjdev/visual-stack/lib/components/Panel';
 import './styles.css';
-import { Demo, Snippet } from '../../components/Demo';
+import { Demo, MarginTopSnippet as Snippet } from '../../components/Demo';
 
 export default () => {
   return (

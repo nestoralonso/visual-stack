@@ -1,7 +1,7 @@
 import React from 'react';
 import './button.css';
 import { Body, Header, Panel } from '@cjdev/visual-stack/lib/components/Panel';
-import { Demo, Snippet } from '../../../components/Demo';
+import { Demo, MarginTopSnippet as Snippet } from '../../../components/Demo';
 import { Button } from '@cjdev/visual-stack/lib/components/Button';
 import {
   AccountIcon,

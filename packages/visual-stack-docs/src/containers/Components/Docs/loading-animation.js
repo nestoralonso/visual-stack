@@ -1,6 +1,6 @@
 import React from 'react';
 import { Panel, Body, Header } from '@cjdev/visual-stack/lib/components/Panel';
-import { Demo, Snippet } from '../../../components/Demo';
+import { Demo, MarginTopSnippet as Snippet } from '../../../components/Demo';
 /* s1:start */
 import LoadingAnimation from '@cjdev/visual-stack/lib/components/LoadingAnimation';
 /* s1:end */

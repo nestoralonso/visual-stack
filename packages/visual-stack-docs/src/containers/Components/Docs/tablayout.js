@@ -7,7 +7,7 @@ import {
   TabContent,
 } from '@cjdev/visual-stack-redux/lib/components/TabLayout';
 /* s1:end */
-import { Demo, Snippet } from '../../../components/Demo';
+import { Demo, MarginTopSnippet as Snippet } from '../../../components/Demo';
 import { Panel, Body, Header } from '@cjdev/visual-stack/lib/components/Panel';
 
 export default () => (

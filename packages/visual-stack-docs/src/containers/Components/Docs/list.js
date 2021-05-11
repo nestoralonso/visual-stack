@@ -4,7 +4,7 @@ import {
   Body,
   Header as PanelHeader,
 } from '@cjdev/visual-stack/lib/components/Panel';
-import { Demo, Snippet } from '../../../components/Demo';
+import { Demo, MarginTopSnippet as Snippet } from '../../../components/Demo';
 
 import {
   List,

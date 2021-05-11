@@ -1,22 +1,14 @@
-import React from 'react'
+import React from 'react';
 
 import Box from '../../experimental/Box';
-import Text from '../../experimental/Text'
-import InformationOutlineIcon from 'mdi-react/InformationOutlineIcon'
-import PropTypes from 'prop-types'
-import cn from 'classnames'
+import Text from '../../experimental/Text';
+import InformationOutlineIcon from 'mdi-react/InformationOutlineIcon';
+import PropTypes from 'prop-types';
+import cn from 'classnames';
 
-export const CjSupportLink = ({
-                    className,
-                    title,
-                    link,
-                    ...restProps
-}) => {
+export const CjSupportLink = ({ className, title, link, ...restProps }) => {
   return (
-    <div
-      {...restProps}
-      className={cn(`vs-cj-support-link`, className)}
-    >
+    <div {...restProps} className={cn(`vs-cj-support-link`, className)}>
       <a
         href={link}
         target="_blank"
@@ -38,10 +30,10 @@ export const CjSupportLink = ({
         </Box>
       </a>
     </div>
-  )
-}
+  );
+};
 
 CjSupportLink.propTypes = {
   title: PropTypes.string,
   link: PropTypes.string,
-}
+};

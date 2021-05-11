@@ -1,7 +1,7 @@
-import React from 'react'
-import cn from 'classnames'
-import CJLogo from '../../components/CJLogo'
-import PropTypes from 'prop-types'
+import React from 'react';
+import cn from 'classnames';
+import CJLogo from '../../components/CJLogo';
+import PropTypes from 'prop-types';
 
 export const TopNav = ({
                          className,
@@ -27,12 +27,17 @@ export const TopNav = ({
           {actionChildren}
         </div>
       </div>
-      <div className={cn('vs-topnav-content', `vs-topnav-content-${contentSize ? contentSize : ''}`)}>
+      <div
+        className={cn(
+          'vs-topnav-content',
+          `vs-topnav-content-${contentSize ? contentSize : 'normal'}`
+        )}
+      >
         {children}
       </div>
     </div>
-  )
-}
+  );
+};
 
 TopNav.propTypes = {
   className: PropTypes.string,
@@ -41,4 +46,4 @@ TopNav.propTypes = {
   children: PropTypes.object,
   subTitle: PropTypes.object,
   contentSize: PropTypes.string,
-}
+};
