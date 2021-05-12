@@ -83,13 +83,11 @@
 }
 
 .vs-topnav-action {
-  color: #bebfc0 !important;
   cursor: pointer;
 }
 
-.vs-topnav-action-text {
+.vs-topnav-text {
   color: #bebfc0 !important;
-  cursor: pointer;
 }
 
 a.vs-cj-support-link-container:hover {

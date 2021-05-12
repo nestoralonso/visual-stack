@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 export const TopNav = ({
                          className,
                          title,
-                         subTitle,
+                         subtitle,
                          actionChildren,
                          children,
                          contentSize,
@@ -22,7 +22,7 @@ export const TopNav = ({
           </div>
           <h1 className="vs-topnav-title">{title}</h1>
         </div>
-        {subTitle ? <div className={"vs-topnav-action-text"}>{subTitle}</div> : ""}
+        {subtitle ? <div className={"vs-topnav-text"}>{subtitle}</div> : ""}
         <div className="vs-topnav-button-bar">
           {actionChildren}
         </div>
@@ -44,6 +44,6 @@ TopNav.propTypes = {
   title: PropTypes.string,
   actionChildren: PropTypes.object,
   children: PropTypes.object,
-  subTitle: PropTypes.object,
+  subtitle: PropTypes.string,
   contentSize: PropTypes.string,
 };

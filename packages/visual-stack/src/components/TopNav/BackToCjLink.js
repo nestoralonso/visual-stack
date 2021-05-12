@@ -17,10 +17,10 @@ export const BackToCjLink = ({ className, title, onClick, ...restProps }) => {
       onClick={onClick}
       className="topnav-action"
     >
-      <Text id="topnav-back-icon" className="vs-topnav-action-text">
+      <Text id="topnav-back-icon" className="vs-topnav-action vs-topnav-text">
         <ArrowLeftIcon />
       </Text>
-      <Text id="topnav-back-title" className="vs-topnav-action-text">
+      <Text id="topnav-back-title" className="vs-topnav-action vs-topnav-text">
         {title}
       </Text>
     </Box>
