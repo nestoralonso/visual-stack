@@ -4,28 +4,25 @@ import CJLogo from '../../components/CJLogo';
 import PropTypes from 'prop-types';
 
 export const TopNav = ({
-                         className,
-                         title,
-                         subtitle,
-                         actionChildren,
-                         children,
-                         contentSize,
-                         ...restProps
-                       }) => {
-
+  className,
+  title,
+  subtitle,
+  actionChildren,
+  children,
+  contentSize,
+  ...restProps
+}) => {
   return (
     <div {...restProps} className={cn(`vs-topnav`, className)}>
       <div className="vs-topnav-header vs-topnav-page-title">
         <div className="vs-topnav-logo-title-container">
           <div className="vs-topnav-logo-container">
-            <span>{<CJLogo/>}</span>
+            <span>{<CJLogo />}</span>
           </div>
           <h1 className="vs-topnav-title">{title}</h1>
         </div>
-        {subtitle ? <div className={"vs-topnav-text"}>{subtitle}</div> : ""}
-        <div className="vs-topnav-button-bar">
-          {actionChildren}
-        </div>
+        {subtitle ? <div className={'vs-topnav-text'}>{subtitle}</div> : ''}
+        <div className="vs-topnav-button-bar">{actionChildren}</div>
       </div>
       <div
         className={cn(
