@@ -1,3 +1,8 @@
+# Upcoming
+
+## Updates
+- TopNav: add subtitle prop for centered text in nav
+
 # 7.3.2
 
 ## Fix
