@@ -62,6 +62,7 @@ export const TopNavCodeSnippet1 = ({router}) => (
     /* s1:start */
     <TopNav
       title="Header Title"
+      subtitle="Subtitle"
       actionChildren={
         <Box direction="row" gap="xl" align="center" grow>
           <BackToCjLink title="Back to the Home Page" onClick={() => router.push('/components/topnav')}/>
