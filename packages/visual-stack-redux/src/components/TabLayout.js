@@ -57,6 +57,7 @@ export class InternalTabLayout extends Component {
           R.lensPath([this.props.tabLayoutId, 'index']),
           this.props.tabLayouts
         )}
+        lazy={this.props.lazy}
       >
         {this.props.children}
       </BaseTabLayout>

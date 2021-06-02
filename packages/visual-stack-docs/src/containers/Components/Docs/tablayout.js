@@ -145,6 +145,41 @@ export default () => (
                       </div>
                     </Body>
                   </Panel>
+                  <Panel>
+                    <Header>
+                      <div>
+                        TabLayout with lazy prop renders tab content only when
+                        selected
+                      </div>
+                    </Header>
+                    <Body>
+                      <Snippet tag="s8" src={snippets} />
+                      <DivWithBorder>
+                        {/* s8:start */}
+                        <TabLayout lazy tabLayoutId="tabLayout4">
+                          <Tab
+                            label={<TabLabelContent>Tab 1</TabLabelContent>}
+                            renderContent={() => (
+                              <TabContent>Tab Content 1</TabContent>
+                            )}
+                          />
+                          <Tab
+                            label={<TabLabelContent>Tab 2</TabLabelContent>}
+                            renderContent={() => (
+                              <TabContent>Tab Content 2</TabContent>
+                            )}
+                          />
+                          <Tab
+                            label={<TabLabelContent>Tab 3</TabLabelContent>}
+                            renderContent={() => (
+                              <TabContent>Tab Content 3</TabContent>
+                            )}
+                          />
+                        </TabLayout>
+                        {/* s8:end */}
+                      </DivWithBorder>
+                    </Body>
+                  </Panel>
                 </TabContent>
               }
             />
