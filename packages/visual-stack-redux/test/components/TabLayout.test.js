@@ -27,6 +27,7 @@ describe('TabLayout', () => {
     onTabClick: () => {},
     tabLayouts: { ID123: { index: 0 } },
     selectTab: () => {},
+    lazy: true,
     ...override,
   });
 

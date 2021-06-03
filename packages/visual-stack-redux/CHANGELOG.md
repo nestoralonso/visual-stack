@@ -1,3 +1,9 @@
+# Upcoming
+
+## New Features
+
+- Tabs can now render lazily.
+
 # 0.0.12 (January 2, 2017)
 
 ## New Features

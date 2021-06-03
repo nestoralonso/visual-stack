@@ -16,7 +16,13 @@ export class TabLayout extends React.Component {
   }
 
   render() {
-    const { floatingHeader, headerHeight, headerWidth } = this.props;
+    const {
+      floatingHeader,
+      headerHeight,
+      headerWidth,
+      lazy,
+      tabLayoutId,
+    } = this.props;
     const children = toArray(this.props.children);
     const tabs = R.filter(R.identity, children);
     const labelMap = tabs.map((tab, index) => {
@@ -35,9 +41,14 @@ export class TabLayout extends React.Component {
       );
     });
     const contentMap = tabs.map((tab, index) => {
+      const selected = this.isSelected(index);
+      if (lazy && !selected) {
+        return null;
+      }
       return (
-        <div key={index} hidden={!this.isSelected(index)}>
-          {tab.props.content}
+        <div key={index} hidden={!selected}>
+          {tab.props.content ||
+            (tab.props.renderContent ? tab.props.renderContent() : null)}
         </div>
       );
     });
