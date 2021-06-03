@@ -1,6 +1,13 @@
+# 7.4.0
+
+## New Features
+
+- Tabs can now render lazily.
+
 # 7.3.3
 
 ## Updates
+
 - TopNav: add subtitle prop for centered text in nav
 
 # 7.3.2
