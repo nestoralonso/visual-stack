@@ -1,3 +1,9 @@
+# 7.4.1
+
+## Fix
+
+- SideNav:  Prevent the sidenav icons from looking too much apart when the sidenav is collapsed and the user is using the expanded property
+
 # 7.4.0
 
 ## New Features
