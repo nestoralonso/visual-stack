@@ -25,7 +25,7 @@ export class LinkGroup extends React.Component {
   render() {
     const classes =
       `${this.props.className || ''} vs-sidenav-entry vs-sidenav-container` +
-      (this.props.expanded ? ' expanded' : '');
+      (this.props.expanded && !this.props.collapsed ? ' expanded' : '');
     const expandRow = () => {
       this.props.onClick(!this.props.expanded, this.props.label);
       if (this.props.expanded) {
