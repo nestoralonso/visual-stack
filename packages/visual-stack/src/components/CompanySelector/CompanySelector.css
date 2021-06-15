@@ -1,0 +1,86 @@
+@import 'material-icons.css';
+@import 'roboto.css';
+
+:root {
+    --cj-nav-link-color: #757575;
+    --cj-nav-selected-page-color: #333;
+    --cj-nav-text-color: #333;
+    --cj-nav-text-background-color: #f6f6f6;
+    --cj-nav-tooltip-background-color: #6d7684;
+    --cj-green: #49c5b1;
+}
+
+.top-nav-dropdown-container {
+    float: right;
+}
+
+.account-dropdown {
+    max-width: 220px;
+}
+
+.top-nav-dropdown {
+    z-index: 1;
+    background: #ffffff;
+    width: 280px;
+    border-radius: 3px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.16);
+}
+
+.company-switcher-dropdown {
+    position: relative;
+    top: -32px;
+    right: 0px;
+}
+
+.top-nav-menu-item-text {
+    color: var(--cj-nav-text-color);
+}
+
+.icon-menu-item {
+    font-size: 18px;
+    color: var(--cj-nav-link-color);
+    transition: 0.2s all ease-in-out;
+}
+
+.top-nav-menu-item {
+    display: flex;
+    align-items: center;
+    height: 32px;
+}
+
+.top-nav-menu-item-title {
+    color: var(--cj-nav-text-color);
+    font-weight: 500;
+}
+
+.top-nav-dropdown-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--cj-nav-text-color);
+    height: 48px;
+    padding: 0 16px 0 16px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.top-nav-dropdown-header .icon-dropdown {
+    height: 32px;
+    width: 32px;
+    padding: 5px 5px 5px 5px;
+}
+
+.top-nav-dropdown-container .icon-dropdown i {
+    font-size: 18px;
+}
+
+.icon-dropdown {
+    font-size: 18px;
+    color: var(--cj-nav-link-color);
+    transition: 0.2s all ease-in-out;
+    cursor: pointer;
+}
+
+.icon-dropdown:hover {
+    color: #333333;
+}

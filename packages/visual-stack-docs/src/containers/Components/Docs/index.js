@@ -13,6 +13,7 @@ import ButtonDocs from './button';
 import ButtonWithDropdownDocs from './button-with-dropdown';
 import CardDocs from './card';
 import CollapsiblePanelDocs from './collapsiblepanel';
+import CompanySelector from './company-selector';
 import DatePickerDocs from './datepicker';
 import DrawerDocs from './drawer';
 import ExpandingInputButtonDocs from './expanding-input-button';
@@ -57,6 +58,7 @@ addComponentRoute(
   'Collapsible Panel',
   <CollapsiblePanelDocs />
 );
+addComponentRoute('companyselector', 'Company Selector', <CompanySelector />);
 addComponentRoute(
   'expanding-input-button',
   'Expanding Input Button',
