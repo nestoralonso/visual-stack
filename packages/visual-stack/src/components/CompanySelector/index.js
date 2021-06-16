@@ -1,63 +1,98 @@
-import React, { useState } from 'react';
+import React from 'react';
 import ReactSelect, { components } from 'react-select';
 
 import companySelectorStyle from './CompanySelectorStyle';
 import './CompanySelector.css';
 
-/**
- *
- * @param {object} selectedCompany The currently selected company
- * @param {string} selectedCompany.name
- * @param {string} selectedCompany.id The company id
- * @param {array} companies A list of companies of the same shape as `selectedCompany`
- * @returns {JSX.Element}
- */
-export const CompanySelector = ({ selectedCompany, companies }) => {
-  const hasMultipleCompanies = companies.length > 1;
-
-  const [isDropdownExpanded, setIsDropdownExpanded] = useState(false);
-  const [company, setCompany] = useState({
-    name: selectedCompany ? selectedCompany.name : null,
-    id: selectedCompany ? selectedCompany.id : null,
-  });
-
-  const collapseDropdown = company => {
-    if (company) setCompany(company);
-    setIsDropdownExpanded(false);
+export class CompanySelector extends React.Component {
+  container = React.createRef();
+  state = {
+    isDropdownExpanded: false,
+    company: { name: null, id: null },
   };
 
-  const expandDropdown = () => setIsDropdownExpanded(true);
+  constructor(props) {
+    super(props);
+    if (this.props.selectedCompany)
+      this.state.company = {
+        name: this.props.selectedCompany.name,
+        id: this.props.selectedCompany.id,
+      };
+    this.collapseDropdown = this.collapseDropdown.bind(this);
+    this.expandDropdown = this.expandDropdown.bind(this);
+    this.handleClickOutside = this.handleClickOutside.bind(this);
+  }
 
-  return (
-    <div className="top-nav-dropdown-container">
-      <MenuItem
-        name="AccountIndicator"
-        title={company.name}
-        text={`(${company.id})`}
-        dataId={'topnav-accountswitcher'}
-        onClick={hasMultipleCompanies ? () => expandDropdown() : () => {}}
-        showDownArrow={hasMultipleCompanies}
-        additionalClasses={'account-dropdown'}
-      />
-      {hasMultipleCompanies ? (
-        <CompanySelectorDropdown
-          companies={companies}
-          selectedCompany={company.id}
-          show={isDropdownExpanded}
-          collapseDropdown={x => collapseDropdown(x)}
+  componentDidMount() {
+    document.addEventListener('mousedown', this.handleClickOutside);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('mousedown', this.handleClickOutside);
+  }
+
+  collapseDropdown(company) {
+    if (company) {
+      this.setState({ company: company });
+      if (this.props.updateCompanyCallback) this.props.updateCompanyCallback();
+    }
+    console.log('collapse dropdown');
+    this.setState({ isDropdownExpanded: false });
+  }
+
+  expandDropdown() {
+    console.log('expand dropdown');
+    this.setState({ isDropdownExpanded: true });
+  }
+
+  handleClickOutside = (event) => {
+    if (
+      this.container.current &&
+      !this.container.current.contains(event.target)
+    ) {
+      console.log('click outside collapse');
+      this.setState({ isDropdownExpanded: false });
+    }
+  };
+
+  render() {
+    const hasMultipleCompanies = this.props.companies.length > 1;
+
+    return (
+      <div className="top-nav-dropdown-container" ref={this.container}>
+        <MenuItem
+          name="AccountIndicator"
+          title={this.state.company.name}
+          text={`(${this.state.company.id})`}
+          dataId={'topnav-accountswitcher'}
+          onClick={
+            hasMultipleCompanies ? () => this.expandDropdown() : () => {}
+          }
+          showDownArrow={hasMultipleCompanies}
+          additionalClasses={'account-dropdown'}
         />
-      ) : (
-        <div />
-      )}
-    </div>
-  );
-};
+        {hasMultipleCompanies ? (
+          <CompanySelectorDropdown
+            {...this.props}
+            companies={this.props.companies}
+            selectedCompany={this.state.company.id}
+            show={this.state.isDropdownExpanded}
+            collapseDropdown={(x) => this.collapseDropdown(x)}
+          />
+        ) : (
+          <div />
+        )}
+      </div>
+    );
+  }
+}
 
 const CompanySelectorDropdown = ({
   companies,
   selectedCompany,
   show,
   collapseDropdown,
+  ...restProps
 }) => {
   const changeCompany = (value, { action }) => {
     if (action === 'select-option') {
@@ -69,10 +104,10 @@ const CompanySelectorDropdown = ({
   };
 
   const companyList = companies
-    .map(c => ({ value: c, label: `${c.name} (${c.id})` }))
+    .map((c) => ({ value: c, label: `${c.name} (${c.id})` }))
     .sort((a, b) => a.label.toUpperCase().localeCompare(b.label.toUpperCase()));
 
-  const CustomMenu = props => (
+  const CustomMenu = (props) => (
     <components.Menu {...props}>
       {props.children}
       <div
@@ -89,7 +124,7 @@ const CompanySelectorDropdown = ({
     </components.Menu>
   );
 
-  const CustomInput = props => (
+  const CustomInput = (props) => (
     <components.Input {...props} autoFocus>
       {props.children}
     </components.Input>
@@ -98,7 +133,7 @@ const CompanySelectorDropdown = ({
   return show ? (
     <div className="top-nav-dropdown company-switcher-dropdown">
       <DropdownHeader
-        label={'Select Account'}
+        label={restProps.selectText || 'Select Account'}
         collapseDropdown={collapseDropdown}
       />
       <ReactSelect
@@ -107,8 +142,8 @@ const CompanySelectorDropdown = ({
         menuIsOpen={true}
         onChange={changeCompany}
         options={companyList}
-        isOptionSelected={option => option.value === selectedCompany}
-        placeholder={<CompanySelectorPlaceholder />}
+        isOptionSelected={(option) => option.value === selectedCompany}
+        placeholder={<CompanySelectorPlaceholder {...restProps} />}
       />
     </div>
   ) : (
@@ -160,7 +195,7 @@ const DropdownHeader = ({ label, collapseDropdown }) => (
   </div>
 );
 
-const CompanySelectorPlaceholder = () => (
+const CompanySelectorPlaceholder = ({ ...restProps }) => (
   <>
     <div
       style={{
@@ -187,7 +222,7 @@ const CompanySelectorPlaceholder = () => (
         top: '-2px',
       }}
     >
-      {'Search for accounts...'}
+      {restProps.searchAccountsText || 'Search for accounts...'}
     </div>
   </>
 );

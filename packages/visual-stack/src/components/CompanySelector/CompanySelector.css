@@ -11,7 +11,9 @@
 }
 
 .top-nav-dropdown-container {
-    float: right;
+    float: left;
+    max-width: 220px;
+    max-height: 32px;
 }
 
 .account-dropdown {
