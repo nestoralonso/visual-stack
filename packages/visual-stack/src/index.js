@@ -7,6 +7,7 @@ export * from './components/Button';
 export * from './components/Badge';
 export * from './components/Drawer';
 export * from './components/Spinner';
+export * from './components/CompanySelector';
 
 // modules that need scoping. i.e. the components they
 // export need to be scoped to VisualStack.<module>.<component>
