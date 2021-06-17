@@ -1,3 +1,9 @@
+# 7.5.0
+
+## New Component
+
+- CompanySelector: Add selector component to change between companies. This component allows the ability to search through companies
+
 # 7.4.1
 
 ## Fix
