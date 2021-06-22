@@ -9,21 +9,35 @@ export const DESCENDING = 'descending';
 export const getSortingIcon = (sortingOption, currentLabel) => {
   let icon = null;
   if (sortingOption.order === ASCENDING) {
-    icon = <ArrowUpIcon />;
+    icon = <ArrowUpIcon/>;
   }
   if (sortingOption.order === DESCENDING) {
-    icon = <ArrowDownIcon />;
+    icon = <ArrowDownIcon/>;
   }
   if (sortingOption.label !== currentLabel) {
-    icon = <ArrowDownIcon className="vs-unsorted-row-icon" />;
+    icon = <ArrowDownIcon className="vs-unsorted-row-icon"/>;
   }
   return icon;
 };
 
-const sort = order => (index, data) =>
+const ascend = R.curry(function ascend(fn, value, consecutiveValue) {
+  const valueClone = fn(value);
+  const consecutiveValueClone = fn(consecutiveValue);
+  return valueClone === null ? -1 : consecutiveValueClone === null ? 1 : valueClone < consecutiveValueClone ? -1 : valueClone > consecutiveValueClone ? 1 : 0;
+});
+
+const descend = R.curry(function descend(fn, value, consecutiveValue) {
+  const valueClone = fn(value);
+  const consecutiveValueClone = fn(consecutiveValue);
+  return valueClone === null ? 1 : consecutiveValueClone === null ? -1 : valueClone > consecutiveValueClone ? -1 : valueClone < consecutiveValueClone ? 1 : 0;
+});
+
+const sort = (order) => (index, data) =>
   R.sortWith([order(R.path(['row', index]))])(data);
-const sortAscendingByIndex = sort(R.ascend);
-const sortDescendingByIndex = sort(R.descend);
+
+const sortAscendingByIndex = sort(ascend);
+const sortDescendingByIndex = sort(descend);
+
 const sortingFunctionMap = {
   [ASCENDING]: sortAscendingByIndex,
   [DESCENDING]: sortDescendingByIndex,
