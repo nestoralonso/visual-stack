@@ -1,3 +1,8 @@
+# 7.5.1
+
+## Fix
+- visual-stack/sortingHelper:  Custom comparator to handle null values while sorting, specifically for string data type.
+
 # 7.5.0
 
 ## New Component

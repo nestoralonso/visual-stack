@@ -673,9 +673,10 @@ describe('DataTable', () => {
 
       it('should callback with the descending sorting data on non sorted header', () => {
         const onSort = jest.fn();
-        const first = 'a';
-        const second = 'b';
-        const third = 'c';
+        const first = null;
+        const second = 'a';
+        const third = 'b';
+        const fourth = 'c';
         const label = 'id';
         const wrapper = mount(
           <DataTable
@@ -692,6 +693,7 @@ describe('DataTable', () => {
               { id: 0, row: [second], selected: false },
               { id: 1, row: [first], selected: false },
               { id: 2, row: [third], selected: false },
+              { id: 3, row: [fourth], selected: false },
             ]}
             onSort={onSort}
             sortable
@@ -703,6 +705,7 @@ describe('DataTable', () => {
         targetHeaderWrapper.simulate('click');
 
         expect(onSort.mock.calls[0][0].data).toEqual([
+          { id: 3, row: [fourth], selected: false },
           { id: 2, row: [third], selected: false },
           { id: 0, row: [second], selected: false },
           { id: 1, row: [first], selected: false },
@@ -711,9 +714,10 @@ describe('DataTable', () => {
 
       it('should callback with the ascending sorting data', () => {
         const onSort = jest.fn();
-        const first = 'a';
-        const second = 'b';
-        const third = 'c';
+        const first = null;
+        const second = 'a';
+        const third = 'b';
+        const fourth = 'c';
         const label = 'id';
         const wrapper = mount(
           <DataTable
@@ -727,8 +731,9 @@ describe('DataTable', () => {
               order: DESCENDING,
             }}
             data={[
-              { id: 0, row: [second], selected: false },
-              { id: 1, row: [first], selected: false },
+              { id: 1, row: [second], selected: false },
+              { id: 0, row: [first], selected: false },
+              { id: 3, row: [fourth], selected: false },
               { id: 2, row: [third], selected: false },
             ]}
             onSort={onSort}
@@ -741,18 +746,20 @@ describe('DataTable', () => {
         targetHeaderWrapper.simulate('click');
 
         expect(onSort.mock.calls[0][0].data).toEqual([
-          { id: 1, row: [first], selected: false },
-          { id: 0, row: [second], selected: false },
+          { id: 0, row: [first], selected: false },
+          { id: 1, row: [second], selected: false },
           { id: 2, row: [third], selected: false },
+          { id: 3, row: [fourth], selected: false },
         ]);
       });
 
       it('should callback with the descending sorting data', () => {
         const onSort = jest.fn();
         const label = 'first name';
-        const first = 'a';
-        const second = 'b';
-        const third = 'c';
+        const first = null;
+        const second = 'a';
+        const third = 'b';
+        const fourth = 'c';
         const wrapper = mount(
           <DataTable
             columns={[
@@ -765,9 +772,10 @@ describe('DataTable', () => {
               order: ASCENDING,
             }}
             data={[
-              { id: 0, row: [second], selected: false },
-              { id: 1, row: [first], selected: false },
               { id: 2, row: [third], selected: false },
+              { id: 1, row: [second], selected: false },
+              { id: 0, row: [first], selected: false },
+              { id: 3, row: [fourth], selected: false },
             ]}
             onSort={onSort}
             sortable
@@ -778,9 +786,10 @@ describe('DataTable', () => {
           .filterWhere(node => trim(node.text()) === label);
         targetHeaderWrapper.simulate('click');
         expect(onSort.mock.calls[0][0].data).toEqual([
+          { id: 3, row: [fourth], selected: false },
           { id: 2, row: [third], selected: false },
-          { id: 0, row: [second], selected: false },
-          { id: 1, row: [first], selected: false },
+          { id: 1, row: [second], selected: false },
+          { id: 0, row: [first], selected: false },
         ]);
       });
     });
