@@ -9,13 +9,13 @@ export const DESCENDING = 'descending';
 export const getSortingIcon = (sortingOption, currentLabel) => {
   let icon = null;
   if (sortingOption.order === ASCENDING) {
-    icon = <ArrowUpIcon/>;
+    icon = <ArrowUpIcon />;
   }
   if (sortingOption.order === DESCENDING) {
-    icon = <ArrowDownIcon/>;
+    icon = <ArrowDownIcon />;
   }
   if (sortingOption.label !== currentLabel) {
-    icon = <ArrowDownIcon className="vs-unsorted-row-icon"/>;
+    icon = <ArrowDownIcon className="vs-unsorted-row-icon" />;
   }
   return icon;
 };
