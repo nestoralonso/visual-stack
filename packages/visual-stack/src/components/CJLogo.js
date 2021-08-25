@@ -2,14 +2,19 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import SVG from 'react-inlinesvg';
 import classNames from 'classnames';
-import logoSvg from '../../src/images/ui-kit/new-cj-logo-icon.svg';
+import logoSvg from '../images/ui-kit/cj-logo-2021.svg';
 import './CJLogo.css';
 
-const CJLogo = ({ className, ...restProps }) => (
+const CJLogo = ({ className, useStandardPadding = true, ...restProps }) => (
   <SVG
     {...restProps}
     src={logoSvg}
-    className={classNames('vs-cj-logo', 'vs-cj-logo-svg', className)}
+    className={classNames(
+      'vs-cj-logo',
+      'vs-cj-logo-svg',
+      className,
+      useStandardPadding && 'vs-cj-logo-padded'
+    )}
   />
 );
 
