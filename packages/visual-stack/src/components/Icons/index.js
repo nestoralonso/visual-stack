@@ -6,7 +6,7 @@ import Account from 'mdi-react/AccountCircleIcon';
 import Logout from 'mdi-react/LogoutIcon';
 import Settings from 'mdi-react/SettingsIcon';
 import Product from 'mdi-react/PackageVariantClosedIcon';
-import CJLogo from '../CJLogo';
+import CJLogo from '../../components/CJLogo';
 import classNames from 'classnames';
 
 export const AccountIcon = Account;

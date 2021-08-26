@@ -10,8 +10,13 @@ var config = {
         exclude: /node_modules/,
         use: 'babel-loader',
       },
-      { test: /\.css$/,
+      {
+        test: /\.css$/,
         use: 'ignore-loader',
+      },
+      {
+        test: /\.((woff2?|svg)(\?v=[0-9]\.[0-9]\.[0-9]))|(woff2?|svg|jpe?g|png|gif|ico)$/,
+        use: [{ loader: 'url-loader', options: { limit: 10000 } }],
       }
     ]
   },
