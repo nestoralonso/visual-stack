@@ -1,3 +1,8 @@
+# 7.6.1
+
+## Fix
+- DialogLayout no longer has double the spacing between TopNav and content
+
 # 7.6.0
 
 ## Updates
