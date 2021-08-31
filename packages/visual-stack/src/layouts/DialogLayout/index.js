@@ -34,23 +34,20 @@ export const DialogLayout = ({
   <div className={cn(`vs-dialog-layout`, className)} {...restProps}>
     <TopNav
       title={title}
-      actionChildren=<TopNavControls
-        onSubmit={onSubmit}
-        onCancel={onCancel}
-        submitButtonText={submitButtonText}
-        cancelButtonText={cancelButtonText}
-        disableSubmit={disableSubmit}
-        showSubmitButtonSpinner={showSubmitButtonSpinner}
-      />
-    />
-    <div
-      className={cn(
-        'vs-dialog-layout-content',
-        `vs-dialog-layout-content-${contentSize ? contentSize : 'normal'}`
-      )}
+      contentSize={contentSize}
+      actionChildren={
+        <TopNavControls
+          onSubmit={onSubmit}
+          onCancel={onCancel}
+          submitButtonText={submitButtonText}
+          cancelButtonText={cancelButtonText}
+          disableSubmit={disableSubmit}
+          showSubmitButtonSpinner={showSubmitButtonSpinner}
+        />
+      }
     >
       {children}
-    </div>
+    </TopNav>
   </div>
 );
 

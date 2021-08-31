@@ -5,6 +5,8 @@ import Adapter from 'enzyme-adapter-react-16';
 
 Enzyme.configure({ adapter: new Adapter() });
 
+jest.mock('../../../components/CJLogo', () => () => <></>);
+
 describe('DialogLayout', () => {
   test('should render', () => {
     const component = mount(
@@ -151,24 +153,24 @@ describe('DialogLayout', () => {
   test('should have wide content when contentSize is wide', () => {
     const component = mount(<DialogLayout contentSize={'wide'} />);
 
-    const content = component.find('.vs-dialog-layout-content');
+    const content = component.find('.vs-topnav-content');
 
-    expect(content.hasClass('vs-dialog-layout-content-wide')).toBe(true);
+    expect(content.hasClass('vs-topnav-content-wide')).toBe(true);
   });
 
   test('should have normal content when contentSize is normal', () => {
     const component = mount(<DialogLayout contentSize={'normal'} />);
 
-    const content = component.find('.vs-dialog-layout-content');
+    const content = component.find('.vs-topnav-content');
 
-    expect(content.hasClass('vs-dialog-layout-content-normal')).toBe(true);
+    expect(content.hasClass('vs-topnav-content-normal')).toBe(true);
   });
 
   test('should have normal content when contentSize is not passed', () => {
     const component = mount(<DialogLayout />);
 
-    const content = component.find('.vs-dialog-layout-content');
+    const content = component.find('.vs-topnav-content');
 
-    expect(content.hasClass('vs-dialog-layout-content-normal')).toBe(true);
+    expect(content.hasClass('vs-topnav-content-normal')).toBe(true);
   });
 });

@@ -54,26 +54,6 @@
   fill: #fff;
 }
 
-.vs-dialog-layout-content {
-  position: relative;
-  margin: 0 auto;
-  z-index: 10;
-}
-
-.vs-dialog-layout-content p {
-  max-width: 580px;
-}
-
-.vs-dialog-layout-content-normal {
-  max-width: 800px;
-  padding: 48px 24px 24px;
-}
-
-.vs-dialog-layout-content-wide {
-  max-width: 100%;
-  padding: 48px 48px 48px;
-}
-
 .vs-dialog-layout-button-bar .vs-text-btn {
   color: #fff;
   opacity: 0.64;
