@@ -1,3 +1,10 @@
+# Upcoming
+
+## Updates
+- Updated CJLogo to use the new svg asset
+- Changed CJIcon to use CJLogo instead of its own svg paths
+- Added webpack support for svg files in visual-stack-redux
+
 # 7.5.1
 
 ## Fix
