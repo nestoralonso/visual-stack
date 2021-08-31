@@ -1,4 +1,4 @@
-# Upcoming
+# 7.6.0
 
 ## Updates
 - Updated CJLogo to use the new svg asset
