@@ -36,12 +36,10 @@ export class CompanySelector extends React.Component {
       this.setState({ company: company });
       if (this.props.updateCompanyCallback) this.props.updateCompanyCallback();
     }
-    console.log('collapse dropdown');
     this.setState({ isDropdownExpanded: false });
   }
 
   expandDropdown() {
-    console.log('expand dropdown');
     this.setState({ isDropdownExpanded: true });
   }
 
@@ -50,7 +48,6 @@ export class CompanySelector extends React.Component {
       this.container.current &&
       !this.container.current.contains(event.target)
     ) {
-      console.log('click outside collapse');
       this.setState({ isDropdownExpanded: false });
     }
   };
