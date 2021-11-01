@@ -1,3 +1,8 @@
+# Next Version
+
+## Updates
+- Merged [Frontend Chapter's CONTRIBUTING.md](https://gitlab.cj.dev/cjdev/front-end-chapter/-/blob/master/visual-stack/CONTRIBUTING.md) into this repo's CONTRIBUTING.md.
+
 # 7.6.1
 
 ## Fix
